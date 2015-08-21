@@ -2,7 +2,7 @@ markdown: redcarpet
 pygments: true
 
 url: http://www.quxiaofeng.me
-baseurl: /securitybiometrics
+baseurl: /dkhrs.ml
 
-title_tag_text: Security Biometrics
-h1_tag_text: Security Biometrics
+title_tag_text: Door Knob Hand Recognition System
+h1_tag_text: Door Knob Hand Recognition System
