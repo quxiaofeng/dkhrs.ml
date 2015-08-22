@@ -6,8 +6,14 @@
 
 ### Imaging ###
 
-### 	Feature Extraction and Classification ###
+## Feature Extraction and Classification ##
 
 ## Dataset ##
 
 ### Experimental Results  ###
+
+## Publications ##
+
+### Patents ###
+
+### Papers ###
