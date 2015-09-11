@@ -1,7 +1,7 @@
 markdown: redcarpet
 pygments: true
 
-url: http://www.dkhrs.ml
+url: http://www.doorknob.ml
 baseurl:
 
 title_tag_text: Door Knob Hand Recognition System
