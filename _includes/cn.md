@@ -25,5 +25,5 @@ LGBPHS
 
 流程图
 
-![LGBPHS Method](/images/fig_lgbphs.svg)
+![LGBPHS Method](/images/fig_flowchart.svg)
 

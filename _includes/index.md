@@ -27,7 +27,7 @@ LGBPHS
 
 Flowchart
 
-![LGBPHS Method](/images/fig_lgbphs.svg)
+![LGBPHS Method](/images/fig_flowchart.svg)
 
 ## Publications ##
 
