@@ -1,6 +1,6 @@
 [中文版 (Chinese version)](/cn/)
 
-![DKHRS](/images/fig_devic.png)
+![DKHRS](/images/fig_device.png)
 
 ## Ergonomic Biometrics Design Model ##
 

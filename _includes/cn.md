@@ -3,7 +3,7 @@
 
 [English version (英文版)](/)
 
-![DKHRS](/images/fig_devic.png)
+![DKHRS](/images/fig_device.png)
 
 ## 简介
 
