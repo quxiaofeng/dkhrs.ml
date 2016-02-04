@@ -3,6 +3,8 @@
 
 [English version (英文版)](/)
 
+![DKHRS](/images/fig_devic.png)
+
 ## 简介
 
 ## 人体工学的生物特征识别设计模型 ##
@@ -25,5 +27,5 @@ LGBPHS
 
 流程图
 
-![LGBPHS Method](/images/fig_flowchart.svg)
+![Flowchart](/images/fig_flowchart.svg)
 

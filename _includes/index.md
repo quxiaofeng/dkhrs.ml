@@ -1,5 +1,6 @@
 [中文版 (Chinese version)](/cn/)
 
+![DKHRS](/images/fig_devic.png)
 
 ## Ergonomic Biometrics Design Model ##
 
@@ -27,7 +28,7 @@ LGBPHS
 
 Flowchart
 
-![LGBPHS Method](/images/fig_flowchart.svg)
+![Flowchart](/images/fig_flowchart.svg)
 
 ## Publications ##
 
