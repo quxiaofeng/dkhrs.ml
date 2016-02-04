@@ -1,3 +1,6 @@
+[中文版 (Chinese version)](/cn/)
+
+
 ## Ergonomic Biometrics Design Model ##
 
 ## Door Knob Hand Recognition System ##
