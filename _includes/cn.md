@@ -15,7 +15,15 @@ EBD 模型
 
 ![EBD model](/images/fig_newmodel.svg)
 
-## 测试数学公式
+## 特征提取与分类
 
-$$ (a+b)^2 = a^2 + 2ab + b^2 $$
+LGBPHS
+
+![LGBPHS Method](/images/fig_lgbphs.svg)
+
+### 实验 ###
+
+流程图
+
+![LGBPHS Method](/images/fig_lgbphs.svg)
 

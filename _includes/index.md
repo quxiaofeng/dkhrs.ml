@@ -19,9 +19,15 @@ EBD Model
 
 ## Feature Extraction and Classification ##
 
-## Dataset ##
+LGBPHS
 
-### Experimental Results  ###
+![LGBPHS Method](/images/fig_lgbphs.svg)
+
+### Experiment ###
+
+Flowchart
+
+![LGBPHS Method](/images/fig_lgbphs.svg)
 
 ## Publications ##
 
