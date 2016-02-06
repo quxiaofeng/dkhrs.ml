@@ -54,7 +54,7 @@ The contribution of our work is two-fold. First, we introduce a new DL framework
 
 Denote by \\(\\mathbf{X = \[X\_1,\\ldots,X\_k,\\ldots,X\_K\]}\\) a set of p-dimensional training samples from \\(K\\) classes, where \\(\\mathbf{X\_k} \\in \\Re^{p\\times{}n}\\) is the training sample set of class \\(k\\), and \\(n\\) is the number of samples of each class. Discriminative DL methods aim to learn an effective data representation model from \\(\\mathbf{X}\\) for classification tasks by exploiting the class label information of training data. Most of the state-of-the-art discriminative DL methods [5, 7, 9] can be formulated under the following framework:
 
-\\[\\mathbf{ \min\_{D,A} \\| X - DA \\|^2\_F + \\lambda \\|A\\|\_p} + \\Psi (D,A,Y), \\]
+\\[\\mathbf{\min\_{D,A}\\|X-DA\\|^2\_F+\\lambda\\|A\\|\_p+\\Psi(D,A,Y)},\\]
 
 where 0 is a scalar constant, Y represents the class label matrix of samples in X, D is the synthesis dictionary to be learned, and A is the coding coefficient matrix of X over D. In the training model (1), the data fidelity term ensures the representation ability of is the \\(l\_p\\)-norm regularizer on A; and (D;A; Y) stands for some discrimination promotion function, which ensures the discrimination power of D and A.
 
