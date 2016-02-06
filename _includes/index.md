@@ -52,6 +52,14 @@ The contribution of our work is two-fold. First, we introduce a new DL framework
 
 #### Projective Dictionary Pair Learning
 
+Denote by \\(\\bm{X} = \[\\bm{X}\_1,\\ldots,\\bm{X}\_k,\\ldots,\\bm{X}\_K\]\\) a set of p-dimensional training samples from \\(K\\) classes, where \\(\\bm{X}\_k \\in \\Re^{p\\times{}n}\\) is the training sample set of class k, and n is the number of samples of each class. Discriminative DL methods aim to learn an effective data representation model from X for classification tasks by exploiting the class label information of training data. Most of the state-of-the-art discriminative DL methods [5, 7, 9] can be formulated under the following framework:
+
+where 0 is a scalar constant, Y represents the class label matrix of samples in X, D is the synthesis dictionary to be learned, and A is the coding coefficient matrix of X over D. In the training model (1), the data fidelity term ensures the representation ability of is the \\(l\_p\\)-norm regularizer on A; and (D;A; Y) stands for some discrimination promotion function, which ensures the discrimination power of D and A.
+
+As we introduced in Section 1, some DL methods [4, 5, 7] learn a shared dictionary for all classes and a classifier on the coding coefficients simultaneously, while some DL methods [8, 9, 10] learn a structured dictionary to promote discrimination between classes. However, they all employ \\(l\_0\\) or \\(l\_1\\)-norm sparsity regularizer on the coding coefficients, making the training stage and the consequent testing stage inefficient.
+
+In this work, we extend the conventional DL model in (1), which learns a discriminative synthesis dictionary, to a novel DPL model, which learns a pair of synthesis and analysis dictionaries. No costly \\(l\_0\\) or \\(l\_1\\)-norm sparsity regularizer is required in the proposed DPL model, and the coding coefficients can be explicitly obtained by linear projection. Fortunately, DPL does not sacrifice the classification accuracy while achieving significant improvement in the efficiency, as demonstrated by our extensive experiments in Section 3.
+
 ##### Discriminative dictionary learning
 
 ##### The dictionary pair learning model
