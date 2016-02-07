@@ -66,7 +66,7 @@ In this work, we extend the conventional DL model, which learns a discriminative
 
 The conventional discriminative DL model in (1) aims to learn a synthesis dictionary \\(\\mathbf{D}\\) to sparsely represent the signal \\(\\mathbf{X}\\), and a costly \\(l_1\\)-norm sparse coding process is needed to resolve the code \\(\\mathbf{A}\\). Suppose that if we can find an analysis dictionary, denoted by \\(\\mathbf{P}\\in\\Re^{mK\\times{}p}\\), such that the code \\(\\mathbf{A}\\) can be analytically obtained as \\(\\mathbf{A=PX}\\), then the representation of \\(\\mathbf{X}\\) would become very efficient. Based on this idea, we propose to learn such an analysis dictionary \\(\\mathbf{P}\\) together with the synthesis dictionary \\(\\mathbf{D}\\), leading to the following DPL model:
 
-\\[\\{\\mathbf{P^*,D^*}\\}=argmin\_{P,D}\\|X-DPX\\|^2\_F+\\Psi(D,P,X,Y),\\]
+\\[\\{\\mathbf{P^\*,D^\*}\\}=argmin\_{P,D}\\|X-DPX\\|^2\_F+\\Psi(D,P,X,Y),\\]
 
 where 	(D; P;X; Y) is some discrimination function. D and P form a dictionary pair: the analysis dictionary P is used to analytically code X, and the synthesis dictionary D is used to reconstruct X. The discrimination power of the DPL model depends on the suitable design of 	(D; P;X; Y) . We propose to learn a structured synthesis dictionary D = [D1; : : : ;Dk; : : : ;DK] and a structured  forms a subdictionary pair corresponding to class k. Recent studies on sparse subspace clustering [19] have proved that a sample can be represented by its corresponding dictionary if the signals satisfy certain incoherence condition. With the structured analysis dictionary P, we want that the sub-dictionary Pk can project the samples from class i; i 6= k, to a nearly null space, i.e.,
 
