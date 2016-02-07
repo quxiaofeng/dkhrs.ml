@@ -71,7 +71,9 @@ The conventional discriminative DL model in (1) aims to learn a synthesis dictio
 where \\(\\mathbf{\\Psi(D,P,X,Y)}\\) is some discrimination function. \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\) form a dictionary pair: the analysis dictionary \\(\\mathbf{P}\\) is used to analytically code \\(\\mathbf{X}\\), and the synthesis dictionary \\(\\mathbf{D}\\) is used to reconstruct \\(\\mathbf{X}\\). The discrimination power of the DPL model depends on the suitable design of \\(\\mathbf{\\Psi(D,P,X,Y)}\\). We propose to learn a structured synthesis dictionary \\(\\mathbf{D=[D\_1,\\ldots,D\_k,\\ldots,D\_K]}\\) and a structured analysis dictionary \\(\\mathbf{P=[P\_1;\\ldots;P\_k;\\ldots;P\_K]}\\), where \\(\\{\\mathbf{D}\_k\\in\\Re^{p\\times{}m},   \\mathbf{P}\_k\\in\\Re^{m\\times{}p}\\}\\) forms a subdictionary pair corresponding to class \\(k\\). Recent studies on sparse subspace clustering [19] have proved that a sample can be represented by its corresponding dictionary if the signals satisfy certain incoherence condition. With the structured analysis dictionary \\(\\mathbf{P}\\), we want that the sub-dictionary \\(\\mathbf{P}_k\\) can project the samples from class \\(i,  i\neq k\\), to a nearly null space, i.e.,
 
 <div style='text-llign:center'>
+
 \\[\\mathbf{P}\_k\\mathbf{X}\_i\\sim\\mathbf{0},   \\forall k\\neq i.\\]
+
 <span style='float:right'>(3)</span>
 </div>
 
