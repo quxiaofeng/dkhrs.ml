@@ -78,7 +78,8 @@ Clearly, with (3) the coefficient matrix \\(\\mathbf{PX}\\) will be nearly block
 
 Based on the above analysis, we can readily have the following DPL model:
 
-\\[\phantom{x}\\{\\mathbf{P}^\*,\\mathbf{D}^\*\\}=\\arg\\min\_{\\mathbf{P,D}}\\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F+\\lambda\\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F,\phantom{x}s.t.\\|\\mathbf{d}\_i\\|^2\_2\\leq{}1.\phantom{x}(5)\\]
+\\[\phantom{x}\\{\\mathbf{P}^\*,\\mathbf{D}^\*\\}=\\arg\\min\_{\\mathbf{P,D}}\\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F+\\lambda\\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F,\phantom{x}\\]
+\\[\phantom{xxxxxxxx}s.t.\\|\\mathbf{d}\_i\\|^2\_2\\leq{}1.\phantom{xxxxxxxx}(5)\\]
 
 ##### The dictionary pair learning model
 
