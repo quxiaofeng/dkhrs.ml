@@ -66,7 +66,7 @@ In this work, we extend the conventional DL model, which learns a discriminative
 
 The conventional discriminative DL model in (1) aims to learn a synthesis dictionary \\(\\mathbf{D}\\) to sparsely represent the signal \\(\\mathbf{X}\\), and a costly \\(l_1\\)-norm sparse coding process is needed to resolve the code \\(\\mathbf{A}\\). Suppose that if we can find an analysis dictionary, denoted by \\(\\mathbf{P}\\in\\Re^{mK\\times{}p}\\), such that the code \\(\\mathbf{A}\\) can be analytically obtained as \\(\\mathbf{A=PX}\\), then the representation of \\(\\mathbf{X}\\) would become very efficient. Based on this idea, we propose to learn such an analysis dictionary \\(\\mathbf{P}\\) together with the synthesis dictionary \\(\\mathbf{D}\\), leading to the following DPL model:
 
-\\[\phantom{x}\\{\\mathbf{P^\*,D^\*}\\}=\\arg\\min\_{\\mathbf{P,D}}\\|\\mathbf{X-DPX}\\|^2\_F+\\mathbf{\\Psi(D,P,X,Y)},\phantom{x}(2)\\]
+\\[\\{\\mathbf{P^\*,D^\*}\\}=\\arg\\min\_{\\mathbf{P,D}}\\|\\mathbf{X-DPX}\\|^2\_F+\\mathbf{\\Psi(D,P,X,Y)},(2)\\]
 
 where \\(\\mathbf{\\Psi(D,P,X,Y)}\\) is some discrimination function. \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\) form a dictionary pair: the analysis dictionary \\(\\mathbf{P}\\) is used to analytically code \\(\\mathbf{X}\\), and the synthesis dictionary \\(\\mathbf{D}\\) is used to reconstruct \\(\\mathbf{X}\\). The discrimination power of the DPL model depends on the suitable design of \\(\\mathbf{\\Psi(D,P,X,Y)}\\). We propose to learn a structured synthesis dictionary \\(\\mathbf{D=[D\_1,\\ldots,D\_k,\\ldots,D\_K]}\\) and a structured analysis dictionary \\(\\mathbf{P=[P\_1;\\ldots;P\_k;\\ldots;P\_K]}\\), where \\(\\{\\mathbf{D}\_k\\in\\Re^{p\\times{}m},   \\mathbf{P}\_k\\in\\Re^{m\\times{}p}\\}\\) forms a subdictionary pair corresponding to class \\(k\\). Recent studies on sparse subspace clustering [19] have proved that a sample can be represented by its corresponding dictionary if the signals satisfy certain incoherence condition. With the structured analysis dictionary \\(\\mathbf{P}\\), we want that the sub-dictionary \\(\\mathbf{P}_k\\) can project the samples from class \\(i,  i\neq k\\), to a nearly null space, i.e.,
 
@@ -74,7 +74,7 @@ where \\(\\mathbf{\\Psi(D,P,X,Y)}\\) is some discrimination function. \\(\\mathb
 
 Clearly, with (3) the coefficient matrix \\(\\mathbf{PX}\\) will be nearly block diagonal. On the other hand, with the structured synthesis dictionary \\(\\mathbf{D}\\), we want that the sub-dictionary \\(\\mathbf{D}\_k\\) can well reconstruct the data matrix \\(\\mathbf{X}\_k\\) from its projective code matrix \\(\\mathbf{P}\_k\\mathbf{X}\_k\\); that is, the dictionary pair should minimize the reconstruction error:
 
-\\[\phantom{xxxxxxxxxx}\\min\_{\\mathbf{P,D}}\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F.\phantom{xxxxxxxxxx}(4)\\]
+\\[\phantom{xxxxxxxxxxxx}\\min\_{\\mathbf{P,D}}\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F.\phantom{xxxxxxxxxxxx}(4)\\]
 
 Based on the above analysis, we can readily have the following DPL model:
 
