@@ -74,12 +74,12 @@ where \\(\\mathbf{\\Psi(D,P,X,Y)}\\) is some discrimination function. \\(\\mathb
 
 Clearly, with (3) the coefficient matrix \\(\\mathbf{PX}\\) will be nearly block diagonal. On the other hand, with the structured synthesis dictionary \\(\\mathbf{D}\\), we want that the sub-dictionary \\(\\mathbf{D}\_k\\) can well reconstruct the data matrix \\(\\mathbf{X}\_k\\) from its projective code matrix \\(\\mathbf{P}\_k\\mathbf{X}\_k\\); that is, the dictionary pair should minimize the reconstruction error:
 
-\\[\phantom{xxxxxxxxxxxx}\\min\_{\\mathbf{P,D}}\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F.\phantom{xxxxxxxxxxxx}(4)\\]
+\\[\phantom{xxxxxxxxx}\\min\_{\\mathbf{P,D}}\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F.\phantom{xxxxxxxxx}(4)\\]
 
 Based on the above analysis, we can readily have the following DPL model:
 
 \\[\phantom{x}\\{\\mathbf{P}^\*,\\mathbf{D}^\*\\}=\\arg\\min\_{\\mathbf{P,D}}\\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F+\\lambda\\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F,\phantom{x}\\]
-\\[\phantom{xxxxxxxx}s.t.\\|\\mathbf{d}\_i\\|^2\_2\\leq{}1.\phantom{xxxxxxxx}(5)\\]
+\\[\phantom{xxxxxxxxxxxx}s.t.\\|\\mathbf{d}\_i\\|^2\_2\\leq{}1.\phantom{xxxxxxxxxxxx}(5)\\]
 
 ##### The dictionary pair learning model
 
