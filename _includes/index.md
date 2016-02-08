@@ -52,6 +52,8 @@ The contribution of our work is two-fold. First, we introduce a new DL framework
 
 #### Projective Dictionary Pair Learning
 
+**Discriminative dictionary learning**
+
 Denote by \\(\\mathbf{X = \[X\_1,\\ldots,X\_k,\\ldots,X\_K\]}\\) a set of p-dimensional training samples from \\(K\\) classes, where \\(\\mathbf{X\_k} \\in \\Re^{p\\times{}n}\\) is the training sample set of class \\(k\\), and \\(n\\) is the number of samples of each class. Discriminative DL methods aim to learn an effective data representation model from \\(\\mathbf{X}\\) for classification tasks by exploiting the class label information of training data. Most of the state-of-the-art discriminative DL methods [5, 7, 9] can be formulated under the following framework:
 
 \\[\phantom{xxxx}\min\_{\\mathbf{D,A}}\\|\\mathbf{X-DA}\\|^2\_F+\\lambda\\|\\mathbf{A}\\|\_p+\\mathbf{\\Psi(D,A,Y)},\phantom{xxxx}(1)\\]
@@ -62,7 +64,7 @@ As we introduced in last Section, some DL methods [4, 5, 7] learn a shared dicti
 
 In this work, we extend the conventional DL model, which learns a discriminative synthesis dictionary, to a novel DPL model, which learns a pair of synthesis and analysis dictionaries. No costly \\(l\_0\\) or \\(l\_1\\)-norm sparsity regularizer is required in the proposed DPL model, and the coding coefficients can be explicitly obtained by linear projection. Fortunately, DPL does not sacrifice the classification accuracy while achieving significant improvement in the efficiency.
 
-##### Discriminative dictionary learning
+**The dictionary pair learning model**
 
 The conventional discriminative DL model in (1) aims to learn a synthesis dictionary \\(\\mathbf{D}\\) to sparsely represent the signal \\(\\mathbf{X}\\), and a costly \\(l_1\\)-norm sparse coding process is needed to resolve the code \\(\\mathbf{A}\\). Suppose that if we can find an analysis dictionary, denoted by \\(\\mathbf{P}\\in\\Re^{mK\\times{}p}\\), such that the code \\(\\mathbf{A}\\) can be analytically obtained as \\(\\mathbf{A=PX}\\), then the representation of \\(\\mathbf{X}\\) would become very efficient. Based on this idea, we propose to learn such an analysis dictionary \\(\\mathbf{P}\\) together with the synthesis dictionary \\(\\mathbf{D}\\), leading to the following DPL model:
 
@@ -81,13 +83,15 @@ Based on the above analysis, we can readily have the following DPL model:
 \\[\phantom{x}\\{\\mathbf{P}^\*,\\mathbf{D}^\*\\}=\\arg\\min\_{\\mathbf{P,D}}\\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F+\\lambda\\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F,\phantom{x}\\]
 \\[\phantom{xxxxxxxxxxxxx}s.t.\\|\\mathbf{d}\_i\\|^2\_2\\leq{}1.\phantom{xxxxxxxxxxxxx}(5)\\]
 
-##### The dictionary pair learning model
+where \\(\\mathbf{X}\_k\\) denotes the complementary data matrix of \\(\\mathbf{X}\_k\\) in the whole training set \\(\\mathbf{X}\\), \\(\\lambda>0\\) is a scalar constant, and \\(\\mathbf{d}\_i\\) denotes the \\(i\\)th atom of synthesis dictionary \\(\\mathbf{D}\\). We constrain the energy of each atom \\(\\mathbf{d}\_i\\) in order to avoid the trivial solution of \\(\\mathbf{P}\_k=\\mathbf{0}\\) and make the DPL more stable.
 
-##### Optimization
+The DPL model in (5) is not a sparse representation model, while it enforces group sparsity on the code matrix \\(\\mathbf{PX}\\) (i.e., \\(\\mathbf{PX}\\) is nearly block diagonal). Actually, the role of sparse coding in classification is still an open problem, and some researchers argued that sparse coding may not be crucial to classification tasks [20, 21]. Our findings in this work are supportive to this argument. The DPL model leads to very competitive classification performance with those sparse coding based DL models, but it is much faster.
 
-##### Classification scheme 
+**Optimization**
 
-##### Complexity and convergence
+**Classification scheme** 
+
+**Complexity and convergence**
 
 ### Experiment ###
 
