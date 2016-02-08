@@ -74,7 +74,7 @@ where \\(\\mathbf{\\Psi(D,P,X,Y)}\\) is some discrimination function. \\(\\mathb
 
 Clearly, with (3) the coefficient matrix \\(\\mathbf{PX}\\) will be nearly block diagonal. On the other hand, with the structured synthesis dictionary \\(\\mathbf{D}\\), we want that the sub-dictionary \\(\\mathbf{D}\_k\\) can well reconstruct the data matrix \\(\\mathbf{X}\_k\\) from its projective code matrix \\(\\mathbf{P}\_k\\mathbf{X}\_k\\); that is, the dictionary pair should minimize the reconstruction error:
 
-\\[\phantom{xxxxxxxxxx}\\min\_{\\mathbf{P,D}\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F}.\phantom{xxxxxxxxxx}(4)\\]
+\\[\phantom{xxxxxxxxxx}\\min\_{\\mathbf{P,D}}\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F.\phantom{xxxxxxxxxx}(4)\\]
 
 Based on the above analysis, we can readily have the following DPL model:
 
