@@ -89,6 +89,11 @@ The DPL model in (5) is not a sparse representation model, while it enforces gro
 
 **Optimization**
 
+The objective function in (5) is generally non-convex. We introduce a variable matrix A and relax (5) to the following problem:
+
+\\[\\{\\mathbf{P}^\*,\\mathbf{A}^\*,\\mathbf{D}^\*\\} = \\arg\\min\_{\\mathbf{P},\\mathbf{A},\\mathbf{D}} \\sum^K\_{k=1} \\|\\mathbf{X}\_i-\\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k-\\mathbf{A}\_k\\|^2\_F + \lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F, \\]
+\\[\phantom{xxxxxxxxxxxxx}s.t. \\|\\mathbf{d}\_i\\|^2\_2 \leq 1. \phantom{xxxxxxxxxxxxx}(6) \\]
+
 **Classification scheme** 
 
 **Complexity and convergence**
