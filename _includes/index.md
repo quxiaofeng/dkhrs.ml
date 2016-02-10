@@ -98,7 +98,7 @@ where \\(\\tau\\)is a scalar constant. All terms in the above objective function
 
 (1) Fix \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\), update \\(\\mathbf{A}\\)
 
-\\[\\mathbf{A}^\* = \\arg \\min\_\\mathbf{A} \\sum^K\_{k=1} \\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F. \phantom{xx}(7)\\]
+\\[\\mathbf{A}^\* = \\arg \\min\_{\\mathbf{A}} \\sum^K\_{k=1} \\|\\mathbf{X}\_k - \\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F. \phantom{xx}(7)\\]
 
 This is a standard least squares problem and we have the closed-form solution:
 
