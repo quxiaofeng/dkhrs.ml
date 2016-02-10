@@ -56,7 +56,7 @@ The contribution of our work is two-fold. First, we introduce a new DL framework
 
 Denote by \\(\\mathbf{X = \[X\_1,\\ldots,X\_k,\\ldots,X\_K\]}\\) a set of p-dimensional training samples from \\(K\\) classes, where \\(\\mathbf{X\_k} \\in \\Re^{p\\times{}n}\\) is the training sample set of class \\(k\\), and \\(n\\) is the number of samples of each class. Discriminative DL methods aim to learn an effective data representation model from \\(\\mathbf{X}\\) for classification tasks by exploiting the class label information of training data. Most of the state-of-the-art discriminative DL methods [5, 7, 9] can be formulated under the following framework:
 
-\\[\phantom{xx}\min\_{\\mathbf{D,A}}\\|\\mathbf{X-DA}\\|^2\_F+\\lambda\\|\\mathbf{A}\\|\_p+\\mathbf{\\Psi(D,A,Y)},\phantom{xx}(1)\\]
+\\[\phantom{xxx}\min\_{\\mathbf{D,A}}\\|\\mathbf{X-DA}\\|^2\_F+\\lambda\\|\\mathbf{A}\\|\_p+\\mathbf{\\Psi(D,A,Y)},\phantom{xxx}(1)\\]
 
 where \\(\\lambda \geq 0\\) is a scalar constant, \\(\\mathbf{Y}\\) represents the class label matrix of samples in \\(\\mathbf{X}\\), \\(\\mathbf{D}\\) is the synthesis dictionary to be learned, and \\(\\mathbf{A}\\) is the coding coefficient matrix of \\(\\mathbf{X}\\) over \\(\\mathbf{D}\\). In the training model above, the data fidelity term \\(\\|\\mathbf{X-DA}\\|^2\_F\\) ensures the representation ability of \\(\\mathbf{D}\\); \\(\\|\\mathbf{A}\\|\_p\\) is the \\(l\_p\\)-norm regularizer on \\(\\mathbf{A}\\); and \\(\\mathbf{\\Psi(D,A,Y)}\\) stands for some discrimination promotion function, which ensures the discrimination power of \\(\\mathbf{D}\\) and \\(\\mathbf{A}\\).
 
