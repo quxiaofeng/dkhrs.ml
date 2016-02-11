@@ -106,6 +106,15 @@ This is a standard least squares problem and we have the closed-form solution:
 
 \\[\\mathbf{A}^\*\_k = (\\mathbf{D}^T\_k\\mathbf{D}\_k + \\tau\\mathbf{I})^{-1} (\\tau \\mathbf{P}\_k \\mathbf{X}\_k + \\mathbf{D}^T\_k\\mathbf{X}\_k).\phantom{xxxxxxxxx}(8)\\]
 
+(2) Fix \\(\\mathbf{A}\\), update \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\):
+
+\\[
+\\begin{cases}
+\\mathbf{P}^\* = \\arg \\min\_{\\mathbf{P}} \\sum^K\_{k=1} \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F;\\\\
+\\mathbf{D}^\* = \\arg \\min\_{\\mathbf{D}} \\sum^K\_{k=1} \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F;
+\\end{cases}
+\\]
+
 **Classification scheme** 
 
 **Complexity and convergence**
