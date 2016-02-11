@@ -110,11 +110,15 @@ This is a standard least squares problem and we have the closed-form solution:
 
 \\[
 \\begin{cases}
-\\mathbf{P}^\* = \\arg \\min\_{\\mathbf{P}} \\sum^K\_{k=1} \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F;\\\\
+\\mathbf{P}^\* = \\arg \\min\_{\\mathbf{P}} \\sum^K\_{k=1} \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{\\bar{X}}\_k\\|^2\_F;\\\\
 \\mathbf{D}^\* = \\arg \\min\_{\\mathbf{D}} \\sum^K\_{k=1}       \\|\\mathbf{X}\_k - \\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F, \\phantom{xx} s.t. \\|\\mathbf{d}\_i\\|^2\_2 \\leq 1.
 \\end{cases}
 \\]
 \\[\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(9)\\]
+
+The closed-form solutions of \\(\\mathbf{P}\\) can be obtained as:
+
+\\[\\mathbf{P}^\*\_k = \\tau \\mathbf{A}\_k\\mathbf{X}\^T\_k(\\tau \\mathbf{X}\_k\\mathbf{X}^T\_k + \\lambda \\mathbf{\\bar{X}}\_k\\mathbf{\\bar{X}}^T\_k + \\gamma\\mathbf{I})^{-1},\\phantom{xx}(10)\\] 
 
 **Classification scheme** 
 
