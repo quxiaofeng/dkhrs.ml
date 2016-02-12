@@ -104,7 +104,7 @@ where \\(\\tau\\)is a scalar constant. All terms in the above objective function
 
 This is a standard least squares problem and we have the closed-form solution:
 
-\\[\\mathbf{A}^\*\_k = (\\mathbf{D}^T\_k\\mathbf{D}\_k + \\tau\\mathbf{I})^{-1} (\\tau \\mathbf{P}\_k \\mathbf{X}\_k + \\mathbf{D}^T\_k\\mathbf{X}\_k).\phantom{xxxxxxxxx}(8)\\]
+\\[\phantom{xxxx}\\mathbf{A}^\*\_k = (\\mathbf{D}^T\_k\\mathbf{D}\_k + \\tau\\mathbf{I})^{-1} (\\tau \\mathbf{P}\_k \\mathbf{X}\_k + \\mathbf{D}^T\_k\\mathbf{X}\_k).\phantom{xxxxx}(8)\\]
 
 (2) Fix \\(\\mathbf{A}\\), update \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\):
 
