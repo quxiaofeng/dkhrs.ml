@@ -92,7 +92,15 @@ The DPL model in (5) is not a sparse representation model, while it enforces gro
 
 The objective function in (5) is generally non-convex. We introduce a variable matrix A and relax (5) to the following problem:
 
-\\[\\{\\mathbf{P}^\*,\\mathbf{A}^\*,\\mathbf{D}^\*\\} = \\arg\\min\_{\\mathbf{P},\\mathbf{A},\\mathbf{D}} \\sum^K\_{k=1} \\|\\mathbf{X}\_i-\\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k-\\mathbf{A}\_k\\|^2\_F + \lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F, \\]
+\\[
+\begin{aligned}
+\{ \mathbf{P}^*, \mathbf{A}^*, \mathbf{D}^* \} & = & \arg\min_{\mathbf{P}, \mathbf{A}, \mathbf{D}} \left( \sum^K_{k=1} \| \mathbf{X}_i - \mathbf{D}_k \mathbf{A}_k \|^2_F \\
+& + & \tau  \| \mathbf{P}_k \mathbf{X}_k - \mathbf{A}_k \|^2_F \\
+& + & \lambda  \| \mathbf{P}_k \mathbf{X}_k \|^2_F \right), 
+\end{aligned}
+\\]
+
+\\[\\{\\mathbf{P}^\*,\\mathbf{A}^\*,\\mathbf{D}^\*\\} = \\arg\\min\_{\\mathbf{P},\\mathbf{A},\\mathbf{D}} \\sum^K\_{k=1} \\|\\mathbf{X}\_i-\\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k-\\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F, \\]
 \\[\phantom{xxxxxxxxxxxxx}s.t. \phantom{xx}\\|\\mathbf{d}\_i\\|^2\_2 \leq 1. \phantom{xxxxxxxxxxxxx}(6) \\]
 
 where \\(\\tau\\)is a scalar constant. All terms in the above objective function are characterized by Frobenius norm, and (6) can be easily solved. We initialize the analysis dictionary \\(\\mathbf{P}\\) and synthesis dictionary \\(\\mathbf{D}\\) as random matrices with unit Frobenius norm, and then alternatively update \\(\\mathbf{A}\\) and \\(\\{\\mathbf{D},\\mathbf{P}\\}\\). The minimization can be alternated between the following two steps.
