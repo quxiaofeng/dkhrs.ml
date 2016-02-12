@@ -1,7 +1,7 @@
 门把手识别系统
 ======================
 
-[English version (英文版)](/)
+[English](/) | [中文](/cn/)
 
 ![DKHRS](/images/fig_device.png)
 

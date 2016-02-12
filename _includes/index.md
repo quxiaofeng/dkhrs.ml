@@ -1,4 +1,4 @@
-[中文版 (Chinese version)](/cn/)
+[English](/) | [中文](/cn/)
 
 ![DKHRS](/images/fig_device.png)
 
