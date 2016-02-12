@@ -92,12 +92,20 @@ The DPL model in (5) is not a sparse representation model, while it enforces gro
 
 The objective function in (5) is generally non-convex. We introduce a variable matrix A and relax (5) to the following problem:
 
+
 \\[
-\begin{aligned}
-\{ \mathbf{P}^*, \mathbf{A}^*, \mathbf{D}^* \} & = & \arg\min_{\mathbf{P}, \mathbf{A}, \mathbf{D}} \left( \sum^K_{k=1} \| \mathbf{X}_i - \mathbf{D}_k \mathbf{A}_k \|^2_F \\
-& + & \tau  \| \mathbf{P}_k \mathbf{X}_k - \mathbf{A}_k \|^2_F \\
-& + & \lambda  \| \mathbf{P}_k \mathbf{X}_k \|^2_F \right), 
-\end{aligned}
+\\begin{aligned}
+A \\\\
+B
+\\end{aligned}
+\\]
+
+\\[
+\\begin{aligned}
+\\{ \\mathbf{P}^\*, \\mathbf{A}^\*, \\mathbf{D}^\* \\} \& = \& \\arg\\min\_{\\mathbf{P}, \\mathbf{A}, \\mathbf{D}} \\left( \\sum^K\_{k=1} \\| \\mathbf{X}\_i - \\mathbf{D}\_k \\mathbf{A}\_k \\|^2\_F \\\\
+\& + \& \\tau  \\| \\mathbf{P}\_k \\mathbf{X}\_k - \\mathbf{A}\_k \\|^2\_F \\\\
+\& + \& \\lambda  \\| \\mathbf{P}\_k \\mathbf{X}\_k \\|^2\_F \\right), 
+\\end{aligned}
 \\]
 
 \\[\\{\\mathbf{P}^\*,\\mathbf{A}^\*,\\mathbf{D}^\*\\} = \\arg\\min\_{\\mathbf{P},\\mathbf{A},\\mathbf{D}} \\sum^K\_{k=1} \\|\\mathbf{X}\_i-\\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k-\\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F, \\]
