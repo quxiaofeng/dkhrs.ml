@@ -68,7 +68,7 @@ In this work, we extend the conventional DL model, which learns a discriminative
 
 The conventional discriminative DL model in (1) aims to learn a synthesis dictionary \\(\\mathbf{D}\\) to sparsely represent the signal \\(\\mathbf{X}\\), and a costly \\(l_1\\)-norm sparse coding process is needed to resolve the code \\(\\mathbf{A}\\). Suppose that if we can find an analysis dictionary, denoted by \\(\\mathbf{P}\\in\\Re^{mK\\times{}p}\\), such that the code \\(\\mathbf{A}\\) can be analytically obtained as \\(\\mathbf{A=PX}\\), then the representation of \\(\\mathbf{X}\\) would become very efficient. Based on this idea, we propose to learn such an analysis dictionary \\(\\mathbf{P}\\) together with the synthesis dictionary \\(\\mathbf{D}\\), leading to the following DPL model:
 
-\\[\\{\\mathbf{P^\*,D^\*}\\}= \\underset{\\mathbf{P,D}}{argmin}\\|\\mathbf{X-DPX}\\|^2\_F+\\mathbf{\\Psi(D,P,X,Y)},\\]
+\\[\\{\\mathbf{P^\*,D^\*}\\}= \\underset{P,D}{argmin}\\|\\mathbf{X-DPX}\\|^2\_F+\\mathbf{\\Psi(D,P,X,Y)},\\]
 \\[\\{\\mathbf{P^\*,D^\*}\\}=\\arg\\min\_{\\mathbf{P,D}}\\|\\mathbf{X-DPX}\\|^2\_F+\\mathbf{\\Psi(D,P,X,Y)},\\]
 \\[\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(2)\\]
 
