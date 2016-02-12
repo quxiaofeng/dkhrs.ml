@@ -95,8 +95,8 @@ The objective function in (5) is generally non-convex. We introduce a variable m
 
 \\[
 \\begin{aligned}
-A \\\\
-B
+A & = 8 \\\\
+  & = B
 \\end{aligned}
 \\]
 
