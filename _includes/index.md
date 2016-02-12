@@ -94,9 +94,9 @@ The objective function in (5) is generally non-convex. We introduce a variable m
 
 \\[\\{\\mathbf{P}^\*,\\mathbf{A}^\*,\\mathbf{D}^\*\\} = \\arg\\min\_{\\mathbf{P},\\mathbf{A},\\mathbf{D}}
 \\begin{cases}
-& \\sum^K\_{k=1} \\left( \\|\\mathbf{X}\_i-\\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F \\\\
-& + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k-\\mathbf{A}\_k\\|^2\_F \\\\
-& + \\lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F \\right),
+\& \\sum^K\_{k=1} \\left( \\|\\mathbf{X}\_i-\\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F \\\\
+\& + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k-\\mathbf{A}\_k\\|^2\_F \\\\
+\& + \\lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F \\right),
 \\end{cases}
 \\]
 \\[\\phantom{xxxxxxxxxxxxx}\\text{s.t.} \\quad \\|\\mathbf{d}\_i\\|^2\_2 \leq 1. \\phantom{xxxxxxxxxxxxx}(6) \\]
