@@ -116,11 +116,11 @@ The optimal solution of (11) can ben obtained by the ADMM algorithm:
 \\[
 \\begin{cases}
 \\mathbf{D}^{(r+1)} = \\arg \\min\_{\\mathbf{D}} \\sum^K\_{k=1} \\|\\mathbf{X}\_k - \\mathbf{D}\_k \\mathbf{A}\_k\\|^2\_F + \\rho \\|\\mathbf{D}\_k - \\mathbf{S}^{(r)}\_k + \\mathbf{T}^{(r)}\_k\\|^2\_F \\\\
-\\mathbf{S}^{(r+1)} = \\arg \\min\_{\\mathbf{S}} \\sum^K\_{k=1} \\|\\mathbf{D}^{(r+1)}\_k - \\mathbf{S}\_k + \\mathbf{T}^{(r)}\_k\\|^2\_F, \\quad \\text{s.t. } \\|s\_i\\|^2\_2 \\leq 1, \\\\
-\\mathbf{T}^{(r+1)} = \\mathbf{T}^{(r)} + \\mathbf{D}^{(r+1)}\_k - \\mathbf{S}^{(r+1)}\_k, \\text{ update } \\rho \\text{ if appropriate.}
+\\mathbf{S}^{(r+1)} = \\arg \\min\_{\\mathbf{S}} \\sum^K\_{k=1} \\|\\mathbf{D}^{(r+1)}\_k - \\mathbf{S}\_k + \\mathbf{T}^{(r)}\_k\\|^2\_F, \\quad \\text{s.t.} \\quad \\|s\_i\\|^2\_2 \\leq 1, \\\\
+\\mathbf{T}^{(r+1)} = \\mathbf{T}^{(r)} + \\mathbf{D}^{(r+1)}\_k - \\mathbf{S}^{(r+1)}\_k, \\quad \\text{update } \\rho \\text{ if appropriate.}
 \\end{cases}
-\\quad (12)
 \\]
+\\[\\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(12)\\]
 
 **Classification scheme** 
 
