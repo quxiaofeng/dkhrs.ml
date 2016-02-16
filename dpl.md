@@ -3,7 +3,7 @@ layout: default
 permalink: /dpl/
 ---
 
-# [Gu, S., et, al. "Projective dictionary pair learning for pattern classification." Neural Information Processing Systems (2014).](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf) #
+[Gu, S., et, al. "Projective dictionary pair learning for pattern classification." Neural Information Processing Systems (2014).](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf)
 
 #### Abstract
 

@@ -1,3 +1,6 @@
+[Door Knob Hand Recognition System]({{site.url}}/)
+==================================
+
 [English](/) | [中文](/cn/)
 
 ![DKHRS](/images/fig_device.png)
