@@ -108,7 +108,7 @@ The closed-form solutions of \\(\\mathbf{P}\\) can be obtained as:
 where \\(\\gamma = 10^{-4}\\) is a small number. The \\(\\mathbf{D}\\) problem can be optimized by introducing a variable  \\(\\mathbf{S}\\):
 
 \\[
-\\quad \\min\_{\\mathbf{D}, \\mathbf{S}} \\sum^K\_{k=1} \\|\\mathbf{X}\_k \\mathbf{D}\_k \\mathbf{A}\_k\\|^2\_F, \\quad \\text{s.t.} \\quad \\mathbf{D} = \\mathbf{S}, \\quad \|s\_i\|^2\_2 \\leq 1. (11)
+\\min\_{\\mathbf{D}, \\mathbf{S}} \\sum^K\_{k=1} \\|\\mathbf{X}\_k \\mathbf{D}\_k \\mathbf{A}\_k\\|^2\_F, \\quad \\text{s.t.} \\quad \\mathbf{D} = \\mathbf{S}, \\quad \|s\_i\|^2\_2 \\leq 1. \\quad (11)
 \\]
 
 The optimal solution of (11) can ben obtained by the ADMM algorithm:
