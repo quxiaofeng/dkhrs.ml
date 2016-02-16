@@ -3,7 +3,7 @@ layout: default
 permalink: /dpl/
 ---
 
-[Gu, S., et, al. "Projective dictionary pair learning for pattern classification." Neural Information Processing Systems (2014).](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf)
+# [Gu, S., et, al. "Projective dictionary pair learning for pattern classification." Neural Information Processing Systems (2014).](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf) #
 
 #### Abstract
 
@@ -104,6 +104,12 @@ This is a standard least squares problem and we have the closed-form solution:
 The closed-form solutions of \\(\\mathbf{P}\\) can be obtained as:
 
 \\[\\phantom{xxxx}\\mathbf{P}^\*\_k = \\tau \\mathbf{A}\_k\\mathbf{X}^T\_k(\\tau \\mathbf{X}\_k\\mathbf{X}^T\_k + \\lambda \\mathbf{\\bar{X}}\_k\\mathbf{\\bar{X}}^T\_k + \\gamma\\mathbf{I})^{-1},\\phantom{xxxx}(10)\\] 
+
+where \\(\\gamma = 10^{-4}\\) is a small number. The \\(\\mathbf{D}\\) problem can be optimized by introducing a variable  \\(\\mathbf{S}\\):
+
+\\[
+\\min\_{\\mathbf{D}, \\mathbf{S}} \\sum^K\_{k=1} \\|\\mathbf{X}\_k \\mathbf{D}\_k \\mathbf{A}\_k\\|^2\_F, \\quad \\text{s.t. } \\mathbf{D} = \\mathbf{S}, \\quad \|s\_i\|^2\_2 \\leq 1. \\quad (11)
+\\]
 
 **Classification scheme** 
 
