@@ -33,9 +33,9 @@ The contribution of our work is two-fold. First, we introduce a new DL framework
 
 **Discriminative dictionary learning**
 
-Denote by \\(\\mathbf{X = \[X\_1,\\ldots,X\_k,\\ldots,X\_K\]}\\) a set of p-dimensional training samples from \\(K\\) classes, where \\(\\mathbf{X\_k} \\in \\Re^{p\\times{}n}\\) is the training sample set of class \\(k\\), and \\(n\\) is the number of samples of each class. Discriminative DL methods aim to learn an effective data representation model from \\(\\mathbf{X}\\) for classification tasks by exploiting the class label information of training data. Most of the state-of-the-art discriminative DL methods [5, 7, 9] can be formulated under the following framework:
+Denote by \\(\\mathbf{X = \[X\_1,\\ldots,X\_k,\\ldots,X\_K\]}\\) a set of p-dimensional training samples from \\(K\\) classes, where \\(\\mathbf{X\_k} \\in \\mathbb{R}^{p\\times{}n}\\) is the training sample set of class \\(k\\), and \\(n\\) is the number of samples of each class. Discriminative DL methods aim to learn an effective data representation model from \\(\\mathbf{X}\\) for classification tasks by exploiting the class label information of training data. Most of the state-of-the-art discriminative DL methods [5, 7, 9] can be formulated under the following framework:
 
-\\[\phantom{xxx}\min\_{\\mathbf{D,A}}\\|\\mathbf{X-DA}\\|^2\_F+\\lambda\\|\\mathbf{A}\\|\_p+\\mathbf{\\Psi(D,A,Y)},\phantom{xxx}(1)\\]
+\\[\\phantom{xxx}\min\_{\\mathbf{D,A}}\\|\\mathbf{X-DA}\\|^2\_F+\\lambda\\|\\mathbf{A}\\|\_p+\\mathbf{\\Psi(D,A,Y)},\\phantom{xxx}(1)\\]
 
 where \\(\\lambda \geq 0\\) is a scalar constant, \\(\\mathbf{Y}\\) represents the class label matrix of samples in \\(\\mathbf{X}\\), \\(\\mathbf{D}\\) is the synthesis dictionary to be learned, and \\(\\mathbf{A}\\) is the coding coefficient matrix of \\(\\mathbf{X}\\) over \\(\\mathbf{D}\\). In the training model above, the data fidelity term \\(\\|\\mathbf{X-DA}\\|^2\_F\\) ensures the representation ability of \\(\\mathbf{D}\\); \\(\\|\\mathbf{A}\\|\_p\\) is the \\(l\_p\\)-norm regularizer on \\(\\mathbf{A}\\); and \\(\\mathbf{\\Psi(D,A,Y)}\\) stands for some discrimination promotion function, which ensures the discrimination power of \\(\\mathbf{D}\\) and \\(\\mathbf{A}\\).
 
@@ -45,23 +45,23 @@ In this work, we extend the conventional DL model, which learns a discriminative
 
 **The dictionary pair learning model**
 
-The conventional discriminative DL model in (1) aims to learn a synthesis dictionary \\(\\mathbf{D}\\) to sparsely represent the signal \\(\\mathbf{X}\\), and a costly \\(l_1\\)-norm sparse coding process is needed to resolve the code \\(\\mathbf{A}\\). Suppose that if we can find an analysis dictionary, denoted by \\(\\mathbf{P}\\in\\Re^{mK\\times{}p}\\), such that the code \\(\\mathbf{A}\\) can be analytically obtained as \\(\\mathbf{A=PX}\\), then the representation of \\(\\mathbf{X}\\) would become very efficient. Based on this idea, we propose to learn such an analysis dictionary \\(\\mathbf{P}\\) together with the synthesis dictionary \\(\\mathbf{D}\\), leading to the following DPL model:
+The conventional discriminative DL model in (1) aims to learn a synthesis dictionary \\(\\mathbf{D}\\) to sparsely represent the signal \\(\\mathbf{X}\\), and a costly \\(l_1\\)-norm sparse coding process is needed to resolve the code \\(\\mathbf{A}\\). Suppose that if we can find an analysis dictionary, denoted by \\(\\mathbf{P}\\in\\mathbb{R}^{mK\\times{}p}\\), such that the code \\(\\mathbf{A}\\) can be analytically obtained as \\(\\mathbf{A=PX}\\), then the representation of \\(\\mathbf{X}\\) would become very efficient. Based on this idea, we propose to learn such an analysis dictionary \\(\\mathbf{P}\\) together with the synthesis dictionary \\(\\mathbf{D}\\), leading to the following DPL model:
 
 \\[\\{\\mathbf{P^\*,D^\*}\\}=\\arg\\min\_{\\mathbf{P,D}}\\|\\mathbf{X-DPX}\\|^2\_F+\\mathbf{\\Psi(D,P,X,Y)},\\]
-\\[\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(2)\\]
+\\[\\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(2)\\]
 
-where \\(\\mathbf{\\Psi(D,P,X,Y)}\\) is some discrimination function. \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\) form a dictionary pair: the analysis dictionary \\(\\mathbf{P}\\) is used to analytically code \\(\\mathbf{X}\\), and the synthesis dictionary \\(\\mathbf{D}\\) is used to reconstruct \\(\\mathbf{X}\\). The discrimination power of the DPL model depends on the suitable design of \\(\\mathbf{\\Psi(D,P,X,Y)}\\). We propose to learn a structured synthesis dictionary \\(\\mathbf{D=[D\_1,\\ldots,D\_k,\\ldots,D\_K]}\\) and a structured analysis dictionary \\(\\mathbf{P=[P\_1;\\ldots;P\_k;\\ldots;P\_K]}\\), where \\(\\{\\mathbf{D}\_k\\in\\Re^{p\\times{}m},   \\mathbf{P}\_k\\in\\Re^{m\\times{}p}\\}\\) forms a subdictionary pair corresponding to class \\(k\\). Recent studies on sparse subspace clustering [19] have proved that a sample can be represented by its corresponding dictionary if the signals satisfy certain incoherence condition. With the structured analysis dictionary \\(\\mathbf{P}\\), we want that the sub-dictionary \\(\\mathbf{P}_k\\) can project the samples from class \\(i,  i\neq k\\), to a nearly null space, i.e.,
+where \\(\\mathbf{\\Psi(D,P,X,Y)}\\) is some discrimination function. \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\) form a dictionary pair: the analysis dictionary \\(\\mathbf{P}\\) is used to analytically code \\(\\mathbf{X}\\), and the synthesis dictionary \\(\\mathbf{D}\\) is used to reconstruct \\(\\mathbf{X}\\). The discrimination power of the DPL model depends on the suitable design of \\(\\mathbf{\\Psi(D,P,X,Y)}\\). We propose to learn a structured synthesis dictionary \\(\\mathbf{D=[D\_1,\\ldots,D\_k,\\ldots,D\_K]}\\) and a structured analysis dictionary \\(\\mathbf{P=[P\_1;\\ldots;P\_k;\\ldots;P\_K]}\\), where \\(\\{\\mathbf{D}\_k\\in\\mathbb{R}^{p\\times{}m},   \\mathbf{P}\_k\\in\\mathbb{R}^{m\\times{}p}\\}\\) forms a subdictionary pair corresponding to class \\(k\\). Recent studies on sparse subspace clustering [19] have proved that a sample can be represented by its corresponding dictionary if the signals satisfy certain incoherence condition. With the structured analysis dictionary \\(\\mathbf{P}\\), we want that the sub-dictionary \\(\\mathbf{P}_k\\) can project the samples from class \\(i,  i\neq k\\), to a nearly null space, i.e.,
 
-\\[\phantom{xxxxxxxxxxxx}\\mathbf{P}\_k\\mathbf{X}\_i\\sim\\mathbf{0},\phantom{x}\\forall k\\neq i.\phantom{xxxxxxxxxxxx}(3)\\]
+\\[\\phantom{xxxxxxxxxxxx}\\mathbf{P}\_k\\mathbf{X}\_i\\sim\\mathbf{0}, \\quad \\forall k\\neq i.\\phantom{xxxxxxxxxxxx}(3)\\]
 
 Clearly, with (3) the coefficient matrix \\(\\mathbf{PX}\\) will be nearly block diagonal. On the other hand, with the structured synthesis dictionary \\(\\mathbf{D}\\), we want that the sub-dictionary \\(\\mathbf{D}\_k\\) can well reconstruct the data matrix \\(\\mathbf{X}\_k\\) from its projective code matrix \\(\\mathbf{P}\_k\\mathbf{X}\_k\\); that is, the dictionary pair should minimize the reconstruction error:
 
-\\[\phantom{xxxxxxxxx}\\min\_{\\mathbf{P,D}}\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F.\phantom{xxxxxxxxx}(4)\\]
+\\[\\phantom{xxxxxxxxx}\\min\_{\\mathbf{P,D}}\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F.\\phantom{xxxxxxxxx}(4)\\]
 
 Based on the above analysis, we can readily have the following DPL model:
 
-\\[\phantom{x}\\{\\mathbf{P}^\*,\\mathbf{D}^\*\\}=\\arg\\min\_{\\mathbf{P,D}}\\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F+\\lambda\\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F,\phantom{x}\\]
-\\[\phantom{xxxxxxxxxxx}s.t.\phantom{xx}\\|\\mathbf{d}\_i\\|^2\_2\\leq{}1.\phantom{xxxxxxxxxxxxxxx}(5)\\]
+\\[\\{\\mathbf{P}^\*,\\mathbf{D}^\*\\}=\\arg\\min\_{\\mathbf{P,D}}\\sum^K\_{k=1}\\|\\mathbf{X}\_k-\\mathbf{D}\_k\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F+\\lambda\\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F,\\]
+\\[\\phantom{xxxxxxxxxxx} \\text{s.t.} \\quad \\|\\mathbf{d}\_i\\|^2\_2\\leq{}1.\\phantom{xxxxxxxxxxxxxxx}(5)\\]
 
 where \\(\\mathbf{X}\_k\\) denotes the complementary data matrix of \\(\\mathbf{X}\_k\\) in the whole training set \\(\\mathbf{X}\\), \\(\\lambda>0\\) is a scalar constant, and \\(\\mathbf{d}\_i\\) denotes the \\(i\\)th atom of synthesis dictionary \\(\\mathbf{D}\\). We constrain the energy of each atom \\(\\mathbf{d}\_i\\) in order to avoid the trivial solution of \\(\\mathbf{P}\_k=\\mathbf{0}\\) and make the DPL more stable.
 
@@ -71,33 +71,39 @@ The DPL model in (5) is not a sparse representation model, while it enforces gro
 
 The objective function in (5) is generally non-convex. We introduce a variable matrix A and relax (5) to the following problem:
 
-\\[\\{\\mathbf{P}^\*,\\mathbf{A}^\*,\\mathbf{D}^\*\\} = \\arg\\min\_{\\mathbf{P},\\mathbf{A},\\mathbf{D}} \\sum^K\_{k=1} \\|\\mathbf{X}\_i-\\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k-\\mathbf{A}\_k\\|^2\_F + \lambda \\|\\mathbf{P}\_k\\mathbf{X}\_k\\|^2\_F, \\]
-\\[\phantom{xxxxxxxxxxxxx}s.t. \phantom{xx}\\|\\mathbf{d}\_i\\|^2\_2 \leq 1. \phantom{xxxxxxxxxxxxx}(6) \\]
+\\[\\{\\mathbf{P}^\*,\\mathbf{A}^\*,\\mathbf{D}^\*\\} = \\arg\\min\_{\\mathbf{P},\\mathbf{A},\\mathbf{D}}
+\\begin{cases}
+&   \\sum^K\_{k=1} \\Big( \\| \\mathbf{X}\_i - \\mathbf{D}\_k \\mathbf{A}\_k \\|^2\_F \\\\
+& + \\tau \\| \\mathbf{P}\_k \\mathbf{X}\_k - \\mathbf{A}\_k \\|^2\_F \\\\
+& + \\lambda \\| \\mathbf{P}\_k \\mathbf{X}\_k \\|^2\_F \\Big),
+\\end{cases}
+\\]
+\\[\\phantom{xxxxxxxxxxxxx}\\text{s.t.} \\quad \\|\\mathbf{d}\_i\\|^2\_2 \leq 1. \\phantom{xxxxxxxxxxxxx}(6) \\]
 
 where \\(\\tau\\)is a scalar constant. All terms in the above objective function are characterized by Frobenius norm, and (6) can be easily solved. We initialize the analysis dictionary \\(\\mathbf{P}\\) and synthesis dictionary \\(\\mathbf{D}\\) as random matrices with unit Frobenius norm, and then alternatively update \\(\\mathbf{A}\\) and \\(\\{\\mathbf{D},\\mathbf{P}\\}\\). The minimization can be alternated between the following two steps.
 
 (1) Fix \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\), update \\(\\mathbf{A}\\)
 
 \\[\\mathbf{A}^\* = \\arg \\min\_{\\mathbf{A}} \\sum^K\_{k=1} \\|\\mathbf{X}\_k - \\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F + \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F.\\]
-\\[\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(7)\\]
+\\[\\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(7)\\]
 
 This is a standard least squares problem and we have the closed-form solution:
 
-\\[\\mathbf{A}^\*\_k = (\\mathbf{D}^T\_k\\mathbf{D}\_k + \\tau\\mathbf{I})^{-1} (\\tau \\mathbf{P}\_k \\mathbf{X}\_k + \\mathbf{D}^T\_k\\mathbf{X}\_k).\phantom{xxxxxxxxx}(8)\\]
+\\[\\phantom{xxxx}\\mathbf{A}^\*\_k = (\\mathbf{D}^T\_k\\mathbf{D}\_k + \\tau\\mathbf{I})^{-1} (\\tau \\mathbf{P}\_k \\mathbf{X}\_k + \\mathbf{D}^T\_k\\mathbf{X}\_k).\\phantom{xxxxx}(8)\\]
 
 (2) Fix \\(\\mathbf{A}\\), update \\(\\mathbf{D}\\) and \\(\\mathbf{P}\\):
 
 \\[
 \\begin{cases}
 \\mathbf{P}^\* = \\arg \\min\_{\\mathbf{P}} \\sum^K\_{k=1} \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{\\bar{X}}\_k\\|^2\_F;\\\\
-\\mathbf{D}^\* = \\arg \\min\_{\\mathbf{D}} \\sum^K\_{k=1}       \\|\\mathbf{X}\_k - \\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F, \\phantom{xx} s.t. \\|\\mathbf{d}\_i\\|^2\_2 \\leq 1.
+\\mathbf{D}^\* = \\arg \\min\_{\\mathbf{D}} \\sum^K\_{k=1}       \\|\\mathbf{X}\_k - \\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F, \\quad \\text{s.t.} \\, \\|\\mathbf{d}\_i\\|^2\_2 \\leq 1.
 \\end{cases}
 \\]
-\\[\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(9)\\]
+\\[\\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}(9)\\]
 
 The closed-form solutions of \\(\\mathbf{P}\\) can be obtained as:
 
-\\[\\phantom{xxxx}\\mathbf{P}^\*\_k = \\tau \\mathbf{A}\_k\\mathbf{X}\^T\_k(\\tau \\mathbf{X}\_k\\mathbf{X}^T\_k + \\lambda \\mathbf{\\bar{X}}\_k\\mathbf{\\bar{X}}^T\_k + \\gamma\\mathbf{I})^{-1},\\phantom{xxxx}(10)\\] 
+\\[\\phantom{xxxx}\\mathbf{P}^\*\_k = \\tau \\mathbf{A}\_k\\mathbf{X}^T\_k(\\tau \\mathbf{X}\_k\\mathbf{X}^T\_k + \\lambda \\mathbf{\\bar{X}}\_k\\mathbf{\\bar{X}}^T\_k + \\gamma\\mathbf{I})^{-1},\\phantom{xxxx}(10)\\] 
 
 **Classification scheme** 
 

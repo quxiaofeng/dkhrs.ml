@@ -1,7 +1,7 @@
 门把手识别系统
 ======================
 
-[English version (英文版)](/)
+[English](/) | [中文](/cn/)
 
 ![DKHRS](/images/fig_device.png)
 
@@ -22,6 +22,10 @@ EBD 模型
 LGBPHS
 
 ![LGBPHS Method](/images/fig_lgbphs.svg)
+
+### 弗罗贝尼乌斯范数 Frobenius norm ###
+
+\\[\\|\\mathbf{A}\\|\_F = \\sqrt{\\sum^m\_{i=1}\\sum^n\_{j=1}|a\_{ij}|^2} = \\sqrt{trace(\\mathbf{A}^\*\\mathbf{A})} = \\sqrt{\\sum^{\\min\\{m,n\\}}\_{i=1}\\sigma^2\_i} \\]
 
 ### 实验 ###
 
