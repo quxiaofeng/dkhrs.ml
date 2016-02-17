@@ -6,7 +6,7 @@ permalink: /cn/
 门把手识别系统
 ======================
 
-[[English](/)] [[中文](/cn/)]
+[[English](/)] [[**中文**](/cn/)]
 
 ![DKHRS](/images/fig_device.png)
 
