@@ -128,4 +128,10 @@ One can see that the first sub-objective function in (9) is a discriminative ana
 
 **Classification scheme** 
 
+In the DPL model, the analysis sub-dictionary \\( \\mathbf{P}^\*\_k \\) is trained to produce small coefficients for samples from classes other than k, and it can only generate significant coding coefficients for samples from class \\( k \\). Meanwhile, the synthesis sub-dictionary \\( \\mathbf{D}^\*\_k \\) is trained to reconstruct the samples of class \\( k \\) from their projective coefficients \\( \\mathbf{P}^\*\_k \\mathbf{X}\_k \\); that is, the residual \\( \\| \\mathbf{X}\_k - \\mathbf{D}^\*\_k \\mathbf{P}^\*\_k \\mathbf{K}\_k \\|^2\_F \\) will be small. On the other hand, since \\( \\mathbf{P}^\*\_k \\mathbf{X}\_k \\), \\( i \\neq k \\), will be small and \\( \\mathbf{D}^\*\_k \\) is not trained to reconstruct \\( \\mathbf{X}\_i \\), the residual will be much larger than.
+
+In the testing phase, if the query sample y is from class k, its projective coding vector by will be more likely to be significant, while its projective coding vectors by, tend to be small. Consequently, the reconstruction residual tends to be much smaller than the residuals. Let us use the Extended YaleB face dataset [22] to illustrate this. (The detailed experimental setting can be found in Section 3.) Fig. 1(a) shows the \\( l\_2 \\)-norm of the coefficients, where the horizontal axis refers to the index of y and the vertical axis refers to the index of. One can clearly see that  
+has a nearly block diagonal structure, and the diagonal blocks are produced by the query samples which have the same class labels as Fig. 1(b) shows the reconstruction residual. One can see that  also has a block diagonal structure, and only the diagonal blocks have small residuals. Clearly, the class-specific reconstruction residual can be used to identify the class label of y, and we can naturally have the following classifier associated with the DPL model:
+
+
 **Complexity and convergence**
