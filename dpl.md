@@ -95,7 +95,7 @@ This is a standard least squares problem and we have the closed-form solution:
 
 \\[
 \\begin{cases}
-\\mathbf{P}^\* = \\arg \\min\_{\\mathbf{P}} \\sum^K\_{k=1} \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{\\bar{X}}\_k\\|^2\_F;\\\\
+\\mathbf{P}^\* = \\arg \\min\_{\\mathbf{P}} \\sum^K\_{k=1} \\tau \\|\\mathbf{P}\_k\\mathbf{X}\_k - \\mathbf{A}\_k\\|^2\_F + \\lambda \\|\\mathbf{P}\_k\\mathbf{\\bar{X}}\_k\\|^2\_F; \\\
 \\mathbf{D}^\* = \\arg \\min\_{\\mathbf{D}} \\sum^K\_{k=1}       \\|\\mathbf{X}\_k - \\mathbf{D}\_k\\mathbf{A}\_k\\|^2\_F, \\quad \\text{s.t.} \\, \\|\\mathbf{d}\_i\\|^2\_2 \\leq 1.
 \\end{cases}
 \\]
