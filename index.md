@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 [Door Knob Hand Recognition System]({{site.url}}/)
 ==================================
 

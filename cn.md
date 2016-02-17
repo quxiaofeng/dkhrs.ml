@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /cn/
+---
+
 门把手识别系统
 ======================
 
@@ -32,4 +37,5 @@ LGBPHS
 流程图
 
 ![Flowchart](/images/fig_flowchart.svg)
+
 
