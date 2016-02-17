@@ -137,3 +137,17 @@ In the testing phase, if the query sample \\( y \\) is from class \\( k \\), its
 \\]
 
 **Complexity and convergence**
+
+**Complexity** In the training phase of DPL, \\( \\mathbf{A}\_k \\), \\( \\mathbf{P}\_k \\), and \\( \\mathbf{D}\_k \\) are updated alternatively. In each iteration, the time complexities of updating \\( \\mathbf{A}\_k \\), \\( \\mathbf{P}\_k \\), and \\( \\mathbf{D}\_k \\) are \\( O(mpn + m^3 + m^2n), \\( O( mnp + p^3 + mp^2 ) \\), and \\( O( W( pmn + m^3 + m^2p + p^2m)) \\), respectively, where \\( W \\) is the iteration number in ADMM algorithm for updating \\( \\mathbf{D} \\). We experimentally found that in most cases \\( W \\) is less than 20. In many applications,
+the number of training samples and the number of dictionary atoms for each class are much smaller
+than the dimension \\( p \\). Thus the major computational burden in the training phase of DPL is on
+updating \\( \\mathbf{P}\_k \\), which involves an inverse of a \\( p \\times p \\) matrix \\( \\left\\{ \\tau \\mathbf{X}\_k \\mathbf{X}^T\_k + \\lambda \\mathbf{\\bar{X}}\_k \\mathbf{\\bar{X}}^T\_k + \\gamma \\mathbf{I} \\right\\} \\). Fortunately, this matrix will not change in the iteration, and thus the inverse of it can be pre-computed. This greatly accelerates the training process.
+
+In the testing phase, our classification scheme is very efficient. The computation of class-specific
+reconstruction error \\( \\| \\mathbf{y} - \\mathbf{D}^\*\_k \\mathbf{P}^\*\_k \\mathbf{y} \\|\_2 \\) only has a complexity of \\( O(mp) \\). Thus, the total complexity of our model to classify a query sample is \\( O(Kmp) \\).
+
+**Convergence** The objective function in (6) is a bi-convex problem for \\( \\{(\\mathbf{D},\\mathbf{P}),(\\mathbf{A})\\} \\), e.g., by fixing \\( \\mathbf{A} \\) the function is convex for \\( \\mathbf{D} \\), and \\( \\mathbf{P} \\), and by fixing \\( \\mathbf{D} \\) and \\( \\mathbf{P} \\) the function is convex for \\( \\mathbf{A} \\). The convergence of such a problem has already been intensively studied [23], and the proposed optimization algorithm is actually an alternate convex search (ACS) algorithm. Since we have the optimal solutions of updating \\( \\mathbf{A} \\), \\( \\mathbf{P} \\), and \\( \\mathbf{D} \\), and our objective function has a general lower bound 0, our algorithm is guaranteed to converge to a stationary point. A detailed convergence analysis can be found in our supplementary file.
+
+It is empirically found that the proposed DPL algorithm converges rapidly. Fig. 2 shows the convergence curve of our algorithm on the AR face dataset [24]. One can see that the energy drops quickly and becomes very small after 10 iterations. In most of our experiments, our algorithm will converge in less than 20 iterations.
+
+
