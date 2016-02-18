@@ -3,18 +3,15 @@ layout: default
 permalink: /dkhrs/
 ---
 
-Door Knob Hand Recognition System
-=================================================
+# Door Knob Hand Recognition System #
 
 Qu, Xiaofeng; Zhang, David; Lu, Guangming; and Guo, Zhenhua, "Door knob hand recognition system," *Will appear in Systems, Man, and Cybernetics: Systems, IEEE Transactions on*
 
-Abstract
---------
+## Abstract ##
 
 Biometric applications have been used globally in everyday life. However, conventional biometrics is created and optimized for high security scenarios. Being used in daily life by ordinary untrained people is a new challenge. Facing this challenge, designing a biometric system with prior constraints of ergonomics, we propose ergonomic biometrics design model, which attains the physiological factors, the psychological factors, and the conventional security characteristics. With this model, a novel hand based biometric system, door knob hand recognition system, is proposed. Door knob hand recognition system has the identical appearance of a conventional door knob, which is an optimum solution in both physiological factors and psychological factors. In this system, a hand image is captured by door knob imaging scheme, which is a tailored omni-vision imaging structure and is optimized for this predetermined door knob appearance. Then features are extracted by local Gabor binary pattern histogram sequence method and classified by projective dictionary pair learning. In the experiment on a large data set including 12000 images from 200 people, The proposed system achieves competitive recognition performance comparing with conventional biometrics like face and fingerprint recognition systems, with an equal error rate of 0.091%. This study shows that a biometric system could be built with a reliable recognition performance under the ergonomic constraints.
 
-1 Introduction
----------------
+## 1 Introduction ##
 
 **In** the last decade, biometrics has expended dramatically and globally. Biometrics came under the spotlight after the counter-terrorism war began. It has become a major solution for identity recognition and authentication. Since 2006, America has been requiring biometric passports for travelers entering the United States under the visa waiver program [[1][ref1]]. Not only in America, biometric technologies have been applied in identity documents in fifteen countries [[2][ref2], [3][ref3], [4][ref4]].
 
@@ -25,10 +22,8 @@ However, biometrics has not been designed in a user-friendly way. In current bio
 In this paper, we present ergonomic biometrics design (EBD) model that considers ergonomics in all aspects of the design (in [Section 2](#section2)). We propose a door knob hand recognition system (DKHRS), which is shaped like a standard door knob, but incorporates a customized imaging device, a robust feature extraction, and a discriminative classification method (in Section 3). When addressing the imaging problem of this new device in this space-limited and shape-confined case, we propose a simplified catadioptric imaging structure - door knob imaging (DKI) scheme (in Section 3.2). The DKI scheme captures the surrounding hand skin surface in one omni-vision image in a cost-efficient structure. In the proposed system, we employ a local Gabor binary pattern histogram sequence (LGBPHS) method, which extracts robust histograms of dense local feature from DKHRS images (in Section 3.3.2). The features are classified using the dictionaries learned by projective dictionary pair learning (DPL) (in Section 3.3.3). Combining DKI scheme, LGBPHS method, and DPL method, we make the proposed DKHRS effective and efficient under the ergonomic constraints. The DKHRS has been used to collect an experimental data set of a significant scale. The experiment result on this data set is promising (in Section 4). The conclusion and future work is summarized in Section 5.
 
 <a name="section2">
-2 Ergonomic Biometrics Design
------------------------------
+## 2 Ergonomic Biometrics Design ##
 </a>
-
 
 ### 2.1 Development of Biometric Systems ###
 
