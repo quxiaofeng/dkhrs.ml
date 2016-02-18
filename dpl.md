@@ -8,11 +8,13 @@ Projective Dictionary Pair Learning
 
 [Gu, S., et, al. "Projective dictionary pair learning for pattern classification." Neural Information Processing Systems (2014).](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf)
 
-#### Abstract
+Abstract
+--------
 
 Discriminative dictionary learning (DL) has been widely studied in various pattern classification problems. Most of the existing DL methods aim to learn a synthesis dictionary to represent the input signal while enforcing the representation coefficients and/or representation residual to be discriminative. However, the \\(l\_0\\) or \\(l\_1\\)-norm sparsity constraint on the representation coefficients adopted in most DL methods makes the training and testing phases time consuming. We propose a new discriminative DL framework, namely projective dictionary pair learning (DPL), which learns a synthesis dictionary and an analysis dictionary jointly to achieve the goal of signal representation and discrimination. Compared with conventional DL methods, the proposed DPL method can not only greatly reduce the time complexity in the training and testing phases, but also lead to very competitive accuracies in a variety of visual classification tasks.
 
-#### Introduction
+1 Introduction
+---------------
 
 Sparse representation represents a signal as the linear combination of a small number of atoms chosen out of a dictionary, and it has achieved a big success in various image processing and computer vision applications [1, 2]. The dictionary plays an important role in the signal representation process [3]. By using a predefined analytical dictionary (e.g., wavelet dictionary, Gabor dictionary) to represent a signal, the representation coefficients can be produced by simple inner product operations. Such a fast and explicit coding makes analytical dictionary very attractive in image representation; however, it is less effective to model the complex local structures of natural images.
 
@@ -32,9 +34,10 @@ One related work to this paper is the analysis-based sparse representation prior
 
 The contribution of our work is two-fold. First, we introduce a new DL framework, which extends the conventional discriminative synthesis dictionary learning to discriminative synthesis and analysis dictionary pair learning (DPL). Second, the DPL utilizes an analytical coding mechanism and it largely improves the efficiency in both the training and testing phases. Our experiments in various visual classification datasets show that DPL achieves very competitive accuracy with state-of-the-art DL algorithms, while it is significantly faster in both training and testing.
 
-#### Projective Dictionary Pair Learning
+2 Projective Dictionary Pair Learning
+--------------------------------------
 
-**Discriminative dictionary learning**
+### 2.1 Discriminative dictionary learning ###
 
 Denote by \\(\\mathbf{X = \[X\_1,\\ldots,X\_k,\\ldots,X\_K\]}\\) a set of p-dimensional training samples from \\(K\\) classes, where \\(\\mathbf{X\_k} \\in \\mathbb{R}^{p\\times{}n}\\) is the training sample set of class \\(k\\), and \\(n\\) is the number of samples of each class. Discriminative DL methods aim to learn an effective data representation model from \\(\\mathbf{X}\\) for classification tasks by exploiting the class label information of training data. Most of the state-of-the-art discriminative DL methods [5, 7, 9] can be formulated under the following framework:
 
@@ -46,7 +49,7 @@ As we introduced in last Section, some DL methods [4, 5, 7] learn a shared dicti
 
 In this work, we extend the conventional DL model, which learns a discriminative synthesis dictionary, to a novel DPL model, which learns a pair of synthesis and analysis dictionaries. No costly \\(l\_0\\) or \\(l\_1\\)-norm sparsity regularizer is required in the proposed DPL model, and the coding coefficients can be explicitly obtained by linear projection. Fortunately, DPL does not sacrifice the classification accuracy while achieving significant improvement in the efficiency.
 
-**The dictionary pair learning model**
+### 2.2 The dictionary pair learning model ###
 
 The conventional discriminative DL model in (1) aims to learn a synthesis dictionary \\(\\mathbf{D}\\) to sparsely represent the signal \\(\\mathbf{X}\\), and a costly \\(l_1\\)-norm sparse coding process is needed to resolve the code \\(\\mathbf{A}\\). Suppose that if we can find an analysis dictionary, denoted by \\(\\mathbf{P}\\in\\mathbb{R}^{mK\\times{}p}\\), such that the code \\(\\mathbf{A}\\) can be analytically obtained as \\(\\mathbf{A=PX}\\), then the representation of \\(\\mathbf{X}\\) would become very efficient. Based on this idea, we propose to learn such an analysis dictionary \\(\\mathbf{P}\\) together with the synthesis dictionary \\(\\mathbf{D}\\), leading to the following DPL model:
 
@@ -70,7 +73,7 @@ where \\(\\mathbf{X}\_k\\) denotes the complementary data matrix of \\(\\mathbf{
 
 The DPL model in (5) is not a sparse representation model, while it enforces group sparsity on the code matrix \\(\\mathbf{PX}\\) (i.e., \\(\\mathbf{PX}\\) is nearly block diagonal). Actually, the role of sparse coding in classification is still an open problem, and some researchers argued that sparse coding may not be crucial to classification tasks [20, 21]. Our findings in this work are supportive to this argument. The DPL model leads to very competitive classification performance with those sparse coding based DL models, but it is much faster.
 
-**Optimization**
+### 2.3 Optimization ###
 
 The objective function in (5) is generally non-convex. We introduce a variable matrix A and relax (5) to the following problem:
 
@@ -129,7 +132,7 @@ In each step of optimization, we have closed form solutions for variables \\( \\
 
 One can see that the first sub-objective function in (9) is a discriminative analysis dictionary learner, focusing on promoting the discriminative power of \\( \\mathbf{P} \\); the second sub-objective function in (9) is a representative synthesis dictionary learner, aiming to minimize the reconstruction error of the input signal with the coding coefficients generated by the analysis dictionary \\( \\mathbf{P} \\). When the minimization process converges, a balance between the discrimination and representation power of the model can be achieved.
 
-**Classification scheme** 
+### 2.4 Classification scheme ### 
 
 In the DPL model, the analysis sub-dictionary \\( \\mathbf{P}^\*\_k \\) is trained to produce small coefficients for samples from classes other than k, and it can only generate significant coding coefficients for samples from class \\( k \\). Meanwhile, the synthesis sub-dictionary \\( \\mathbf{D}^\*\_k \\) is trained to reconstruct the samples of class \\( k \\) from their projective coefficients \\( \\mathbf{P}^\*\_k \\mathbf{X}\_k \\); that is, the residual \\( \\| \\mathbf{X}\_k - \\mathbf{D}^\*\_k \\mathbf{P}^\*\_k \\mathbf{K}\_k \\|^2\_F \\) will be small. On the other hand, since \\( \\mathbf{P}^\*\_k \\mathbf{X}\_k \\), \\( i \\neq k \\), will be small and \\( \\mathbf{D}^\*\_k \\) is not trained to reconstruct \\( \\mathbf{X}\_i \\), the residual will be much larger than.
 
@@ -139,7 +142,7 @@ In the testing phase, if the query sample \\( y \\) is from class \\( k \\), its
 \\qquad \\quad identity( \\mathbf{y} ) = \\arg \\min\_i \\| \\mathbf{y} - \\mathbf{D}\_i \\mathbf{P}\_i \\mathbf{y} \\|\_2. \\qquad (13)
 \\]
 
-**Complexity and convergence**
+### 2.5 Complexity and convergence ###
 
 **Complexity** In the training phase of DPL, \\( \\mathbf{A}\_k \\), \\( \\mathbf{P}\_k \\), and \\( \\mathbf{D}\_k \\) are updated alternatively. In each iteration, the time complexities of updating \\( \\mathbf{A}\_k \\), \\( \\mathbf{P}\_k \\), and \\( \\mathbf{D}\_k \\) are \\( O(mpn + m^3 + m^2n) \\), \\( O( mnp + p^3 + mp^2 ) \\), and \\( O( W( pmn + m^3 + m^2p + p^2m)) \\), respectively, where \\( W \\) is the iteration number in ADMM algorithm for updating \\( \\mathbf{D} \\). We experimentally found that in most cases \\( W \\) is less than 20. In many applications,
 the number of training samples and the number of dictionary atoms for each class are much smaller
