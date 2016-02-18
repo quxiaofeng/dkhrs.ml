@@ -16,7 +16,7 @@ Biometric applications have been used globally in everyday life. However, conven
 1 Introduction
 ---------------
 
-the last decade, biometrics has expended dramatically and globally. Biometrics came under the spotlight after the counter-terrorism war began. It has become a major solution for identity recognition and authentication. Since 2006, America has been requiring biometric passports for travelers entering the United States under the visa waiver program [[1][ref1]]. Not only in America, biometric technologies have been applied in identity documents in fifteen countries [[2][ref2], [3][ref3], [4][ref4]].
+**In** the last decade, biometrics has expended dramatically and globally. Biometrics came under the spotlight after the counter-terrorism war began. It has become a major solution for identity recognition and authentication. Since 2006, America has been requiring biometric passports for travelers entering the United States under the visa waiver program [[1][ref1]]. Not only in America, biometric technologies have been applied in identity documents in fifteen countries [[2][ref2], [3][ref3], [4][ref4]].
 
 With the wide spread of biometrics, it has been used not only in boarder control, forensics and law enforcement agencies [[5][ref5]], but also in everyday life, such as, in smart cars [[6][ref6]] and smart homes [[7][ref7]]. Applications like these have educated the general public about the convenience and high-security level of biometric systems. People have accepted biometric systems as a common, convenient, and secure access control solution. Therefore, though biometrics has been designed to be used in high-security applications, there has been a great demand of biometrics in everyday life.
 
