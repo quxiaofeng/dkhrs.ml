@@ -3,8 +3,8 @@ layout: default
 permalink: /dkhrs/
 ---
 
-Projective Dictionary Pair Learning
-===================================
+Door Knob Hand Recognition System
+=================================================
 
 Qu, Xiaofeng; Zhang, David; Lu, Guangming; and Guo, Zhenhua, "Door knob hand recognition system," *Will appear in Systems, Man, and Cybernetics: Systems, IEEE Transactions on*
 
