@@ -38,11 +38,10 @@ From the above studies, it is noticed that ergonomics takes a significant role i
 Early ergonomics studies in development of biometric systems aimed at user acceptance [[24][ref24], [25][ref25], [26][ref26]], latent fingerprint examination [[27][ref27], [28][ref28]], and collectability  [[5][ref5], [8][ref8], [21][ref21], [29][ref29], [30][ref30]]. According to Albrecht [[24][ref24]], users accept natural and everyday motions the most readily, which conforms with ergonomic principles both in physical and cognitive. The analysis of latent fingerprint is widely depended on the human judgments because the analysis is semi-automatic [[27][ref27], [28][ref28]]. In collectability, the physical ergonomics is the challenge from an engineering perspective to next generation biometrics [[5][ref5], [30][ref30]]. Then, addressing ergonomic issues in a systematic view, human-biometric sensor interaction (HBSI) model is proposed [[31][ref31], [32][ref32]].
 
 <a name="fig_hbsi">
-<figure>
-  <img src="/images/fig_hbsi.svg" alt="HBSI model">
-  <figcaption>Fig. 1 Human-Biometric Sensor Interaction (HBSI) model shows the interactions between human, biometric sensors, and biometric systems (Redrawn in accordance with [[33][ref33]]).</figcaption>
-</figure>
+![HBSI model](/images/fig_hbsi.svg)
 </a>
+
+Fig. 1 Human-Biometric Sensor Interaction (HBSI) model shows the interactions between human, biometric sensors, and biometric systems (Redrawn in accordance with [[33][ref33]]).
 
 HBSI model, which is illustrated in [Fig. 1](#fig_hbsi), focuses on the interactions between target subjects and the biometric sensors [[31][ref31], [32][ref32], [34][ref34]]. HBSI model utilizes the metrics from both biometrics and ergonomics to assess the functionality and performance of biometric systems. Human-sensor intersection focuses on the physical ergonomics. Human-biometric system intersection represents the interactions between users and systems, which include sensors, software and implementations of systems. The aim of this intersection is comprised of three factors: effectiveness, efficiency, and satisfaction. Sensor-biometric system intersection address the image/sample quality issue.
 
