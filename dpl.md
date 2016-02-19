@@ -76,13 +76,21 @@ The DPL model in (5) is not a sparse representation model, while it enforces gro
 ### 2.3 Optimization ###
 
 ---
+
 > **Algorithm 1** Discriminative synthesis&analysis dictionary pair learning (DPL)
+
 ---
+
 > **Input**: Training samples for \\( K \\) classes \\( \\mathbf{X} = \[ \\mathbf{X}\_1, \\mathbf{X}\_2, \\ldots, \\mathbf{X}\_K \] \\), parameter \\( \\lambda, \\tau, m \\);
+
 > 1: Initialize \\( \\mathbf{D}^{(0)} \\) and \\( \\mathbf{P}^{(0)} \\) as random matrixes with unit Frobenious norm, \\( t = 0 \\);
+
 > 2: **while** not converge **do**
+
 > 3: \\( \\qquad t \\arrow t + 1 \\);
+
 > 4: \\( \\qquad \\) **for** \\( i = 1 \: K \\) **do**
+
 ---
 
 The objective function in (5) is generally non-convex. We introduce a variable matrix A and relax (5) to the following problem:
