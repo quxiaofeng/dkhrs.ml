@@ -33,7 +33,7 @@ LGBPHS
 
 ### Projective Dictionary Pair Learning
 
-See [DPL](/dpl/).
+See [DPL](/dpl/) and [DPL Supplementary](/dpl-supplementary/).
 
 ### Experiment ###
 
