@@ -3,18 +3,15 @@ layout: default
 permalink: /dpl/
 ---
 
-Projective Dictionary Pair Learning
-===================================
+# Projective Dictionary Pair Learning #
 
-[Gu, S., et, al. "Projective dictionary pair learning for pattern classification." Neural Information Processing Systems (2014).](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf)
+[Shuhang Gu, Lei Zhang, Wangmeng Zuo, and Xiangchu Feng. "Projective dictionary pair learning for pattern classification." Neural Information Processing Systems (2014).](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf)
 
-Abstract
---------
+## Abstract ##
 
 Discriminative dictionary learning (DL) has been widely studied in various pattern classification problems. Most of the existing DL methods aim to learn a synthesis dictionary to represent the input signal while enforcing the representation coefficients and/or representation residual to be discriminative. However, the \\( \\ell\_0 \\) or \\( \\ell\_1 \\)-norm sparsity constraint on the representation coefficients adopted in most DL methods makes the training and testing phases time consuming. We propose a new discriminative DL framework, namely projective dictionary pair learning (DPL), which learns a synthesis dictionary and an analysis dictionary jointly to achieve the goal of signal representation and discrimination. Compared with conventional DL methods, the proposed DPL method can not only greatly reduce the time complexity in the training and testing phases, but also lead to very competitive accuracies in a variety of visual classification tasks.
 
-1 Introduction
----------------
+## 1 Introduction ##
 
 Sparse representation represents a signal as the linear combination of a small number of atoms chosen out of a dictionary, and it has achieved a big success in various image processing and computer vision applications [1, 2]. The dictionary plays an important role in the signal representation process [3]. By using a predefined analytical dictionary (e.g., wavelet dictionary, Gabor dictionary) to represent a signal, the representation coefficients can be produced by simple inner product operations. Such a fast and explicit coding makes analytical dictionary very attractive in image representation; however, it is less effective to model the complex local structures of natural images.
 
@@ -34,8 +31,7 @@ One related work to this paper is the analysis-based sparse representation prior
 
 The contribution of our work is two-fold. First, we introduce a new DL framework, which extends the conventional discriminative synthesis dictionary learning to discriminative synthesis and analysis dictionary pair learning (DPL). Second, the DPL utilizes an analytical coding mechanism and it largely improves the efficiency in both the training and testing phases. Our experiments in various visual classification datasets show that DPL achieves very competitive accuracy with state-of-the-art DL algorithms, while it is significantly faster in both training and testing.
 
-2 Projective Dictionary Pair Learning
---------------------------------------
+## 2 Projective Dictionary Pair Learning ##
 
 ### 2.1 Discriminative dictionary learning ###
 
@@ -186,4 +182,10 @@ reconstruction error \\( \\| \\mathbf{y} - \\mathbf{D}^\*\_k \\mathbf{P}^\*\_k \
 
 It is empirically found that the proposed DPL algorithm converges rapidly. Fig. 2 shows the convergence curve of our algorithm on the AR face dataset [24]. One can see that the energy drops quickly and becomes very small after 10 iterations. In most of our experiments, our algorithm will converge in less than 20 iterations.
 
+## 3 Experimental Results ##
 
+Omitted. Check [the original paper](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf) if you need.
+
+## 4 Conclusion ##
+
+We proposed a novel projective dictionary pair learning (DPL) model for pattern classification tasks. Different from conventional dictionary learning (DL) methods, which learn a single synthesis dictionary, DPL learns jointly a synthesis dictionary and an analysis dictionary. Such a pair of dictionaries work together to perform representation and discrimination simultaneously. Compared with previous DL methods, DPL employs projective coding, which largely reduces the computational burden in learning and testing. Performance evaluation was conducted on publically accessible visual classification datasets. DPL exhibits highly competitive classification accuracy with state-of-the-art DL methods, while it shows significantly higher efficiency, e.g., hundreds to thousands times faster than LC-KSVD and FDDL in training and testing.
