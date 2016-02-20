@@ -184,7 +184,7 @@ It is empirically found that the proposed DPL algorithm converges rapidly. Fig. 
 
 ## 3 Experimental Results ##
 
-Omitted. Check [the original paper](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf) if you need.
+Omitted. *Check [the original paper](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification.pdf) if you need.*
 
 ## 4 Conclusion ##
 
