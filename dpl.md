@@ -87,7 +87,7 @@ The DPL model in (5) is not a sparse representation model, while it enforces gro
 
 > 2: **while** not converge **do**
 
-> 3: \\( \\qquad t \\arrow t + 1 \\);
+> 3: \\( \\qquad t \\leftarrow t + 1 \\);
 
 > 4: \\( \\qquad \\) **for** \\( i = 1 \: K \\) **do**
 
