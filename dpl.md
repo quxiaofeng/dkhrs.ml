@@ -91,6 +91,18 @@ The DPL model in (5) is not a sparse representation model, while it enforces gro
 
 > 4: \\( \\qquad \\) **for** \\( i = 1 \: K \\) **do**
 
+> 5: \\( \\qquad \\qquad \\) Update \\( \\mathbf{A}^{(t)}\_k \\) by (8);
+
+> 6: \\( \\qquad \\qquad \\) Update \\( \\mathbf{P}^{(t)}\_k \\) by (10);
+
+> 7: \\( \\qquad \\qquad \\) Update \\( \\mathbf{D}^{(t)}\_k \\) by (12);
+
+> 8: \\( \\qquad \\) **end for**
+
+> 9: **end while**
+
+> **Output**: Analysis dictionary \\( \\mathbf{P} \\), synthesis dictionary \\( \\mathbf{D} \\).
+
 ---
 
 The objective function in (5) is generally non-convex. We introduce a variable matrix A and relax (5) to the following problem:
