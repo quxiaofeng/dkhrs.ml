@@ -7,6 +7,8 @@ permalink: /dpl-supplementary/
 
 [Gu, S., et, al. "Supplementary materials to ‘Projective dictionary pair learning for pattern classification’."](http://www4.comp.polyu.edu.hk/~cslzhang/paper/NIPS14_supp_final.pdf)
 
+![](http://images.freeimages.com/images/previews/7d5/under-construction-icon-1242121.jpg)
+
 ## Abstract ##
 
 

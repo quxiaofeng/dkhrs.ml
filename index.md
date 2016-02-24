@@ -5,7 +5,9 @@ layout: default
 [Door Knob Hand Recognition System]({{site.url}}/)
 ==================================
 
-[[**English**](/)] [[中文](/cn/)]
+[**English**](/) \\( \\qquad \\) [中文](/cn/)
+
+![](http://images.freeimages.com/images/previews/7d5/under-construction-icon-1242121.jpg)
 
 ![DKHRS](/images/fig_device.png)
 
