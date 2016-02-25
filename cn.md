@@ -30,12 +30,6 @@ LGBPHS
 
 ![LGBPHS Method](/images/fig_lgbphs.svg)
 
-### 弗罗贝尼乌斯范数 Frobenius norm ###
-
-\\[
-\\| \\mathbf{A} \\|\_F = \\sqrt{\\sum^m\_{i=1} \\sum^n\_{j=1} \\mid a\_{ij} \\mid^2} = \\sqrt{trace(\\mathbf{A}^\* \\mathbf{A})} = \\sqrt{\\sum^{\\min\\{m,n\\}}\_{i=1}\\sigma^2\_i}
-\\]
-
 ### 实验 ###
 
 流程图
