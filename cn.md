@@ -33,7 +33,7 @@ LGBPHS
 ### 弗罗贝尼乌斯范数 Frobenius norm ###
 
 \\[
-\\| \\mathbf{A} \\|\_F = \\sqrt{\\sum^m\_{i=1} \\sum^n\_{j=1} \\mid a\_{ij}|^2} = \\sqrt{trace(\\mathbf{A}^\* \\mathbf{A})} = \\sqrt{\\sum^{\\min\\{m,n\\}}\_{i=1}\\sigma^2\_i}
+\\| \\mathbf{A} \\|\_F = \\sqrt{\\sum^m\_{i=1} \\sum^n\_{j=1} \\mid a\_{ij} \\mid^2} = \\sqrt{trace(\\mathbf{A}^\* \\mathbf{A})} = \\sqrt{\\sum^{\\min\\{m,n\\}}\_{i=1}\\sigma^2\_i}
 \\]
 
 ### 实验 ###
@@ -41,5 +41,24 @@ LGBPHS
 流程图
 
 ![Flowchart](/images/fig_flowchart.svg)
+
+## 相关文献 ##
+
+### 论文 ###
+
++ Qu, X.; Zhang, D.; Lu, G.; and Guo, Z., "Door knob hand recognition system," *Will appear in Systems, Man, and Cybernetics: Systems, IEEE Transactions on*.
+
+### 专利 ###
+
++ 门把形握姿人手图像采集装置及握姿人手图像识别系统（实用新型）
+  + 已授权
+  + 专利号： [ZL 201420166090.7](/docs/ZL201420166090.7.pdf)
+  + China Patent CN203786745 (U)
+
+
++ 握姿人手图像识别系统及其识别方法（发明专利）
+  + 已公开
+  + 专利申请号：[201410137490](http://www.soopat.com/Patent/201410137490)
+  + China Patent CN104978551 (A)
 
 
