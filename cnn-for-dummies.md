@@ -79,7 +79,7 @@ Given a tensor, we can arrange all the numbers inside it into a long vector, fol
 For example, in Matlab, the (\\(:\\)) operator converts a matrix into a column vector in the column-first order.
 An example is:
 
-<a name="eqn_tensor">
+<a name="eqn_tensor"></a>
 \\[
 A = \\left(\\begin{matrix}
 1 & 2 \\\
@@ -92,7 +92,6 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 4
 \\end{matrix}\\right) \\qquad (1)
 \\]
-</a>
 
 In mathematics, we use the notation "vec" to represent this vectorization operator.
 That is, \\( vec(A) = (1, 3, 2, 4)^T \\) in the example in [Equation 1](#eqn_tensor).
