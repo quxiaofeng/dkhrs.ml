@@ -61,11 +61,11 @@ familiar with these basics.
 ### 2.1 Tensor and vectorization ###
 
 Everybody is familiar with vectors and matrices.
-We use a symbol shown in boldface to represent a vector, e.g., \\( \\mathbf{x} \\in \\mathcal{R}^D \\) is a column vector with \\( D \\) components.
-We use a capital letter to denote a matrix, e.g., \\( X \\in \\mathcal{R}^{H\\times{}W} \\) is a matrix with \\( H \\) rows and \\( H \\) columns. The vector \\( \\mathbf{x} \\) can also be viewed as a matrix with \\( 1 \\) column and \\( D \\) rows.
+We use a symbol shown in boldface to represent a vector, e.g., \\( \\mathbf{x} \\in \\mathbb{R}^D \\) is a column vector with \\( D \\) components.
+We use a capital letter to denote a matrix, e.g., \\( X \\in \\mathbb{R}^{H\\times{}W} \\) is a matrix with \\( H \\) rows and \\( H \\) columns. The vector \\( \\mathbf{x} \\) can also be viewed as a matrix with \\( 1 \\) column and \\( D \\) rows.
 
 These concepts can be generalized to higher-order matrices, i.e., tensors.
-For example, \\( \\mathbf{x} \\in \\mathcal{R}^{H\\times{}W\\times{}D} \\) is a 3D tensor.
+For example, \\( \\mathbf{x} \\in \\mathbb{R}^{H\\times{}W\\times{}D} \\) is a 3D tensor.
 It has \\( HWD \\) numbers, and each of them can be indexed by an index triplet \\( (i, j, d) \\), with \\( 0 \\leq i \< H \\), \\( 0 \\leq j \< W \\), and \\( 0 \\leq d \< D \\).
 Another way to view a 3D tensor is to treat it as containing \\( D \\) slices of matrices.
 Every slice is a matrix with size \\( H \\times W \\).
@@ -93,7 +93,7 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 \\end{matrix}\\right) \\qquad (1)
 \\]
 
-In mathematics, we use the notation "vec" to represent this vectorization operator.
+In mathematics, we use the notation "\\( vec \\)" to represent this vectorization operator.
 That is, \\( vec(A) = (1, 3, 2, 4)^T \\) in the example in [Equation 1](#eqn_tensor).
 In order to vectorize a 3D tensor, we could vectorize its first slice (which is a matrix), then the second slice, . . . , till all slices are vectorized.
 The vectorization of the 3D tensor is then the concatenation of all the slices.
