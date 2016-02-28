@@ -18,7 +18,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
 1. [Motivation](#motivation)
 2. [Preliminaries](#preliminaries)
    1. [Tensor and vectorization](#tensor-and-vectorization)
-   2. Vector calculus and chain rule
+   2. [Vector calculus and chain rule](#vector-calculus-and-chain-rule)
 3. CNN in a nutshell
    1. The architecture
    2. The forward run
@@ -98,3 +98,15 @@ That is, \\( vec(A) = (1, 3, 2, 4)^T \\) in the example in [Equation 1](#eqn_ten
 In order to vectorize a 3D tensor, we could vectorize its first slice (which is a matrix), then the second slice, . . . , till all slices are vectorized.
 The vectorization of the 3D tensor is then the concatenation of all the slices.
 This recursive process can be applied to vectorize a 4D (or even higher order) tensor.
+
+### 2.2 Vector calculus and chain rule ###
+
+The CNN learning process depends on vector calculus and chain rule.
+Suppose \\( z \\) is a scalar (i.e., \\( z \\in \\mathbb{R} \\)) and \\( \\mathbf{y} \\in \\mathbb{R}^H \\) is a vector.
+If \\( z \\) is a function of \\( \\mathbf{y} \\), then the partial derivative of \\( z \\) with respect to \\( \\mathbf{y} \\) is a vector, defined as
+\\[
+\\left(\\frac{\\partial z}{\\partial \\mathbf{y}})\_i = \\frac{\\partial z}{\\partial y\_i}. \\qquad \\qquad \\qquad (2)
+\\]
+In other words, \\( \\frac{\\partial z}{\\partial \\mathbf{y}} \\) is a vector having *the same size* as \\( \\mathbf{y} \\), and its \\( i \\)-th element is \\( \\frac{\\partial z}{\\partial y\_i} \\).
+Also note that \\( \\frac{\\partial z}{\\partial \\mathbf{y}^T} = \\left( \\frac{\\partial z}{\\partial \\mathbf{y}} \\right)^T \\).
+ 
