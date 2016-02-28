@@ -124,7 +124,7 @@ A chain rule can be used to compute \\( \\frac{\\partial z}{\\partial \\mathbf{x
 \\]
 
 A sanity check for [Equation 4](#eqn_chain_rule) is to check the matrix/vector dimensions.
-Note that \\( \\frac{\\partial z}{\\partial \\mathbf{y}^T} \\) is a row vector with \\( H \\) elements, or a \\( 1 \\times H \\) matrix (Be reminded that \\( \\frac{\\partial z}{\\partial \\mathbf{y}} is a column vector \\)).
+Note that \\( \\frac{\\partial z}{\\partial \\mathbf{y}^T} \\) is a row vector with \\( H \\) elements, or a \\( 1 \\times H \\) matrix (Be reminded that \\( \\frac{\\partial z}{\\partial \\mathbf{y}} \\) is a column vector).
 Since \\( \\frac{\\partial \\mathbf{y}}{\\partial \\mathbf{x}^T} \\) is an \\( H \\times W \\) matrix, the vector/matrix multiplication between them is valid, and the result should be a row vector with \\( W \\) elements, which matches the dimensionality of \\( \\frac{\\partial z}{\\partial \\mathbf{x}^T} \\).
 
 For specific rules to calculate partial derivatives of vectors and matrices, please refer to [the Matrix Cookbook](http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf).
