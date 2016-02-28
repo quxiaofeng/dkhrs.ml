@@ -81,13 +81,13 @@ An example is:
 
 \\[
 A = \\begin{matrix}
-1 & 2 \\\\
+1 & 2 \\\
 3 & 4
 \\end{matrix},
 A(:) = (1,3,2,4)^T = \\begin{matrix}
-1 \\\\
-2 \\\\
-3 \\\\
+1 \\\
+2 \\\
+3 \\\
 4
 \\end{matrix} \\qquad (1)
 \\]
