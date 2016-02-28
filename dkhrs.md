@@ -3,7 +3,9 @@ layout: default
 permalink: /dkhrs/
 ---
 
-# Door Knob Hand Recognition System #
+# [Door Knob Hand Recognition System](/dkhrs/) #
+
+![](http://images.freeimages.com/images/previews/7d5/under-construction-icon-1242121.jpg)
 
 Qu, Xiaofeng; Zhang, David; Lu, Guangming; and Guo, Zhenhua, "Door knob hand recognition system," *Will appear in Systems, Man, and Cybernetics: Systems, IEEE Transactions on*
 
