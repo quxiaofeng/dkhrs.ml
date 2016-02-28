@@ -51,3 +51,43 @@ This note tries to present beginners with a document that
 + Ignores implementation details. The purpose is for a reader to understand how a CNN runs at the mathematical level. We will ignore those implementation details. In CNN, making correct choices for various details is one of the keys to its high accuracy. However, we intentionally left this part out, in order for the reader to focus on the mathematics. After understanding the mathematical principles and details, it is more advantageous to learn these implementation and design details with hands-on experience by running real CNN codes.
 
 This note is modeled after [Vedaldi and Lenc, 2014](http://arxiv.org/abs/1412.4564).
+
+## 2 Preliminaries ##
+
+We start by a discussion of some background knowledge that are necessary in
+order to understand how a CNN runs. One can ignore this section if he/she is
+familiar with these basics.
+
+### 2.1 Tensor and vectorization ###
+
+Everybody is familiar with vectors and matrices.
+We use a symbol shown in boldface to represent a vector, e.g., \\( \\mathbf{x} \\in \\mathcal{R}^D \\) is a column vector with \\( D \\) components.
+We use a capital letter to denote a matrix, e.g., \\( X \\in \\mathcal{R}^{H\\times{}W} \\) is a matrix with \\( H \\) rows and \\( H \\) columns. The vector \\( \\mathbf{x} \\) can also be viewed as a matrix with \\( 1 \\) column and \\( D \\) rows.
+
+These concepts can be generalized to higher-order matrices, i.e., tensors.
+For example, \\( \\mathbf{x} \\in \\mathcal{R}^{H\\times{}W\\times{}D} \\) is a 3D tensor.
+It has \\( HWD \\) numbers, and each of them can be indexed by an index triplet \\( (i, j, d) \\), with \\( 0 \\leq i \< H \\), \\( 0 \\leq j \< W \\), and \\( 0 \\leq d \< D \\).
+Another way to view a 3D tensor is to treat it as containing \\( D \\) slices of matrices.
+Every slice is a matrix with size \\( H \\times W \\).
+The first slice contains all the numbers in the tensor that are indexed by \\( (i,j,0) \\).
+When \\( D = 1 \\), a 3D tensor reduces to a matrix.
+
+Higher order matrices also exist.
+For example, we will soon see that the filter bank in a convolution layer in a CNN is a 4D tensor.
+
+Given a tensor, we can arrange all the numbers inside it into a long vector, following a pre-specified order.
+For example, in Matlab, the (\\(:\\)) operator converts a matrix into a column vector in the column-first order.
+An example is:
+
+\\[
+A = \\begin{matrix}
+1 & 2 \\\\
+3 & 4
+\\end{matrix},
+A(:) = (1,3,2,4)^T = \\begin{matrix}
+1 \\\\
+2 \\\\
+3 \\\\
+4
+\\end{matrix} \\qquad (1)
+\\]
