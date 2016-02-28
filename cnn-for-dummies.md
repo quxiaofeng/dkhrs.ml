@@ -80,14 +80,14 @@ For example, in Matlab, the (\\(:\\)) operator converts a matrix into a column v
 An example is:
 
 \\[
-A = \\begin{matrix}
+A = \\left(\\begin{matrix}
 1 & 2 \\\
 3 & 4
-\\end{matrix},
-A(:) = (1,3,2,4)^T = \\begin{matrix}
+\\end{matrix}\\right),
+A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 1 \\\
 2 \\\
 3 \\\
 4
-\\end{matrix} \\qquad (1)
+\\end{matrix}\\right) \\qquad (1)
 \\]
