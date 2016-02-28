@@ -79,11 +79,12 @@ Given a tensor, we can arrange all the numbers inside it into a long vector, fol
 For example, in Matlab, the (\\(:\\)) operator converts a matrix into a column vector in the column-first order.
 An example is:
 
+<a name="eqn_tensor">
 \\[
 A = \\left(\\begin{matrix}
 1 & 2 \\\
 3 & 4
-\\end{matrix}\\right),
+\\end{matrix}\\right), \\qquad
 A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 1 \\\
 2 \\\
@@ -91,3 +92,10 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 4
 \\end{matrix}\\right) \\qquad (1)
 \\]
+</a>
+
+In mathematics, we use the notation "vec" to represent this vectorization operator.
+That is, \\( vec(A) = (1, 3, 2, 4)^T \\) in the example in [Equation 1](#eqn_tensor).
+In order to vectorize a 3D tensor, we could vectorize its first slice (which is a matrix), then the second slice, . . . , till all slices are vectorized.
+The vectorization of the 3D tensor is then the concatenation of all the slices.
+This recursive process can be applied to vectorize a 4D (or even higher order) tensor.
