@@ -105,8 +105,27 @@ The CNN learning process depends on vector calculus and chain rule.
 Suppose \\( z \\) is a scalar (i.e., \\( z \\in \\mathbb{R} \\)) and \\( \\mathbf{y} \\in \\mathbb{R}^H \\) is a vector.
 If \\( z \\) is a function of \\( \\mathbf{y} \\), then the partial derivative of \\( z \\) with respect to \\( \\mathbf{y} \\) is a vector, defined as
 \\[
-\\left( \\frac{\\partial z}{\\partial \\mathbf{y}} \\right)\_i = \\frac{\\partial z}{\\partial y\_i}. \\qquad \\qquad \\qquad (2)
+\\qquad \\qquad \\qquad \\left( \\frac{\\partial z}{\\partial \\mathbf{y}} \\right)\_i = \\frac{\\partial z}{\\partial y\_i}. \\qquad \\qquad \\qquad (2)
 \\]
 In other words, \\( \\frac{\\partial z}{\\partial \\mathbf{y}} \\) is a vector having *the same size* as \\( \\mathbf{y} \\), and its \\( i \\)-th element is \\( \\frac{\\partial z}{\\partial y\_i} \\).
 Also note that \\( \\frac{\\partial z}{\\partial \\mathbf{y}^T} = \\left( \\frac{\\partial z}{\\partial \\mathbf{y}} \\right)^T \\).
- 
+
+Furthermore, suppose \\( \\mathbf{x} \\in \\mathbb{R}^W \\) is another vector, and \\( \\mathbf{y} \\) is a function of \\( \\mathbf{x} \\).
+Then, the partial derivative of \\( \\mathbf{y} \\) with respect to \\( \\mathbf{x} \\) is defined as
+\\[
+\\qquad \\qquad \\qquad \\left( \\frac{\\partial \\mathbf{y}}{\\partial \\mathbf{x}^T} \\right) = \\frac{\\partial y\_i}{\\partial x\_j} \\qquad \\qquad \\qquad (3)
+\\]
+This partial derivative is a \\( H \\times W \\) matrix, whose entry at the intersection of the \\( i \\)-th row and \\( j \\)-th column is \\( \\frac{\\partial y\_i}{\\partial x\_j} \\).
+
+It is easy to see that \\( z \\) is a function of \\( \\mathbf{x} \\) in a chain-like argument: a function maps \\( \\mathbf{x} \\) to \\( \\mathbf{y} \\), and another function maps \\( \\mathbf{y} \\) to \\( z \\).
+A chain rule can be used to compute \\( \\frac{\\partial z}{\\partial \\mathbf{x}^T} \\), as
+<a name="eqn_chain_rule"></a>\\[
+\\qquad \\qquad \\qquad \\frac{\\partial z}{\\partial \\mathbf{x}^T} = \\frac{\\partial z}{\\partial \\mathbf{y}^T} \\frac{\\partial \\mathbf{y}}{\\partial \\mathbf{x}^T}. \\qquad \\qquad \\qquad (4)
+\\]
+
+A sanity check for [Equation 4](#eqn_chain_rule) is to check the matrix/vector dimensions.
+Note that \\( \\frac{\\partial z}{\\partial \\mathbf{y}^T} \\) is a row vector with \\( H \\) elements, or a \\( 1 \\times H \\) matrix (Be reminded that \\( \\frac{\\partial z}{\\partial \\mathbf{y}} is a column vector \\)).
+Since \\( \\frac{\\partial \\mathbf{y}}{\\partial \\mathbf{x}^T} \\) is an \\( H \\times W \\) matrix, the vector/matrix multiplication between them is valid, and the result should be a row vector with \\( W \\) elements, which matches the dimensionality of \\( \\frac{\\partial z}{\\partial \\mathbf{x}^T} \\).
+
+For specific rules to calculate partial derivatives of vectors and matrices, please refer to [the Matrix Cookbook](http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf).
+
