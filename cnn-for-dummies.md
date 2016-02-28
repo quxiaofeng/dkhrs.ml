@@ -17,22 +17,22 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
 
 1. Motivation
 2. Preliminaries
-  1. Tensor and vectorization
-  2. Vector calculus and chain rule
+   1. Tensor and vectorization
+   2. Vector calculus and chain rule
 3. CNN in a nutshell
-  1. The architecture
-  2. The forward run
-  3. Stochastic gradient descent (SGD)
-  4. Error back propagation
+   1. The architecture
+   2. The forward run
+   3. Stochastic gradient descent (SGD)
+   4. Error back propagation
 4. The convolution layer
-  1. Input, output, filters, and notations
-  2. The (forward) convolution
-  3. Expanding the convolution
-  4. Now let's make it formal
-  5. The Kronecker product
-  6. Backward propagation: the parameters
-  7. Even higher dimensional indicator matrices
-  8. Backward propagation: the supervision signal 
+   1. Input, output, filters, and notations
+   2. The (forward) convolution
+   3. Expanding the convolution
+   4. Now let's make it formal
+   5. The Kronecker product
+   6. Backward propagation: the parameters
+   7. Even higher dimensional indicator matrices
+   8. Backward propagation: the supervision signal 
 5. The pooling layer
 6. The reverse operators
 7. The ReLU layer
