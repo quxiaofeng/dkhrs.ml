@@ -15,9 +15,9 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
 
 ## Contents ##
 
-1. Motivation
-2. Preliminaries
-   1. Tensor and vectorization
+1. [Motivation](#motivation)
+2. [Preliminaries](#preliminaries)
+   1. [Tensor and vectorization](#tensor-and-vectorization)
    2. Vector calculus and chain rule
 3. CNN in a nutshell
    1. The architecture
