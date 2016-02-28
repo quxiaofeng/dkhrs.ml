@@ -105,7 +105,7 @@ The CNN learning process depends on vector calculus and chain rule.
 Suppose \\( z \\) is a scalar (i.e., \\( z \\in \\mathbb{R} \\)) and \\( \\mathbf{y} \\in \\mathbb{R}^H \\) is a vector.
 If \\( z \\) is a function of \\( \\mathbf{y} \\), then the partial derivative of \\( z \\) with respect to \\( \\mathbf{y} \\) is a vector, defined as
 \\[
-\\left(\\frac{\\partial z}{\\partial \\mathbf{y}})\_i = \\frac{\\partial z}{\\partial y\_i}. \\qquad \\qquad \\qquad (2)
+\\left( \\frac{\\partial z}{\\partial \\mathbf{y}} \\right)\_i = \\frac{\\partial z}{\\partial y\_i}. \\qquad \\qquad \\qquad (2)
 \\]
 In other words, \\( \\frac{\\partial z}{\\partial \\mathbf{y}} \\) is a vector having *the same size* as \\( \\mathbf{y} \\), and its \\( i \\)-th element is \\( \\frac{\\partial z}{\\partial y\_i} \\).
 Also note that \\( \\frac{\\partial z}{\\partial \\mathbf{y}^T} = \\left( \\frac{\\partial z}{\\partial \\mathbf{y}} \\right)^T \\).
