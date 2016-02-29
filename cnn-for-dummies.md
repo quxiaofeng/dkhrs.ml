@@ -21,7 +21,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
    2. [Vector calculus and chain rule](#vector-calculus-and-chain-rule)
 3. [CNN in a nutshell](#cnn-in-a-nutshell)
    1. [The architecture](#the-architecture)
-   2. The forward run
+   2. [The forward run](#the-forward-run)
    3. Stochastic gradient descent (SGD)
    4. Error back propagation
 4. The convolution layer
@@ -156,7 +156,7 @@ The output of the first layer is \\( \\mathbf{x}^2 \\), which also acts as the i
 This processing proceeds till all layers in the CNN has been finished, which outputs \\( \\mathbf{x}^L \\).
 One additional layer, however, is added for backward error propagation.
 Let’s suppose the problem at hand is an image classification problem with \\( C \\) classes.
-A commonly used strategy is to output \\( \\mathbf{x}^L \\) as a \\( C \\) dimensional vector, whose \\( i \\)-th entry encodes the prediction \\( P(c\_i \\mid \\mathbf{x}^1 \\).
+A commonly used strategy is to output \\( \\mathbf{x}^L \\) as a \\( C \\) dimensional vector, whose \\( i \\)-th entry encodes the prediction \\( P \\left(c\_i \\mid \\mathbf{x}^1 \\right) \\).
 That is, given the input \\( \\mathbf{x}^1 \\), \\( \\mathbf{x}^L \\) outputs a vector of CNN-estimated posterior probabilities.
 
 Let's suppose \\( \\mathbf{t} \\) is the corresponding target (ground-truth) value for the input
@@ -167,6 +167,22 @@ For example, the simplest loss function could be
 \\]
 although more complex loss functions are usually used.
 
-For simplicity, [Equation 6](#eqn-simplest-loss) explicitly models the loss function as a loss layer, whose processing is modeled as a box with parameters \\( \\mathbf{w}^L \\).
+For simplicity, [Equation 6](#eqn_simplest_loss) explicitly models the loss function as a loss layer, whose processing is modeled as a box with parameters \\( \\mathbf{w}^L \\).
 
 Note that some layers may not have any parameters, that is, \\( \\mathbf{w}^i \\) may be empty for some \\( i \\).
+
+### 3.2 The forward run ###
+
+Suppose all the parameters of a CNN model\\( \\mathbf{w}^1, \\ldots, \\mathbf{w}^{L-1} \\) has been learned, then we are ready to use this model for prediction.
+
+Prediction only involves running the CNN model forward, i.e., in the direction of the arrows in [Equation 5](#eqn_abstract_cnn_structure).
+
+Let's take the image classification problem as an example.
+Starting from the input \\( \\mathbf{x}^1 \\), we make it pass the processing of the first layer (the box with parameters \\( \\mathbf{w}^1 \\)), and get \\( \\mathbf{x}^2 \\). In turn, \\( \\mathbf{x}^2 \\) is passed into the second layer, etc.
+Finally, we achieve \\( \\mathbf{x}^L \\in \\mathbb{R}^C \\), which estimates the posterior probabilities of \\( \\mathbf{x}^1 \\) belonging to the \\( C \\) categories.
+We can output the CNN prediction as
+\\[
+\\qquad \\qquad \\qquad \\arg\\max\_i \\mathbf{x}^L\_i. \\qquad \\qquad (7)
+\\]
+
+The problem is: how do we learn the model parameters?
