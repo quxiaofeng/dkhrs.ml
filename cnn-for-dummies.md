@@ -143,5 +143,5 @@ We will introduce the details of these layers later in this note.
 For now, let us give an abstract description of the CNN structure first.
 
 \\[
-\\mathbf{x}^1 \\rightarrow \\mathbf{w}^1 \\rightarrow \\mathbf{x}^2 \\rightarrow \\ldots \\rightarrow \\mathbf{x}^{L-1} \\rightarrow \\mathbf{w}^{L-1} \\rightarrow \\mathbf{x}^L \\rightarrow \\mathbf{w}^L \\rightarrow \\mathbf{z} (5) 
+\\mathbf{x}^1 \\rightarrow \\Box{\\mathbf{w}^1} \\rightarrow \\mathbf{x}^2 \\rightarrow \\ldots \\rightarrow \\mathbf{x}^{L-1} \\rightarrow \\Box{\\mathbf{w}^{L-1}} \\rightarrow \\mathbf{x}^L \\rightarrow \\Box{\\mathbf{w}^L} \\rightarrow \\mathbf{z} \\qquad (5) 
 \\]
