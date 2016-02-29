@@ -145,7 +145,7 @@ For now, let us give an abstract description of the CNN structure first.
 
 <a name="eqn_abstract_cnn_structure"></a>
 \\[
-\\mathbf{x}^1 \\rightarrow \[\\mathbf{w}^1\] \\rightarrow \\mathbf{x}^2 \\rightarrow \\ldots \\rightarrow \\mathbf{x}^{L-1} \\rightarrow \[\\mathbf{w}^{L-1}\] \\rightarrow \\mathbf{x}^L \\rightarrow \[\\mathbf{w}^L\] \\rightarrow \\mathbf{z} \\qquad (5) 
+\\mathbf{x}^1 \\rightarrow \\left\[\\mathbf{w}^1\\right\] \\rightarrow \\mathbf{x}^2 \\rightarrow \\ldots \\rightarrow \\mathbf{x}^{L-1} \\rightarrow \\left\[\\mathbf{w}^{L-1}\\right\] \\rightarrow \\mathbf{x}^L \\rightarrow \\left\[\\mathbf{w}^L\\right\] \\rightarrow \\mathbf{z} \\qquad (5) 
 \\]
 
 The above [Equation 5](#eqn_abstract_cnn_structure) illustrates how a CNN runs layer by layer forward.
