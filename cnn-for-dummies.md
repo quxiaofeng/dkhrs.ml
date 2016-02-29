@@ -142,6 +142,31 @@ We will introduce the details of these layers later in this note.
 
 For now, let us give an abstract description of the CNN structure first.
 
+
+<a name="eqn_abstract_cnn_structure"></a>
 \\[
 \\mathbf{x}^1 \\rightarrow \[\\mathbf{w}^1\] \\rightarrow \\mathbf{x}^2 \\rightarrow \\ldots \\rightarrow \\mathbf{x}^{L-1} \\rightarrow \[\\mathbf{w}^{L-1}\] \\rightarrow \\mathbf{x}^L \\rightarrow \[\\mathbf{w}^L\] \\rightarrow \\mathbf{z} \\qquad (5) 
 \\]
+
+The above [Equation 5](#eqn_abstract_cnn_structure) illustrates how a CNN runs layer by layer forward.
+The input is \\( \\mathbf{x}^1 \\), usually an image (3D tensor). It goes through the processing in the first layer, which is the first box.
+We denote the parameters involved in the first layer's processing collectively as a tensor \\( \\mathbf{w}^1 \\).
+The output of the first layer is \\( \\mathbf{x}^2 \\), which also acts as the input to the second layer processing.
+
+This processing proceeds till all layers in the CNN has been finished, which outputs \\( \\mathbf{x}^L \\).
+One additional layer, however, is added for backward error propagation.
+Let’s suppose the problem at hand is an image classification problem with \\( C \\) classes.
+A commonly used strategy is to output \\( \\mathbf{x}^L \\) as a \\( C \\) dimensional vector, whose \\( i \\)-th entry encodes the prediction \\( P(c\_i \\mid \\mathbf{x}^1 \\).
+That is, given the input \\( \\mathbf{x}^1 \\), \\( \\mathbf{x}^L \\) outputs a vector of CNN-estimated posterior probabilities.
+
+Let's suppose \\( \\mathbf{t} \\) is the corresponding target (ground-truth) value for the input
+\\( \\mathbf{x}^1 \\), then a cost or loss function can be used to measure the discrepancy between the CNN prediction \\( \\mathbf{x}^L \\) and the target \\( \\mathbf{t} \\).
+For example, the simplest loss function could be
+<a name="eqn_simplest_loss"></a>\\[
+\\qquad \\qquad \\qquad z = \\| \\mathbf{t} - \\mathbf{x}^L \\|^2, \\qquad \\qquad (6)
+\\]
+although more complex loss functions are usually used.
+
+For simplicity, [Equation 6](#eqn-simplest-loss) explicitly models the loss function as a loss layer, whose processing is modeled as a box with parameters \\( \\mathbf{w}^L \\).
+
+Note that some layers may not have any parameters, that is, \\( \\mathbf{w}^i \\) may be empty for some \\( i \\).
