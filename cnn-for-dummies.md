@@ -182,7 +182,7 @@ Starting from the input \\( \\mathbf{x}^1 \\), we make it pass the processing of
 Finally, we achieve \\( \\mathbf{x}^L \\in \\mathbb{R}^C \\), which estimates the posterior probabilities of \\( \\mathbf{x}^1 \\) belonging to the \\( C \\) categories.
 We can output the CNN prediction as
 \\[
-\\qquad \\qquad \\qquad \\arg\\max\_i \\mathbf{x}^L\_i. \\qquad \\qquad (7)
+\\qquad \\qquad \\qquad \\arg\\max\_i \, \\mathbf{x}^L\_i. \\qquad \\qquad (7)
 \\]
 
 The problem is: how do we learn the model parameters?
