@@ -19,8 +19,8 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
 2. [Preliminaries](#preliminaries)
    1. [Tensor and vectorization](#tensor-and-vectorization)
    2. [Vector calculus and chain rule](#vector-calculus-and-chain-rule)
-3. CNN in a nutshell
-   1. The architecture
+3. [CNN in a nutshell](#cnn-in-a-nutshell)
+   1. [The architecture](#the-architecture)
    2. The forward run
    3. Stochastic gradient descent (SGD)
    4. Error back propagation
@@ -129,3 +129,19 @@ Since \\( \\frac{\\partial \\mathbf{y}}{\\partial \\mathbf{x}^T} \\) is an \\( H
 
 For specific rules to calculate partial derivatives of vectors and matrices, please refer to [the Matrix Cookbook](http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf).
 
+## 3 CNN in a nutshell ##
+
+In this section, we will see how a CNN trains and predicts in an abstract level, with the details leaved out for later sections.
+
+### 3.1 The architecture ###
+
+A CNN usually takes a 3D tensor as its input, e.g., an image with \\( H \\) rows, \\( W \\) columns, and 3 slices or channels (R, G, B color channels).
+The input then sequentially goes through a series of processing.
+One processing step is usually called a layer, which could be a convolution layer, a pooling layer, a normalization layer, a fully connected layer, a loss layer, etc.
+We will introduce the details of these layers later in this note.
+
+For now, let us give an abstract description of the CNN structure first.
+
+\\[
+\\mathbf{x}^1 \\rightarrow \\mathbf{w}^1 \\rightarrow \\mathbf{x}^2 \\rightarrow \\ldots \\rightarrow \\mathbf{x}^{L-1} \\rightarrow \\mathbf{w}^{L-1} \\rightarrow \\mathbf{x}^L \\rightarrow \\mathbf{w}^L \\rightarrow \\mathbf{z} (5) 
+\\]
