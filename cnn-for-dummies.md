@@ -252,3 +252,21 @@ So long as we can compute \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+
 
 The computation of \\( \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)} \\) and \\( \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial(vec(\\mathbf{x}^i)^T)} \\) is not difficult in most cases, because \\( \\mathbf{x}^i \\) is directly related to \\( \\mathbf{x}^{i+1} \\), through a function with parameters \\( \\mathbf{w}^i \\).
 The details of these partial derivatives will be discussed in the following sections.
+
+## 4 The convolution layer ##
+
+Now that the CNN architecture is clear, we will discuss in details the different types of layers, starting from the convolution layer.
+
+### 4.1 Input, output, Filters, and notations ###
+
+Suppose we are considering the l-th layer, whose inputs form a 3D tensor xl
+with xl 2 RHlWlDl
+. Thus, we need a triplet index set (il; jl; dl) to pointing
+to any specic element in xl. That is, the triplet (il; jl; dl) refers to one element
+in xl, which is in the dl-th slice / channel, and at spatial location (il; jl) (at the
+il-th row, and jl-th column). In actual CNN learning, a mini-batch strategy is
+usually used. In that case, xl becomes a 4D tensor in RHlWlDlN where N
+is the mini-batch size. For simplicity we assume that N = 1 in this note.
+In order to simplify the notations which will appear later, we follow the
+zero-based indexing convention, which species that 0  il < Hl, 0  jl < Wl,
+and 0  dl < Dl.
