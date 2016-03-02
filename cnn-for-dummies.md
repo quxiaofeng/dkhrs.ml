@@ -22,10 +22,10 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
 3. [CNN in a nutshell](#cnn-in-a-nutshell)
    1. [The architecture](#the-architecture)
    2. [The forward run](#the-forward-run)
-   3. Stochastic gradient descent (SGD)
-   4. Error back propagation
-4. The convolution layer
-   1. Input, output, filters, and notations
+   3. [Stochastic gradient descent (SGD)](#stochastic-gradient-descent)
+   4. [Error back propagation](#error-back-propagation)
+4. [The convolution layer](#the-convolution-layer)
+   1. [Input, output, filters, and notations](#input-output-filters-and-notations)
    2. The (forward) convolution
    3. Expanding the convolution
    4. Now let's make it formal
@@ -186,6 +186,42 @@ We can output the CNN prediction as
 \\]
 
 The problem is: how do we learn the model parameters?
+
+### 3.3 Stochastic gradient descent (SGD) ###
+
+Stochastic gradient descent (SGD) is the mainstream method to learn a CNN's parameters.
+Let's suppose one training example \\( \\mathbf{x}^1 \\) is given for training such parameters.
+The training process involves running the CNN network in both directions.
+We first run the forward network to get \\( \\mathbf{x}^L \\) to achieve a prediction using the current CNN model.
+Instead of outputting a prediction, we need to compare the prediction with the target \\( \\mathbf{t} \\) corresponding to \\( \\mathbf{x}^1 \\), that is, continue running the forward pass till the last loss layer.
+Finally, we achieve a loss \\( z \\).
+
+The loss \\( z \\) is then a supervision signal, guiding how the parameters of the model should be modified.
+And the SGD way of modifying the parameters are
+<a name="eqn_sgd"></a>\\[
+\\qquad \\qquad \\qquad \\mathbf{w}^i \\leftarrow \\mathbf{w}^i - \\eta \\frac{\\partial z}{\\partial \\mathbf{w}^i}. \\qquad \\qquad (8)
+\\]
+
+In [Equation 8](#eqn_sgd), \\( \\eta \\) is a proper learning rate.
+
+A *cautious note* about the notation.
+In most CNN materials, a superscript indicates the "time" (e.g., training epochs).
+But in this note, we use the superscript to denote the layer index.
+Please do not get confused.
+We do not use an additional index variable \\( t \\) to represent time.
+In [Equation 8](#eqn_sgd), the \\( \\leftarrow \\) sign
+implicitly indicates that the parameters wi (of the i-layer) are updated from
+time t to t + 1. If an time index t is explicit used, this equation will look like
+􀀀
+wit+1
+=
+􀀀
+wit
+􀀀 
+@z
+@ (wi)t : (9)
+A new problem now becomes apparent: how to compute the (partial) deriva-
+tives, which seem very complex?
 
 ### 3.4 Error back propagation ###
 
