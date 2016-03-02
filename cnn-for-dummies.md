@@ -38,7 +38,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
 7. The ReLU layer
 8. Conclusions
 
-## 1 Motivation ##
+## [1 Motivation](#contetnts) ##
 
 The Convolutional Neural Network (CNN) has shown excellent performance in many computer vision and machine learning problems. Many solid papers have been published in this topic, and quite some high quality open source CNN software packages have been made available.
 
@@ -52,13 +52,13 @@ This note tries to present beginners with a document that
 
 This note is modeled after [Vedaldi and Lenc, 2014](http://arxiv.org/abs/1412.4564).
 
-## 2 Preliminaries ##
+## [2 Preliminaries](#contetnts) ##
 
 We start by a discussion of some background knowledge that are necessary in
 order to understand how a CNN runs. One can ignore this section if he/she is
 familiar with these basics.
 
-### 2.1 Tensor and vectorization ###
+### [2.1 Tensor and vectorization](#contetnts) ###
 
 Everybody is familiar with vectors and matrices.
 We use a symbol shown in boldface to represent a vector, e.g., \\( \\mathbf{x} \\in \\mathbb{R}^D \\) is a column vector with \\( D \\) components.
