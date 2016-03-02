@@ -236,3 +236,19 @@ Let's take the \\( i \\)-th layer as an example.
 When we are updating the \\( i \\)-th layer, the back propagation process for the (\\( i \\)+1)-th layer must have been finished.
 That is, we already computed the terms \\( \\frac{\\partial z}{\\partial \\mathbf{w}^{i+1}} \\) and \\( \\frac{\\partial z}{\\partial \\mathbf{x}^{i+1}} \\).
 Both are stored in memory and ready for use.
+
+Now our task is to compute \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\) and \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\).
+Using the chain rule, we have
+\\[
+\\frac{}{} = \\frac{}{} \\frac{}{}, (10)
+\\]
+\\[
+\\frac{}{} = \\frac{}{} \\frac{}{}, (11)
+\\]
+
+Now that \\( \\frac{\\partial z}{\\partial \\mathbf{x}^{i+1}} \\) is already computed and stored in memory.
+It requires just a matrix reshaping operation (\\( vec \\)) and an additional transpose operation to get \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\), which is the first term in the right hand side (RHS) of both equations.
+So long as we can compute \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\) and \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\), we can easily get what we want (the left hand side of both equations).
+
+The computation of \\( \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)} \\) and \\( \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial(vec(\\mathbf{x}^i)^T)} \\) is not difficult in most cases, because \\( \\mathbf{x}^i \\) is directly related to \\( \\mathbf{x}^{i+1} \\), through a function with parameters \\( \\mathbf{w}^i \\).
+The details of these partial derivatives will be discussed in the following sections.
