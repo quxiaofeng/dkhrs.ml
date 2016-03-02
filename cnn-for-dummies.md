@@ -22,7 +22,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
 3. [CNN in a nutshell](#cnn-in-a-nutshell)
    1. [The architecture](#the-architecture)
    2. [The forward run](#the-forward-run)
-   3. [Stochastic gradient descent (SGD)](#stochastic-gradient-descent)
+   3. [Stochastic gradient descent (SGD)](#stochastic-gradient-descent-sgd)
    4. [Error back propagation](#error-back-propagation)
 4. [The convolution layer](#the-convolution-layer)
    1. [Input, output, filters, and notations](#input-output-filters-and-notations)
@@ -209,19 +209,13 @@ In most CNN materials, a superscript indicates the "time" (e.g., training epochs
 But in this note, we use the superscript to denote the layer index.
 Please do not get confused.
 We do not use an additional index variable \\( t \\) to represent time.
-In [Equation 8](#eqn_sgd), the \\( \\leftarrow \\) sign
-implicitly indicates that the parameters wi (of the i-layer) are updated from
-time t to t + 1. If an time index t is explicit used, this equation will look like
-􀀀
-wit+1
-=
-􀀀
-wit
-􀀀 
-@z
-@ (wi)t : (9)
-A new problem now becomes apparent: how to compute the (partial) deriva-
-tives, which seem very complex?
+In [Equation 8](#eqn_sgd), the \\( \\leftarrow \\) sign implicitly indicates that the parameters \\( \\mathbf{w}^i \\) (of the \\( i \\)-layer) are updated from time \\( t \\) to \\( t + 1 \\).
+If an time index \\( t \\) is explicit used, this equation will look like
+\\[
+\\qquad \\qquad \\left( \\mathbf{w}^i \\right)^{t + 1} = \\left( \\mathbf{w}^i \\right)^t - \\eta \\frac{\\partial z}{\\partial \\left( \\mathbf{w}^i \\right)^t}. \\qquad (9)
+\\]
+
+A new problem now becomes apparent: how to compute the (partial) derivatives, which seem very complex?
 
 ### 3.4 Error back propagation ###
 
@@ -232,5 +226,13 @@ In the same spirit, it is also easy to compute \\( \\frac{\\partial z}{\\partial
 
 In fact, for every layer, we compute two sets of results: the partial derivatives of \\( z \\) with respect to the layer parameters \\( \\mathbf{w}^i \\), and that layer's input \\( \\mathbf{x}^i \\).
 
-+ The term \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\), as seen in Equation 8, can be used to update the current (\\( i \\)-th) layer's parameters;
-+ The term \\( \\frac{\\partial z}{\\partial \\mathbf{x}^L} \\) can be used to update parameters backwards, e.g., to the 
++ The term \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\), as seen in [Equation 8](#eqn_sgd), can be used to update the current (\\( i \\)-th) layer's parameters;
++ The term \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\) can be used to update parameters backwards, e.g., to the (\\( i \\)-1)-th layer. An intuitive explanation is that \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\) is the part of the "error" supervision information propagated from \\( z \\) backwards till the current layer, in a layer by layer fashion. Thus, we can continue the back propagation process, and use \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\) to both guide the updating of parameters and propagate the errors backwards to the (\\( i \\)-1)-th layer.
+
+Thus, at each layer \\( i \\), we need to compute two sets of derivatives: \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\) and \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\).
+This layer-by-layer backward updating procedure makes learning a CNN much easier.
+
+Let's take the \\( i \\)-th layer as an example.
+When we are updating the \\( i \\)-th layer, the back propagation process for the (\\( i \\)+1)-th layer must have been finished.
+That is, we already computed the terms \\( \\frac{\\partial z}{\\partial \\mathbf{w}^{i+1}} \\) and \\( \\frac{\\partial z}{\\partial \\mathbf{x}^{i+1}} \\).
+Both are stored in memory and ready for use.
