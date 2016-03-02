@@ -173,7 +173,7 @@ Note that some layers may not have any parameters, that is, \\( \\mathbf{w}^i \\
 
 ### 3.2 The forward run ###
 
-Suppose all the parameters of a CNN model\\( \\mathbf{w}^1, \\ldots, \\mathbf{w}^{L-1} \\) has been learned, then we are ready to use this model for prediction.
+Suppose all the parameters of a CNN model \\( \\mathbf{w}^1, \\ldots, \\mathbf{w}^{L-1} \\) has been learned, then we are ready to use this model for prediction.
 
 Prediction only involves running the CNN model forward, i.e., in the direction of the arrows in [Equation 5](#eqn_abstract_cnn_structure).
 
