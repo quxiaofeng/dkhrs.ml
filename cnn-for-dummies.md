@@ -167,7 +167,7 @@ For example, the simplest loss function could be
 \\]
 although more complex loss functions are usually used.
 
-For simplicity, [Equation 6](#eqn_simplest_loss) explicitly models the loss function as a loss layer, whose processing is modeled as a box with parameters \\( \\mathbf{w}^L \\).
+For simplicity, [Equation 5](#eqn_abstract_cnn_structure) explicitly models the loss function as a loss layer, whose processing is modeled as a box with parameters \\( \\mathbf{w}^L \\).
 
 Note that some layers may not have any parameters, that is, \\( \\mathbf{w}^i \\) may be empty for some \\( i \\).
 
@@ -186,3 +186,15 @@ We can output the CNN prediction as
 \\]
 
 The problem is: how do we learn the model parameters?
+
+### 3.4 Error back propagation ###
+
+The last layer partial derivatives are easy to compute.
+Because \\( \\mathbf{x}^L \\) is connected to \\( z \\) directly under the control of parameters \\( \\mathbf{w}^L \\), it is easy to compute \\( \\frac{\\partial z}{\\partial \\mathbf{w}^L} \\).
+This step is only neede when \\( \\mathbf{w}^L \\) is not empty.
+In the same spirit, it is also easy to compute \\( \\frac{\\partial z}{\\partial \\mathbf{x}^L} \\).
+
+In fact, for every layer, we compute two sets of results: the partial derivatives of \\( z \\) with respect to the layer parameters \\( \\mathbf{w}^i \\), and that layer's input \\( \\mathbf{x}^i \\).
+
++ The term \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\), as seen in Equation 8, can be used to update the current (\\( i \\)-th) layer's parameters;
++ The term \\( \\frac{\\partial z}{\\partial \\mathbf{x}^L} \\) can be used to update parameters backwards, e.g., to the 
