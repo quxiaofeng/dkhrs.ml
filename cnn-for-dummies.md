@@ -240,15 +240,15 @@ Both are stored in memory and ready for use.
 Now our task is to compute \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\) and \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\).
 Using the chain rule, we have
 \\[
-\\frac{}{} = \\frac{}{} \\frac{}{}, (10)
+\\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} = \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, (10)
 \\]
 \\[
-\\frac{}{} = \\frac{}{} \\frac{}{}, (11)
+\\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} = \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, (11)
 \\]
 
 Now that \\( \\frac{\\partial z}{\\partial \\mathbf{x}^{i+1}} \\) is already computed and stored in memory.
 It requires just a matrix reshaping operation (\\( vec \\)) and an additional transpose operation to get \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\), which is the first term in the right hand side (RHS) of both equations.
-So long as we can compute \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\) and \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\), we can easily get what we want (the left hand side of both equations).
+So long as we can compute \\( \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)} \\) and \\( \\frac{\\partial \\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)} \\), we can easily get what we want (the left hand side of both equations).
 
 The computation of \\( \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)} \\) and \\( \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial(vec(\\mathbf{x}^i)^T)} \\) is not difficult in most cases, because \\( \\mathbf{x}^i \\) is directly related to \\( \\mathbf{x}^{i+1} \\), through a function with parameters \\( \\mathbf{w}^i \\).
 The details of these partial derivatives will be discussed in the following sections.
@@ -259,14 +259,13 @@ Now that the CNN architecture is clear, we will discuss in details the different
 
 ### 4.1 Input, output, Filters, and notations ###
 
-Suppose we are considering the l-th layer, whose inputs form a 3D tensor xl
-with xl 2 RHlWlDl
-. Thus, we need a triplet index set (il; jl; dl) to pointing
-to any specic element in xl. That is, the triplet (il; jl; dl) refers to one element
-in xl, which is in the dl-th slice / channel, and at spatial location (il; jl) (at the
-il-th row, and jl-th column). In actual CNN learning, a mini-batch strategy is
-usually used. In that case, xl becomes a 4D tensor in RHlWlDlN where N
-is the mini-batch size. For simplicity we assume that N = 1 in this note.
-In order to simplify the notations which will appear later, we follow the
-zero-based indexing convention, which species that 0  il < Hl, 0  jl < Wl,
-and 0  dl < Dl.
+Suppose we are considering the \\( l \\)-th layer, whose inputs form a 3D tensor \\( \\mathbf{x}^l \\) with \\( \\mathbf{x}^l \\in \\mathbb{R}^{H^l \\times W^l \\times D^l} \\).
+Thus, we need a triplet index set \\( (i^l, j^l, d^l) \\) to pointing to any specific element in \\( \\mathbf{x}^l \\).
+That is, the triplet \\( (i^l, j^l, d^l) \\) refers to one element in \\( \\mathbf{x}^l \\), which is in the \\( d^l \\)-th slice/channel, and at spatial location \\( (i^l, j^l) \\) (at the \\( i^l \\)-th row, and \\( j^l \\)-th column).
+In actual CNN learning, a mini-batch strategy is usually used.
+In that case, \\( \\mathbf{x}^l \\) becomes a 4D tensor in \\( \\mathbb{R}^{H^l \\times W^l \\times D^l} \\) where \\( N \\) is the mini-batch size.
+For simplicity we assume that \\( N = 1 \\) in this note.
+
+In order to simplify the notations which will appear later, we follow the zero-based indexing convention, which specifies that \\( 0 \\leq i^l \< H^l \\), \\( 0 \\leq j^l \< W^l \\), and \\( 0 \\leq d^l \< D^l \\).
+
+
