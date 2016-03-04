@@ -26,7 +26,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
    4. [Error back propagation](#error-back-propagation)
 4. [The convolution layer](#the-convolution-layer)
    1. [Input, output, filters, and notations](#input-output-filters-and-notations)
-   2. The (forward) convolution
+   2. [The (forward) convolution](#the-forward-convolution)
    3. Expanding the convolution
    4. Now let's make it formal
    5. The Kronecker product
@@ -268,4 +268,18 @@ For simplicity we assume that \\( N = 1 \\) in this note.
 
 In order to simplify the notations which will appear later, we follow the zero-based indexing convention, which specifies that \\( 0 \\leq i^l \< H^l \\), \\( 0 \\leq j^l \< W^l \\), and \\( 0 \\leq d^l \< D^l \\).
 
+In the \\( l \\)-th layer, a set of convolution filters will transform the input \\( \\mathbf{x}^l \\) to an output \\( \\mathbf{y} \\), which is also the input to the next layer.
+Thus, we notice that \\( \\mathbf{y} \\) and \\( \\mathbf{x}^{l + 1} \\) in fact refers to the same object, and it is very helpful to keep this point in mind.
 
+Now we turn to the filter bank \\( \\mathbf{f} \\).
+Assuming \\( D \\) filters are used and each filter is of spatial span \\( H \\times W \\), we note that one filter needs to process all the
+\\( D^l \\) slices in \\( \\mathbf{x}^l \\).
+Thus, \\( \\mathbf{f} \\) is in \\( \\mathbb{R}^{H \\times W \\times D^l \\times D} \\).
+Similarly, we use index variables \\( 0 \\leq i \< H \\), \\( 0 \\leq j \< W \\), \\( 0 \\leq d^l \< D^l \\), and \\( 0 \\leq d \< D \\) to pointing to a specific element in the filter bank.
+Also note that this filter bank \\( \\mathbf{f} \\) refers to the same
+object as the notation \\( \\mathbf{w}^l \\) in [Equation 5](#eqn_abstract_cnn_structure).
+We changed the notation a bit to make the derivation a little bit simpler in its notations.
+
+These notations will be used throughout the rest of this note.
+
+### 4.2 The (forward) convolution ###
