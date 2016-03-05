@@ -27,7 +27,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
 4. [The convolution layer](#the-convolution-layer)
    1. [Input, output, filters, and notations](#input-output-filters-and-notations)
    2. [The (forward) convolution](#the-forward-convolution)
-   3. Expanding the convolution
+   3. [Expanding the convolution](#expanding-the-convolution)
    4. Now let's make it formal
    5. The Kronecker product
    6. Backward propagation: the parameters
