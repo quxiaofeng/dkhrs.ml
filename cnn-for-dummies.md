@@ -283,3 +283,44 @@ We changed the notation a bit to make the derivation a little bit simpler in its
 These notations will be used throughout the rest of this note.
 
 ### 4.2 The (forward) convolution ###
+
+We consider the simplest case of convolution: the stride is \\( 1 \\) and no padding is used.
+Thus, the convolution output will have a spatial size \\( (H^l - H + 1) \\times (W^l - W + 1) \\) and it will have \\( D \\) slices.
+That is, we have y (or x l+1 ) in
+R H
+l+1 ×W l+1 ×D l+1 , with H l+1
+= H l −H+1, W l+1 = W l −W+1, and D l+1 = D.
+Specifically, the convolution output for the slice d is computed as follows.
+• This one filter has size H × W × D l ;
+• Considering a spatial location (i l+1 ,j l+1 ), so long as 0 ≤ i l+1 < H l+1 =
+H l − H + 1 and 0 ≤ j l+1 < W l+1 = W l − W + 1, we can extract a
+subvolume from x l with the same size as this filter. Note that there will
+be H l+1 W l+1 such subvolumes;
+• Multiply the two 3D tensor (the d-th filter and the subvolume from x l ),
+and sum all the per-element product into a single number.
+This number is the convolution result for this subvolume, or equivalently, at
+the spatial location (i l+1 ,j l+1 ) for the slide d. If we repeat the same procedure
+for all slices 0 ≤ d < D, we get a vector with D elements, which is the com-
+plete convolution result for the subvolume. In the output x l+1 , this vector is
+x(i l+1 ,j l+1 ,:) in the Matlab notation, where x is the Matlab counterpart for
+x l+1 .
+In precise mathematics, the convolution procedure can be expressed as an
+equation:
+y i l+1 ,j l+1 ,d =
+H
+X
+i=0
+W
+X
+j=0
+D
+X
+d=0
+f i,j,d × x l
+i l+1 +i,j l+1 +j,d .
+(12)
+Equation 12 is repeated for all 0 ≤ d ≤ D = D l+1 , and satisfies 0 ≤ i l+1 < H l −
+H +1 = H l+1 ,0 ≤ j l+1 < W l −W +1 = W l+1 . In the equation, x l
+i l+1 +i,j l+1 +j,d
+refers to the element of x l indexed by the triplet (i l+1 + i,j l+1 + j,d).
+A bias term b d is usually added to y i l+1 ,j l+1 ,d , we omit this term.
