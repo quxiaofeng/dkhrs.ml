@@ -286,10 +286,8 @@ These notations will be used throughout the rest of this note.
 
 We consider the simplest case of convolution: the stride is \\( 1 \\) and no padding is used.
 Thus, the convolution output will have a spatial size \\( (H^l - H + 1) \\times (W^l - W + 1) \\) and it will have \\( D \\) slices.
-That is, we have y (or x l+1 ) in
-R H
-l+1 ×W l+1 ×D l+1 , with H l+1
-= H l −H+1, W l+1 = W l −W+1, and D l+1 = D.
+That is, we have \\( \\mathbf{y} \\) (or \\( \\mathbf{x}^{l+1} \\)) in \\( \\mathbb{R}^{H^{l+1} \\times W^{l+1} \\times D^{l+1}} \\), with \\( H^{l+1} = H^l - H + 1 \\), \\( W^{l+1} = W^l - W + 1 \\), and \\( D^{l+1} = D^l\\).
+
 Specifically, the convolution output for the slice d is computed as follows.
 • This one filter has size H × W × D l ;
 • Considering a spatial location (i l+1 ,j l+1 ), so long as 0 ≤ i l+1 < H l+1 =
