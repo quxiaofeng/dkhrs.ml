@@ -333,7 +333,7 @@ This example is illustrated as
 
 ---
 
-\\[ x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\]
+<a name="eqn_rendering_error"></a>\\[ x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\]
 
 \\[ {x^l}\_{i^{l+1}+i, j^{l+1}+j, d} \\]
 
