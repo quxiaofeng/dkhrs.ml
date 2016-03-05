@@ -144,8 +144,9 @@ For now, let us give an abstract description of the CNN structure first.
 
 <a name="eqn_abstract_cnn_structure"></a>
 \\[
-\\mathbf{x}^1 \\rightarrow \\left\[\\mathbf{w}^1\\right\] \\rightarrow \\mathbf{x}^2 \\rightarrow \\ldots \\rightarrow \\mathbf{x}^{L-1} \\rightarrow \\left\[\\mathbf{w}^{L-1}\\right\] \\rightarrow \\mathbf{x}^L \\rightarrow \\left\[\\mathbf{w}^L\\right\] \\rightarrow \\mathbf{z} (5) 
+\\mathbf{x}^1 \\rightarrow \\left\[\\mathbf{w}^1\\right\] \\rightarrow \\mathbf{x}^2 \\rightarrow \\ldots \\rightarrow \\mathbf{x}^{L-1} \\rightarrow \\left\[\\mathbf{w}^{L-1}\\right\] \\rightarrow \\mathbf{x}^L \\rightarrow \\left\[\\mathbf{w}^L\\right\] \\rightarrow \\mathbf{z}
 \\]
+\\[\\fill (5)\\]
 
 The above [Equation 5](#eqn_abstract_cnn_structure) illustrates how a CNN runs layer by layer forward.
 The input is \\( \\mathbf{x}^1 \\), usually an image (3D tensor). It goes through the processing in the first layer, which is the first box.
@@ -299,7 +300,7 @@ In the output \\( \\mathbf{x}^{l+1} \\), this vector is \\( x(i^{l+1}, j^{l+1}, 
 
 In precise mathematics, the convolution procedure can be expressed as an equation:
 <a name="eqn_convolution_procedure"></a>\\[
-y\_{i^{l+1},j^{l+1},d} = \\sum^H\_{i=0} \\sum^W\_{j=0} \\sum^D\_{d=0} f\_{i,j,d} \\times x^l\_{i^{l+1}+i, j^{l+1}+j, d}. \\qquad (12)
+y\_{i^{l+1},j^{l+1},d} = \\sum^H\_{i=0} \\sum^W\_{j=0} \\sum^D\_{d=0} f\_{i,j,d} \\times {x^l}\_{i^{l+1}+i, j^{l+1}+j, d}. \\qquad (12)
 \\]
 [Equation 12](#eqn_convolution_procedure) is repeated for all \\( 0 \\leq d \< D = D^{l+1} \\), and satisfies \\( 0 \\leq i^{l+1} \< H^l - H + 1 = H^{l+1} \\), \\( 0 \\leq j^{l+1} \< W^l - W + 1 = W^{l+1} \\).
 In the equation, \\( x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\) refers to the element of \\( \\mathbf{x}^l \\) indexed by the triplet \\( i^{l+1}+i, j^{l+1}+j, d \\).
