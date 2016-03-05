@@ -288,13 +288,11 @@ We consider the simplest case of convolution: the stride is \\( 1 \\) and no pad
 Thus, the convolution output will have a spatial size \\( (H^l - H + 1) \\times (W^l - W + 1) \\) and it will have \\( D \\) slices.
 That is, we have \\( \\mathbf{y} \\) (or \\( \\mathbf{x}^{l+1} \\)) in \\( \\mathbb{R}^{H^{l+1} \\times W^{l+1} \\times D^{l+1}} \\), with \\( H^{l+1} = H^l - H + 1 \\), \\( W^{l+1} = W^l - W + 1 \\), and \\( D^{l+1} = D^l\\).
 
-Specifically, the convolution output for the slice d is computed as follows.
-• This one filter has size H × W × D l ;
-• Considering a spatial location (i l+1 ,j l+1 ), so long as 0 ≤ i l+1 < H l+1 =
-H l − H + 1 and 0 ≤ j l+1 < W l+1 = W l − W + 1, we can extract a
-subvolume from x l with the same size as this filter. Note that there will
-be H l+1 W l+1 such subvolumes;
-• Multiply the two 3D tensor (the d-th filter and the subvolume from x l ),
+Specifically, the convolution output for the slice \\( d \\) is computed as follows.
+
++ This one filter has size \\( H \\times W \\times D^l \\);
++ Considering a spatial location \\( (i^{l+1}, j^{l+1}) \\), so long as \\( 0 \\leq i^{l+1} \< H^{l+1} = H^l - H + 1 \\) and \\( 0 \\leq j^{l+1} \< W^{l+1} = W^l - W + 1 \\), we can extract a subvolume from \\( \\mathbf{x}^l \\) with the same size as this filter. Note that there will be \\( H^{l+1}W^{l+1} \\) such subvolumes;
++ Multiply the two 3D tensor (the d-th filter and the subvolume from x l ),
 and sum all the per-element product into a single number.
 This number is the convolution result for this subvolume, or equivalently, at
 the spatial location (i l+1 ,j l+1 ) for the slide d. If we repeat the same procedure
