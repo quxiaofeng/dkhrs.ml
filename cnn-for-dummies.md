@@ -292,31 +292,41 @@ Specifically, the convolution output for the slice \\( d \\) is computed as foll
 
 + This one filter has size \\( H \\times W \\times D^l \\);
 + Considering a spatial location \\( (i^{l+1}, j^{l+1}) \\), so long as \\( 0 \\leq i^{l+1} \< H^{l+1} = H^l - H + 1 \\) and \\( 0 \\leq j^{l+1} \< W^{l+1} = W^l - W + 1 \\), we can extract a subvolume from \\( \\mathbf{x}^l \\) with the same size as this filter. Note that there will be \\( H^{l+1}W^{l+1} \\) such subvolumes;
-+ Multiply the two 3D tensor (the d-th filter and the subvolume from x l ),
-and sum all the per-element product into a single number.
-This number is the convolution result for this subvolume, or equivalently, at
-the spatial location (i l+1 ,j l+1 ) for the slide d. If we repeat the same procedure
-for all slices 0 ≤ d < D, we get a vector with D elements, which is the com-
-plete convolution result for the subvolume. In the output x l+1 , this vector is
-x(i l+1 ,j l+1 ,:) in the Matlab notation, where x is the Matlab counterpart for
-x l+1 .
-In precise mathematics, the convolution procedure can be expressed as an
-equation:
-y i l+1 ,j l+1 ,d =
-H
-X
-i=0
-W
-X
-j=0
-D
-X
-d=0
-f i,j,d × x l
-i l+1 +i,j l+1 +j,d .
-(12)
-Equation 12 is repeated for all 0 ≤ d ≤ D = D l+1 , and satisfies 0 ≤ i l+1 < H l −
-H +1 = H l+1 ,0 ≤ j l+1 < W l −W +1 = W l+1 . In the equation, x l
-i l+1 +i,j l+1 +j,d
-refers to the element of x l indexed by the triplet (i l+1 + i,j l+1 + j,d).
-A bias term b d is usually added to y i l+1 ,j l+1 ,d , we omit this term.
++ Multiply the two 3D tensor (the \\( d \\)-th filter and the subvolume from \\( \\mathbf{x}^l \\)), and sum all the per-element product into a single number.
+
+This number is the convolution result for this subvolume, or equivalently, at the spatial location \\( (i^{l+1}, j^{l+1}) \\) for the slide \\( d \\).
+If we repeat the same procedure for all slices \\( 0 \\leq d \< D \\), we get a vector with \\( D \\) elements, which is the complete convolution result for the subvolume.
+In the output \\( \\mathbf{x}^{l+1} \\), this vector is \\( x(i^{l+1}, j^{l+1}, :) \\) in the Matlab notation, where \\( x \\) is the Matlab counterpart for \\( \\mathbf{x}^{l+1} \\).
+
+In precise mathematics, the convolution procedure can be expressed as an equation:
+<a name="eqn_convolution_procedure"></a>\\[
+y\_{i^{l+1},j^{l+1},d} = \\sum^H\_{i=0} \\sum^W\_{j=0} \\sum^D\_{d=0} f\_{i,j,d} \\times x^l\_{i^{l+1}+i, j^{l+1}+j, d}. \\qquad (12)
+\\]
+[Equation 12](#eqn_convolution_procedure) is repeated for all \\( 0 \\leq d \< D = D^{l+1} \\), and satisfies \\( 0 \\leq i^{l+1} \< H^l - H + 1 = H^{l+1} \\), \\( 0 \\leq j^{l+1} \< W^l - W + 1 = W^{l+1} \\).
+In the equation, \\( x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\) refers to the element of \\( \\mathbf{x}^l \\) indexed by the triplet \\( i^{l+1}+i, j^{l+1}+j, d \\).
+
+A bias term \\( b_d \\) is usually added to \\( y\_{i^{l+1}+i, j^{l+1}+j, d} \\), we omit this term.
+
+### 4.3 Expanding the convolution ###
+
+[Equation 12](#eqn_convolution_procedure) seems pretty complex.
+There is a way to expand \\( \\mathbf{x}^l \\) and simplify the convolution.
+
+Let's consider a special case with \\( D^l = D = 1\\), \\( H = W = 2\\), and \\( H^l = 3 \\), \\( W^l = 4 \\).
+That is, we consider convolving a small \\( 3 \\times 4 \\) matrix (or image) with a single \\( 2 \\times 2 \\) filter.
+This example is illustrated as
+\\[
+\\left( \\begin{matrix}
+1 & 2 & 3 & 1 \\\
+4 & 5 & 6 & 1 \\\
+7 & 8 & 9 & 1
+\\end{matrix} \\right)  *
+\\left( \\begin{matrix}
+1 & 1 \\\
+1 & 1
+\\end{matrix} \\right) =
+\\left( \\begin{matrix}
+12 & 16 & 11 \\\
+24 & 28 & 17
+\\end{matrix} \\right), \\qquad (13)
+\\]
