@@ -330,3 +330,13 @@ This example is illustrated as
 24 & 28 & 17
 \\end{matrix} \\right), \\qquad (13)
 \\]
+
+---
+
+\\[ x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\]
+
+\\[ {x^l}\_{i^{l+1}+i, j^{l+1}+j, d} \\]
+
+\\( x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\) or \\( {x^l}\_{i^{l+1}+i, j^{l+1}+j, d} \\)
+
+---
