@@ -346,7 +346,7 @@ It is obvious that now the first column of \\( B \\) corresponds to the first \\
 Similarly, the second to last column in \\( B \\) correspond to subvolumes in \\( A \\) with \\( (i^{l+1}, j^{l+1} ) \\) being \\((2, 1)\\), \\((1, 2)\\), \\((2, 2)\\), \\((3, 1)\\), and \\((3, 2)\\), respectively.
 That is, the Matlab `im2col` function explicitly expands the required elements for performing each individual convolution into a column in the matrix \\( B \\).
 For convenience of (later) notations, we transpose \\( B \\) to get a matrix \\( C \\), with
-\\[ C =
+\\[ \\qquad \\qquad \\qquad C =
 \\left( \\begin{matrix}
 1 & 4 & 2 & 5 \\\
 4 & 7 & 5 & 8 \\\
@@ -354,7 +354,7 @@ For convenience of (later) notations, we transpose \\( B \\) to get a matrix \\(
 5 & 8 & 6 & 9 \\\
 3 & 6 & 1 & 1 \\\
 6 & 9 & 1 & 1
-\\end{matrix} \\right). (14)
+\\end{matrix} \\right). \\qquad \\qquad \\qquad (14)
 \\]
 
 Now, if we vectorize the filter itself into a vector (in the same column-first
