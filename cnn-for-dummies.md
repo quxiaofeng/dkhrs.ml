@@ -332,7 +332,7 @@ This example is illustrated as
 \\]
 where the first matrix is denoted as \\( A \\), and the filter simply adds the elements in each subvolume together; \\( ∗ \\) is the convolution operator.
 
-Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) matrix that is an expanded version of \\( B \\):
+Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) matrix that is an expanded version of \\( A \\):
 \\[ B =
 \\left( \\begin{matrix}
 1 & 4 & 2 & 5 & 3 & 6 \\\
@@ -342,27 +342,21 @@ Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) 
 \\end{matrix} \\right).
 \\]
 
-It is obvious that now the first column of B corresponds to the first 2 × 2
-subvolume in A, in a column-first order, corresponding to (i l+1 ,j l+1 ) = (1,1).
-Similarly, the second to last column in B correspond to subvolumes in A with
-(i l+1 ,j l+1 ) being (2,1), (1,2), (2,2), (3,1) and (3,2), respectively. That is, the
-Matlab im2col function explicitly expands the required elements for performing
-each individual convolution into a column in the matrix B. For convenience of
-(later) notations, we transpose B to get a matrix C, with
-C =
-
-
-
-1 4 2 5
-4 7 5 8
-2 5 3 6
-5 8 6 9
-3 6 1 1
-6 9 1 1
-
-
-
-. (14)
+It is obvious that now the first column of \\( B \\) corresponds to the first \\( 2 \\times 2 \\) subvolume in \\( A \\), in a column-first order, corresponding to \\( (i^{l+1}, j^{l+1} ) = (1, 1) \\).
+Similarly, the second to last column in \\( B \\) correspond to subvolumes in \\( A \\) with \\( (i^{l+1}, j^{l+1} ) \\) being \\((2, 1)\\), \\((1, 2)\\), \\((2, 2)\\), \\((3, 1)\\), and \\((3, 2)\\), respectively.
+That is, the Matlab `im2col` function explicitly expands the required elements for performing each individual convolution into a column in the matrix \\( B \\).
+For convenience of (later) notations, we transpose \\( B \\) to get a matrix \\( C \\), with
+\\[ C =
+\\left( \\begin{matrix}
+1 & 4 & 2 & 5 \\\
+4 & 7 & 5 & 8 \\\
+2 & 5 & 3 & 6 \\\
+5 & 8 & 6 & 9 \\\
+3 & 6 & 1 & 1 \\\
+6 & 9 & 1 & 1
+\\end{matrix} \\right). (14)
+\\]
+
 Now, if we vectorize the filter itself into a vector (in the same column-first
 ordering) (1,1,1,1) T , we find that
 C
