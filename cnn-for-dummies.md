@@ -315,8 +315,7 @@ There is a way to expand \\( \\mathbf{x}^l \\) and simplify the convolution.
 Let's consider a special case with \\( D^l = D = 1\\), \\( H = W = 2\\), and \\( H^l = 3 \\), \\( W^l = 4 \\).
 That is, we consider convolving a small \\( 3 \\times 4 \\) matrix (or image) with a single \\( 2 \\times 2 \\) filter.
 This example is illustrated as
-\\[
-\\left( \\begin{matrix}
+<a name="eqn_convolving_example"></a> \\[ \\left( \\begin{matrix}
 1 & 2 & 3 & 1 \\\
 4 & 5 & 6 & 1 \\\
 7 & 8 & 9 & 1
@@ -357,38 +356,27 @@ For convenience of (later) notations, we transpose \\( B \\) to get a matrix \\(
 \\end{matrix} \\right). \\qquad \\qquad \\qquad (14)
 \\]
 
-Now, if we vectorize the filter itself into a vector (in the same column-first
-ordering) (1,1,1,1) T , we find that
-C
-
-
-
+Now, if we vectorize the filter itself into a vector (in the same column-first ordering) \\( (1,1,1,1)^T \\), we find that
+<a name="eqn_vectorize_example"></a> \\[ \\qquad \\qquad \\qquad C
+\\left( \\begin{matrix}
+1 \\\
+1 \\\
+1 \\\
 1
-1
-1
-1
-
-
-
-=
-
-
-
-12
-24
-16
-28
-11
+\\end{matrix} \\right) =
+\\left( \\begin{matrix}
+12 \\\
+24 \\\
+16 \\\
+28 \\\
+11 \\\
 17
-
-
-
-. (15)
-It is obvious that if we reshape this resulting vector in Equation 15 properly,
-we get the exact convolution result matrix in Equation 13. That is, the convo-
-lution operator is a linear one. We can multiply the expanded input matrix and
-the vectorized filter to get a result vector, and by reshaping this vector properly
-we get the correct convolution results.
+\\end{matrix} \\right). \\qquad \\qquad \\qquad (15)
+\\]
+
+It is obvious that if we reshape this resulting vector in [Equation 15](#eqn_vectorize_example) properly, we get the exact convolution result matrix in [Equation 13](#eqn_convolving_example).
+That is, the convolution operator is a linear one.
+We can multiply the expanded input matrix and the vectorized filter to get a result vector, and by reshaping this vector properly we get the correct convolution results.
 
 ### 4.4 Now let's make it formal ###
 
