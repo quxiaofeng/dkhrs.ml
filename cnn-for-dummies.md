@@ -393,8 +393,8 @@ Then, the expansion operator assigns the element \\( (i^l, j^l, d^l) \\) in \\( 
 From the description of the expansion process, it is clear that given a fixed \\((p, q)\\), we can calculate its corresponding \\( (i^l, j^l, d^l) \\) triplet, because obviously
 \\[p   = i^{l+1} + (H^l - H + 1) \\times j^{l+1},   \\qquad (16)\\]
 \\[q   = i + H \\times j + H \\times W \\times d^l, \\qquad (17)\\]
-\\[i^l = i^{l+1} + i,                               \\qquad (18)\\]
-\\[j^l = j^{l+1} + j .                              \\qquad (19)\\]
+\\[i^l = \\qquad \\qquad i^{l+1} + i,               \\qquad (18)\\]
+\\[j^l = \\qquad \\qquad j^{l+1} + j .              \\qquad (19)\\]
 
 In Equation 17, dividing q by HW and take the integer part of the quotient,
 we can determine which slice (d l ) does it belong to in the subvolume. Similarly,
