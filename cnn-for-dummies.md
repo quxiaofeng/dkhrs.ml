@@ -380,25 +380,22 @@ We can multiply the expanded input matrix and the vectorized filter to get a res
 
 ### 4.4 Now let's make it formal ###
 
-Now we can generalize this idea to other situations and formalize them. If
-D l > 1 (that is, the input x l has more than 1 slice), the expansion operator
-could first expand the first slice of x l , then the second, ..., till all D l slices are
-expanded. The expanded slices will be stacked together, that is, one column
-will have H × W × D l elements, rather than H × W.
+Now we can generalize this idea to other situations and formalize them.
+If \\( D^l > 1 \\) (that is, the input \\( \\mathbf{x}^l \\) has more than \\( 1 \\) slice), the expansion operator could first expand the first slice of \\( \\mathbf{x}^l \\), then the second, ..., till all \\( D^l \\) slices are expanded.
+The expanded slices will be stacked together, that is, one column will have \\( H \\times W \\times D^l \\) elements, rather than \\( H \\times W \\).
 
-More formally, suppose x l is a 3D tensor in R H
-l ×W l ×D l , with one element
-in x l being indexed by a triplet (i l ,j l ,d l ). We also consider a filter bank f,
-whose spatial extent are all H × W. Then, the expansion operator converts x l
-into a matrix φ(x l ). We use two indexes (p,q) to pointing to an element in this
-matrix. Then, the expansion operator assigns the element (i l ,j l ,d l ) in x l to the
-(p,q) entry in φ(x l ).
-From the description of the expansion process, it is clear that given a fixed
-(p,q), we can calculate its corresponding (i l ,j l ,d l ) triplet, because obviously
-p = i l+1 + (H l − H + 1) × j l+1 , (16)
-q = i + H × j + H × W × d l , (17)
-i l = i l+1 + i, (18)
-j l = j l+1 + j . (19)
+More formally, suppose \\( \\mathbf{x}^l \\) is a 3D tensor in \\( \\mathbb{R}^{H^l \\times W^l \\times D^l} \\), with one element in \\( \\mathbf{x}^l \\) being indexed by a triplet \\( (i^l, j^l, d^l) \\).
+We also consider a filter bank \\( \\mathbf{f} \\), whose spatial extent are all \\( H \\times W \\).
+Then, the expansion operator converts \\( \\mathbf{x}^l \\) into a matrix \\( \\phi(\\mathbf{x}^l) \\).
+We use two indexes \\((p, q)\\) to pointing to an element in this matrix.
+Then, the expansion operator assigns the element \\( (i^l, j^l, d^l) \\) in \\( \\mathbf{x}^l \\) to the \\((p, q)\\) entry in \\( \\phi(\\mathbf{x}^l) \\).
+
+From the description of the expansion process, it is clear that given a fixed \\((p, q)\\), we can calculate its corresponding \\( (i^l, j^l, d^l) \\) triplet, because obviously
+\\[p   = i^{l+1} + (H^l − H + 1) × j^{l+1},         \\qquad (16)\\]
+\\[q   = i + H \\times j + H \\times W \\times d^l, \\qquad (17)\\]
+\\[i^l = i^{l+1} + i,                               \\qquad (18)\\]
+\\[j^l = j^{l+1} + j .                              \\qquad (19)\\]
+
 In Equation 17, dividing q by HW and take the integer part of the quotient,
 we can determine which slice (d l ) does it belong to in the subvolume. Similarly,
 we can get the offsets inside the subvolume as (i,j), where 0 ≤ i < H and
