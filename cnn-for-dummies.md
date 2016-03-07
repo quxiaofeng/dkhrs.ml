@@ -391,12 +391,12 @@ We use two indexes \\((p, q)\\) to pointing to an element in this matrix.
 Then, the expansion operator assigns the element \\( (i^l, j^l, d^l) \\) in \\( \\mathbf{x}^l \\) to the \\((p, q)\\) entry in \\( \\phi(\\mathbf{x}^l) \\).
 
 From the description of the expansion process, it is clear that given a fixed \\((p, q)\\), we can calculate its corresponding \\( (i^l, j^l, d^l) \\) triplet, because obviously
-\\[ \\begin{align}
-& p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & (16)\\\
-& q   = & i + H \\times j + H \\times W \\times d^l, & (17)\\\
-& i^l = & i^{l+1} + i,                               & (18)\\\
-& j^l = & j^{l+1} + j .                              & (19)
-\\end{align} \\]
+\\[ \\begin{array}{lrr}
+p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & (16)\\\
+q   = & i + H \\times j + H \\times W \\times d^l, & (17)\\\
+i^l = & i^{l+1} + i,                               & (18)\\\
+j^l = & j^{l+1} + j .                              & (19)
+\\end{array} \\]
 
 In Equation 17, dividing q by HW and take the integer part of the quotient,
 we can determine which slice (d l ) does it belong to in the subvolume. Similarly,
