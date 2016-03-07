@@ -392,10 +392,10 @@ Then, the expansion operator assigns the element \\( (i^l, j^l, d^l) \\) in \\( 
 
 From the description of the expansion process, it is clear that given a fixed \\((p, q)\\), we can calculate its corresponding \\( (i^l, j^l, d^l) \\) triplet, because obviously
 \\[ \\begin{array}{lrrr}
-\\qquad \\qquad p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & \\qquad \\qquad \\qquad & (16)\\\
-\\qquad \\qquad q   = & i + H \\times j + H \\times W \\times d^l, & \\qquad \\qquad \\qquad & (17)\\\
-\\qquad \\qquad i^l = & i^{l+1} + i,                               & \\qquad \\qquad \\qquad & (18)\\\
-\\qquad \\qquad j^l = & j^{l+1} + j .                              & \\qquad \\qquad \\qquad & (19)
+p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & \\qquad \\qquad & (16)\\\
+q   = & i + H \\times j + H \\times W \\times d^l, & \\qquad \\qquad & (17)\\\
+i^l = & i^{l+1} + i,                               & \\qquad \\qquad & (18)\\\
+j^l = & j^{l+1} + j .                              & \\qquad \\qquad & (19)
 \\end{array} \\]
 
 In Equation 17, dividing q by HW and take the integer part of the quotient,
