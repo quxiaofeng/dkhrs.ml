@@ -155,7 +155,7 @@ The output of the first layer is \\( \\mathbf{x}^2 \\), which also acts as the i
 
 This processing proceeds till all layers in the CNN has been finished, which outputs \\( \\mathbf{x}^L \\).
 One additional layer, however, is added for backward error propagation.
-Let’s suppose the problem at hand is an image classification problem with \\( C \\) classes.
+Let's suppose the problem at hand is an image classification problem with \\( C \\) classes.
 A commonly used strategy is to output \\( \\mathbf{x}^L \\) as a \\( C \\) dimensional vector, whose \\( i \\)-th entry encodes the prediction \\( P \\left(c\_i \\mid \\mathbf{x}^1 \\right) \\).
 That is, given the input \\( \\mathbf{x}^1 \\), \\( \\mathbf{x}^L \\) outputs a vector of CNN-estimated posterior probabilities.
 
@@ -330,22 +330,18 @@ This example is illustrated as
 24 & 28 & 17
 \\end{matrix} \\right), \\qquad (13)
 \\]
-where the first matrix is denoted as A, and the filter simply adds the elements
-in each subvolume together; ∗ is the convolution operator.
-Now let’s run a Matlab command B=im2col(A,[2 2]), we arrive at a B
-matrix that is an expanded version of A:
-B =
-
-
-
-1 4 2 5 3 6
-4 7 5 8 6 9
-2 5 3 6 1 1
-5 8 6 9 1 1
-
-
-
-.
+where the first matrix is denoted as \\( A \\), and the filter simply adds the elements in each subvolume together; \\( ∗ \\) is the convolution operator.
+
+Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) matrix that is an expanded version of \\( B \\):
+\\[ B =
+\\left( \\begin{matrix}
+1 & 4 & 2 & 5 & 3 & 6 \\\
+4 & 7 & 5 & 8 & 6 & 9 \\\
+2 & 5 & 3 & 6 & 1 & 1 \\\
+5 & 8 & 6 & 9 & 1 & 1
+\\end{matrix} \\right).
+\\]
+
 It is obvious that now the first column of B corresponds to the first 2 × 2
 subvolume in A, in a column-first order, corresponding to (i l+1 ,j l+1 ) = (1,1).
 Similarly, the second to last column in B correspond to subvolumes in A with
@@ -400,7 +396,7 @@ lution operator is a linear one. We can multiply the expanded input matrix and
 the vectorized filter to get a result vector, and by reshaping this vector properly
 we get the correct convolution results.
 
-### 4.4 Now let’s make it formal ###
+### 4.4 Now let's make it formal ###
 
 Now we can generalize this idea to other situations and formalize them. If
 D l > 1 (that is, the input x l has more than 1 slice), the expansion operator
@@ -435,10 +431,10 @@ tions 18 and 19 find the offset in the input x l as i l = i l+1 +i and j l = j l
 That is, the mapping from (p,q) to (i l ,j l ,d l ) is one-to-one. However, we want
 to emphasize that the reverse mapping from (i l ,j l ,d l ) to (p,q) is one-to-many.
 Now we use the standard vec operator to convert the filter bank f into a
-vector. Let’s start from one slice / channel of filter, which can be vectorized
+vector. Let's start from one slice / channel of filter, which can be vectorized
 into a vector in R HWD
 l . Thus, the entire filter bank can be reshaped into a
-matrix with HWD l rows and D columns (remember that D l+1 = D.) Let’s call
+matrix with HWD l rows and D columns (remember that D l+1 = D.) Let's call
 this matrix F.
 Finally, with all these notations, we have a beautiful equation to calculate
 convolution results:
@@ -764,7 +760,7 @@ or equivalently
 F T
 ?
 . (44)
-Let’s have a closer look at the RHS.
+Let's have a closer look at the RHS.
 ∂z
 ∂Y
 F T ∈ R (H
