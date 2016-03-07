@@ -391,7 +391,7 @@ We use two indexes \\((p, q)\\) to pointing to an element in this matrix.
 Then, the expansion operator assigns the element \\( (i^l, j^l, d^l) \\) in \\( \\mathbf{x}^l \\) to the \\((p, q)\\) entry in \\( \\phi(\\mathbf{x}^l) \\).
 
 From the description of the expansion process, it is clear that given a fixed \\((p, q)\\), we can calculate its corresponding \\( (i^l, j^l, d^l) \\) triplet, because obviously
-\\[p   = i^{l+1} + (H^l − H + 1) × j^{l+1},         \\qquad (16)\\]
+\\[p   = i^{l+1} + (H^l - H + 1) \\times j^{l+1},   \\qquad (16)\\]
 \\[q   = i + H \\times j + H \\times W \\times d^l, \\qquad (17)\\]
 \\[i^l = i^{l+1} + i,                               \\qquad (18)\\]
 \\[j^l = j^{l+1} + j .                              \\qquad (19)\\]
