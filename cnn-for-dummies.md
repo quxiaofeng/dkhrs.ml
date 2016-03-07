@@ -50,7 +50,7 @@ This note tries to present beginners with a document that
 + Has details for all the derivations. As the title ("for dummies") suggests, this note tries to explain all the necessary math in details. We try not to ignore any step in a derivation. Thus, it should be easy for a beginner to follow (although an expert may feel this note as tautological.)
 + Ignores implementation details. The purpose is for a reader to understand how a CNN runs at the mathematical level. We will ignore those implementation details. In CNN, making correct choices for various details is one of the keys to its high accuracy. However, we intentionally left this part out, in order for the reader to focus on the mathematics. After understanding the mathematical principles and details, it is more advantageous to learn these implementation and design details with hands-on experience by running real CNN codes.
 
-This note is modeled after [Vedaldi and Lenc, 2014](http://arxiv.org/abs/1412.4564).
+This note is modeled after [Vedaldi and Lenc](http://arxiv.org/abs/1412.4564).
 
 ## 2 Preliminaries ##
 
@@ -879,3 +879,140 @@ Pooling is a local operator, and its forward computation is pretty straight-
 forward. Now we focus on the back propagation. Only max pooling is discussed
 and we can resort to the indicator matrix again. 3 All we need to encode in this
 indicator matrix is: for every element in y, where does it come from in x l ?
+
+We need a triplet (i l ,j l ,d l ) to pinpoint one element in the input x l , and
+another triplet (i l+1 ,j l+1 ,d l+1 ) to locate one element in y. The pooling output
+y i l+1 ,j l+1 ,d l+1 comes from x l
+i l ,j l ,d l , if and only if the following conditions are met:
+• They are in the same slice;
+• The (i l ,j l )-th spatial entry belongs to the (i l+1 ,j l+1 )-th subregion;
+• The (i l ,j l )-th spatial entry is the largest one in that subregion.
+Translating these conditions into equations, we get
+d l+1 = d l , (49)
+?
+i l
+H
+?
+= i l+1 ,
+?
+j l
+W
+?
+= j l+1 , (50)
+x l
+i l ,j l ,d l
+≥ y i+i l+1 ×H,j+j l+1 ×W,d l ,∀0 ≤ i < H,0 ≤ j < W , (51)
+where b·c is the floor function.
+Given a (i l+1 ,j l+1 ,d l+1 ) triplet, there is only one (i l ,j l ,d l ) triplet that sat-
+isfies all these conditions. Thus, we define an indicator matrix
+S(x l ) ∈ R (H
+l+1 W l+1 D l+1 )×(H l W l D l )
+. (52)
+One triplet of indexes (i l+1 ,j l+1 ,d l+1 ) specifies a row in S, while (i l ,j l ,d l )
+specifies a column. These two triplets together pinpoint one element in S(x l ).
+We set that element to 1 if the equations 49 to 51 are simultaneously satisfied,
+and 0 otherwise.
+
+With the help of this indicator matrix, we have
+vec(y) = S(x l )vec(x l ). (53)
+Then, it is obvious that
+∂ vec(y)
+∂(vec(x l ) T )
+= S(x l ),
+∂z
+∂(vec(x l ) T )
+=
+∂z
+∂(vec(y) T ) S(x
+l ),
+(54)
+and consequently
+∂z
+∂ vec(x l )
+= S(x l ) T
+∂z
+∂ vec(y)
+. (55)
+S(x l ) is very sparse. It has exactly one nonzero entry in every row, and
+at most one nonzero entry in every column. Thus, we do not need to use the
+entire matrix in the computation. Instead, we just need to record the locations
+of those nonzero entries—there are only H l+1 W l+1 D l+1 such entries in S(x l ).
+
+## 6 The reverse operators ##
+
+As illustrated by Equation 35, the convolution operation is a linear operator,
+which means that we can to some extent reverse the operation, i.e., to deconvo-
+lute.
+We will not dig into the deconvolution operator in detail, but only provide
+a succinct mathematical result. Let us remember that the convolution operator
+is associated with an indicator matrix H, and replicate Equation 35 here for
+easier reference:
+vec(φ(x l )) = H vec(x l ). (56)
+Then, in order to deconvolute φ(x l ), the deconvolution result is
+H T vec(φ(x l )), (57)
+which is then reshaped into the same size as x l .
+Since convolution is usually associated with padding at the image border or
+a downsampling effect if the stride is bigger than 1, deconvolution can be used
+as a mathematically sound tool to unpadding or upsampling, which is becoming
+more and more useful in pixel-wise labeling (e.g., in semantic segmentation).
+The pooling operation can also be reversed to some extent. The average
+pooling operation is linear, and can be unpooled similarly by multiplying the
+transpose of the indicator matrix in the average pooling process (cf. Equa-
+tion 57). The max pooling operation is not linear, because in Equation 53, the
+indicator matrix S(x l ) depends on the input x l . However, by recording which
+positions hold the “max” elements in the max pooling operation as an auxiliary
+variable, max pooling can also be reasonably unpooled.
+
+## 7 The ReLU layer ##
+
+A ReLU layer does not change the size of the input, that is, x l and y share the
+same size. In fact, the Rectified Linear Unit (hence the name ReLU) can be
+regarded as a truncation performed individually for every element in the input:
+y i,j,d = max{0,x l i,j,d }, (58)
+with 0 ≤ i < H l = H l+1 , 0 ≤ j < W l = W l+1 , and 0 ≤ d < D l = D l+1 .
+There is no parameter inside a ReLU layer, hence no need for parameter
+learning.
+Based on Equation 58, it is obvious that
+dy i,j,d
+dx l
+i,j,d
+= 1
+? x l
+i,j,d > 0
+?
+, (59)
+where 1[x] is the indicator function, being 1 if x is true, and 0 otherwise.
+
+Hence, we have
+?
+∂z
+∂x l
+?
+i,j,d
+=
+
+
+
+
+
+?
+∂z
+∂y
+?
+i,j,d
+if x l i,j,d > 0
+0 otherwise
+. (60)
+Note that y is an alias for x l+1 .
+Strictly speaking, the function max(0,x) is not differentiable at x = 0, hence
+Equation 59 is a little bit problematic in theory. In practice, it is not an issue
+and are safe to use, though.
+
+## 8 Conclusions ##
+
+We hope this introductory note on CNN is clear, self-contained, and easy to
+understand to our readers.
+Once a reader is confident in his/her understanding of CNN at the mathe-
+matical level, in the next step (aka, future work) it is very helpful to get some
+hands on CNN experience. For example, one can validate what has been talked
+about in this note using [the MatConvNet software package](http://arxiv.org/abs/1412.4564).
