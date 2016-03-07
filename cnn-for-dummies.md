@@ -5,9 +5,9 @@ permalink: /cnn-for-dummies/
 
 # CNN for Dummies #
 
-Written by Jianxin WU
+Written by [Jianxin WU](http://cs.nju.edu.cn/wujx/)
 
-Translated by Xiaofeng QU
+Reformatted by [Xiaofeng QU](http://www.quxiaofeng.me/about/)
 
 ## Abstract ##
 
@@ -330,13 +330,552 @@ This example is illustrated as
 24 & 28 & 17
 \\end{matrix} \\right), \\qquad (13)
 \\]
+where the first matrix is denoted as A, and the filter simply adds the elements
+in each subvolume together; ∗ is the convolution operator.
+Now let’s run a Matlab command B=im2col(A,[2 2]), we arrive at a B
+matrix that is an expanded version of A:
+B =
+
+
+
+1 4 2 5 3 6
+4 7 5 8 6 9
+2 5 3 6 1 1
+5 8 6 9 1 1
+
+
+
+.
+It is obvious that now the first column of B corresponds to the first 2 × 2
+subvolume in A, in a column-first order, corresponding to (i l+1 ,j l+1 ) = (1,1).
+Similarly, the second to last column in B correspond to subvolumes in A with
+(i l+1 ,j l+1 ) being (2,1), (1,2), (2,2), (3,1) and (3,2), respectively. That is, the
+Matlab im2col function explicitly expands the required elements for performing
+each individual convolution into a column in the matrix B. For convenience of
+(later) notations, we transpose B to get a matrix C, with
+C =
+
+
+
+1 4 2 5
+4 7 5 8
+2 5 3 6
+5 8 6 9
+3 6 1 1
+6 9 1 1
+
+
+
+. (14)
+Now, if we vectorize the filter itself into a vector (in the same column-first
+ordering) (1,1,1,1) T , we find that
+C
+
+
+
+1
+1
+1
+1
+
+
+
+=
+
+
+
+12
+24
+16
+28
+11
+17
+
+
+
+. (15)
+It is obvious that if we reshape this resulting vector in Equation 15 properly,
+we get the exact convolution result matrix in Equation 13. That is, the convo-
+lution operator is a linear one. We can multiply the expanded input matrix and
+the vectorized filter to get a result vector, and by reshaping this vector properly
+we get the correct convolution results.
 
----
+### 4.4 Now let’s make it formal ###
 
-<a name="eqn_rendering_error"></a>\\[ x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\]
+Now we can generalize this idea to other situations and formalize them. If
+D l > 1 (that is, the input x l has more than 1 slice), the expansion operator
+could first expand the first slice of x l , then the second, ..., till all D l slices are
+expanded. The expanded slices will be stacked together, that is, one column
+will have H × W × D l elements, rather than H × W.
 
-\\[ {x^l}\_{i^{l+1}+i, j^{l+1}+j, d} \\]
+More formally, suppose x l is a 3D tensor in R H
+l ×W l ×D l , with one element
+in x l being indexed by a triplet (i l ,j l ,d l ). We also consider a filter bank f,
+whose spatial extent are all H × W. Then, the expansion operator converts x l
+into a matrix φ(x l ). We use two indexes (p,q) to pointing to an element in this
+matrix. Then, the expansion operator assigns the element (i l ,j l ,d l ) in x l to the
+(p,q) entry in φ(x l ).
+From the description of the expansion process, it is clear that given a fixed
+(p,q), we can calculate its corresponding (i l ,j l ,d l ) triplet, because obviously
+p = i l+1 + (H l − H + 1) × j l+1 , (16)
+q = i + H × j + H × W × d l , (17)
+i l = i l+1 + i, (18)
+j l = j l+1 + j . (19)
+In Equation 17, dividing q by HW and take the integer part of the quotient,
+we can determine which slice (d l ) does it belong to in the subvolume. Similarly,
+we can get the offsets inside the subvolume as (i,j), where 0 ≤ i < H and
+0 ≤ j < W. In other words, q completely determines one specific location in a
+subvolume.
+Note that the filtering result is x l+1 , whose spatial extent is H l+1 = H l −
+H + 1 and W l+1 = W l − W + 1. Thus, in Equation 16, the remainder and
+quotient of dividing p by H l+1 = H l − H + 1 will give us the offset in the
+convolved result (i l+1 ,j l+1 ), or, which subvolume is it.
+Based on the definition of convolution, it is clear that we can use Equa-
+tions 18 and 19 find the offset in the input x l as i l = i l+1 +i and j l = j l+1 +j.
+That is, the mapping from (p,q) to (i l ,j l ,d l ) is one-to-one. However, we want
+to emphasize that the reverse mapping from (i l ,j l ,d l ) to (p,q) is one-to-many.
+Now we use the standard vec operator to convert the filter bank f into a
+vector. Let’s start from one slice / channel of filter, which can be vectorized
+into a vector in R HWD
+l . Thus, the entire filter bank can be reshaped into a
+matrix with HWD l rows and D columns (remember that D l+1 = D.) Let’s call
+this matrix F.
+Finally, with all these notations, we have a beautiful equation to calculate
+convolution results:
+vec(y) = vec(x l+1 ) = vec
+? φ(x l )F ?
+. (20)
+Note that vec(y) ∈ R H
+l+1 W l+1 D , φ(x l ) ∈ R (H l+1 W l+1 )×(HWD l ) , and F ∈
+R (HWD
+l )×D .
+The matrix multiplication φ(x l )F results in a matrix of size
+(H l+1 W l+1 )×D. The vectorization of this resultant matrix generates a vector
+in R H
+l+1 W l+1 D , which matches the dimensionality of vec(y).
 
-\\( x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\) or \\( {x^l}\_{i^{l+1}+i, j^{l+1}+j, d} \\)
+### 4.5 The Kronecker product ###
 
----
+A short detour to the Kronecker product is needed to compute the derivatives.
+
+Given two matrices A ∈ R m×n and B ∈ R p×q , the Kronecker product A⊗B
+is a mp × nq block matrix, defined as
+A ⊗ B =
+
+
+
+a 11 B ··· a 1n B
+.
+.
+.
+. . . . .
+.
+a m1 B ··· a mn B
+
+
+ .
+(21)
+The Kronecker product has the following properties that will be useful for
+us:
+(A ⊗ B) T = A T ⊗ B T , (22)
+vec(AXB) = (B T ⊗ A)vec(X), (23)
+for matrices A, X, and B with proper dimensions (e.g., when the matrix mul-
+tiplication AXB is defined.) Note that Equation 23 can be utilized from both
+directions.
+With the help of ⊗, we can write down
+vec(y) = vec
+? φ(x l )FI ?
+= (I ⊗ φ(x l ))vec(F), (24)
+vec(y) = vec
+? Iφ(x l )F ?
+= (F T ⊗ I)vec(φ(x l )), (25)
+where I is an identity matrix of proper sizes. In Equation 24, the size of I
+is determined the number of columns in F, hence I ∈ R D×D in Equation 24.
+Similarly, in Equation 25, I ∈ R (H
+l+1 W l+1 )×(H l+1 W l+1 ) .
+
+### 4.6 Backward propagation: the parameters ###
+
+As previously mentioned, we need to compute two derivatives:
+∂z
+∂ vec(x l )
+and
+∂z
+∂ vec(F) , where the first term
+∂z
+∂ vec(x l )
+will be used for backward propagation
+to the previous ((l − 1)-th) layer, and the second term will determine how the
+parameters of the current (l-th) layer will be updated. A friendly reminder is
+to remember that f, F and w i refers to the same thing (modulo reshaping
+of the vector or matrix or tensor). Similarly, we can reshape y into a matrix
+Y ∈ R (H
+l+1 W l+1 )×D , then y, Y and x l+1
+refers to the same object (again modulo
+reshaping).
+From the chain rule (Equation 10), it is easy to compute
+∂z
+∂ vec(F)
+as
+∂z
+∂(vec(F)) T
+=
+∂z
+∂(vec(Y ) T )
+∂ vec(y)
+∂(vec(F) T )
+. (26)
+The first term in the RHS is already computed in the (l+1)-th layer as (equiva-
+lently)
+∂z
+∂(vec(x l+1 )) T
+. The second term, based on Equation 24, is pretty straight-
+forward:
+∂ vec(y)
+∂(vec(F) T )
+=
+∂
+?? I ⊗ φ(x) T ?
+vec(F) ?
+∂(vec(F) T )
+= I ⊗ φ(x l ). (27)
+
+Note that we have used the fact
+∂Xa T
+∂a
+= X or
+∂Xa
+∂a T
+= X so long as the matrix
+multiplications are well defined. This equation leads to
+∂z
+∂(vec(F)) T
+=
+∂z
+∂(vec(y) T ) (I ⊗ φ(x
+l )).
+(28)
+Making a transpose, we get
+∂z
+∂ vec(F)
+=
+? I ⊗ φ(x l ) ? T
+∂z
+∂ vec(y)
+=
+? I ⊗ φ(x l ) ? T
+vec
+?
+∂z
+∂Y
+?
+(29)
+=
+? I ⊗ φ(x l ) T ?
+vec
+?
+∂z
+∂Y
+?
+(30)
+= vec
+?
+φ(x l ) T
+∂z
+∂Y
+I T
+?
+(31)
+= vec
+?
+φ(x l ) T
+∂z
+∂Y
+?
+. (32)
+Note that both Equation 23 (from RHS to LHS) and Equation 22 are used in
+the above derivation.
+Thus, we conclude that
+∂z
+∂F
+= φ(x l ) T
+∂z
+∂Y
+, (33)
+which is enough to update the parameters in the l-th layer.
+
+### 4.7 Even higher dimensional indicator matrices ###
+
+The function φ(·) has been very useful in our analysis. It is pretty high dimen-
+sional, e.g., φ(x l ) has H l+1 W l+1 HWD l elements. From the above, we know
+that an element in φ(x) l is indexed by a pair p and q.
+From q we can determine d l , which slice of the subvolume is used, and also
+i and j, the spatial offsets inside a subvolume. From p we can determine i l+1
+and j l+1 , the spatial offsets inside the convolved result x l+1 . The spatial offsets
+in the input x l can be determined as i l = i l+1 + i and j l = j l+1 + j.
+That is, the mapping t : (p,q) 7→ (i l ,j l ,d l ) is one-to-one, and thus a valid
+function. The inverse mapping, however, is one-to-many (thus not a valid func-
+tion). If we use t −1 to represent the inverse mapping, we know that t −1 (i l ,j l ,d l )
+is a set S, where each (p,q) ∈ S satisfies that t(p,q) = (i l ,j l ,d l ).
+Now we take a look at φ(x l ) from a different perspective. In order to fully
+specify φ(x l ), what information are required? It is obvious that the following
+three types of information are needed (and only those). For every element of
+φ(x l ), we need to know
+(A) Which subvolume does it belong to, i.e., what is the value of p (0 ≤ p <
+H l+1 W l+1 )?
+
+(B) Which element is it inside the subvolume, i.e., what is the value of q
+(0 ≤ q < HWD l )?
+The above two types of information determines a spatial location (p,q) inside
+φ(x l ). The only missing information is
+(C) What is the value in that position, i.e.,
+? φ(x l ) ?
+pq ?
+Since every element in φ(x l ) is a verbatim copy of one element from x l , we
+can turn [C] into a different but equivalent one:
+(C.1) For
+? φ(x l ) ?
+pq , what is its original location inside x
+l , i.e., an index u that
+satisfies 0 ≤ u < H l W l D l ? And,
+(C.2) The entire x l .
+It is easy to see that the collective information in both [A, B, C.1] for the
+entire range of p, q and u, and [C.2] (x l ) contains exactly the same amount of
+information as φ(x l ).
+Since 0 ≤ p < H l+1 W l+1 , 0 ≤ q < HWD l , and 0 ≤ u < H l W l D l , we can
+use a a matrix H ∈ R (H
+l+1 W l+1 HWD l )×(H l W l D l )
+to encode the information in
+[A, B, C.1]. One row of this matrix corresponds to one element inside φ(x l )
+(i.e., a (p,q) pair). One row has H l W l D l elements, and each element can be
+indexed by (i l ,j l ,d l ). Thus, each element in this matrix is indexed by a 5-tuple:
+(p,q,i l ,j l ,d l ).
+Then, we can use the “indicator” method to encode the function t(p,q) =
+(i l ,j l ,d l ) into H. That is, for any possible element in H, its row index deter-
+mines a (p,q) pair, and its column index determines a (i l ,j l ,d l ) triplet, then H
+is defined as
+H(x,y) =
+(
+1 if t(p,q) = (i l ,j l ,d l )
+0 otherwise
+. (34)
+
+The H matrix has the following properties:
+• It is very high dimensional;
+• But it is also very sparse: there is only 1 non-zero entry in the H l W l D l
+elements in one row;
+• H, which uses information [A, B, C.1], only encodes the one-to-one cor-
+respondence between any element in φ(x l ) and any element in x l , it does
+not encode any specific value in x l ;
+• Most importantly, putting together the one-to-one correspondence infor-
+mation in H and the value information in x l , obviously we have
+vec(φ(x l )) = H vec(x l ). (35)
+A natural consequence is that
+∂ vec(φ(x l ))
+∂(vec(x l )) T
+= H , (36)
+a fact we will use soon.
+
+### 4.8 Backward propagation: the supervision signal ###
+
+In the l-th layer, we still need to compute
+∂z
+∂ vec(x l ) . For this purpose, we want to
+reshape x l into a matrix X ∈ R (H
+l W l )×D l , and use these two equivalent forms
+(modulo reshaping) interchangeably.
+The chain rule states that
+∂z
+∂(vec(x l ) T )
+=
+∂z
+∂(vec(y) T )
+∂ vec(y)
+∂(vec(x l ) T )
+(cf. Equa-
+tion 11). We will start by studying the second term in the RHS (utilizing
+equations 25 and 36):
+∂ vec(y)
+∂(vec(x l ) T )
+=
+∂(F T ⊗ I)vec(φ(x l ))
+∂(vec(x l ) T )
+= (F T ⊗ I)H . (37)
+Thus,
+∂z
+∂(vec(x l ) T )
+=
+∂z
+∂(vec(y) T ) (F
+T
+⊗ I)H . (38)
+Since (using Equation 23 from right to left)
+∂z
+∂(vec(y) T ) (F
+T
+⊗ I) =
+?
+(F ⊗ I)
+∂z
+∂ vec(y)
+? T
+(39)
+=
+?
+(F ⊗ I)vec
+?
+∂z
+∂Y
+?? T
+(40)
+= vec
+?
+I
+∂z
+∂Y
+F T
+? T
+(41)
+= vec
+?
+∂z
+∂Y
+F T
+? T
+, (42)
+
+we have
+∂z
+∂(vec(x l ) T )
+= vec
+?
+∂z
+∂Y
+F T
+? T
+H , (43)
+or equivalently
+∂z
+∂(vec(x l ))
+= H T vec
+?
+∂z
+∂Y
+F T
+?
+. (44)
+Let’s have a closer look at the RHS.
+∂z
+∂Y
+F T ∈ R (H
+l+1 W l+1 )×(HWD l ) , and
+vec
+?
+∂z
+∂Y
+F T
+?
+is a vector in R H
+l+1 W l+1 HWD l .
+On the other hand, H T is an
+indicator matrix in R (H
+l W l D l )×(H l+1 W l+1 HWD l ) .
+In order to pinpoint one element in vec(x l ) or one row in H T , we need an
+index triplet (i l ,j l ,d l ), with 0 ≤ i l < H l , 0 ≤ j l < W l , and 0 ≤ d l < D l .
+Similarly, to locate a column in H T or an element in
+∂z
+∂Y
+F T , we need an index
+pair (p,q), with 0 ≤ p < H l+1 W l+1 and 0 ≤ q < HWD l .
+Thus, the (i l ,j l ,d l )-th entry of
+∂z
+∂(vec(x l ))
+equals the multiplication of two
+vectors: the row in H T that is indexed by (i l ,j l ,d l ), and vec
+?
+∂z
+∂Y
+F T
+? .
+Furthermore, since H T is an indicator matrix, in the row vector indexed by
+(i l ,j l ,d l ), only those entries whose index (p,q) satisfies t(p,q) = (i l ,j l ,d l ) have a value 1, all other entries are 0. Thus, the (i l ,j l ,d l )-th entry of
+∂z
+∂(vec(x l ))
+equals
+the sum of these corresponding entries in vec
+?
+∂z
+∂Y
+F T
+? .
+Transferring the above textual description into precise mathematical form,
+we get the following succinct equation:
+?
+∂z
+∂(vec(x l ))
+?
+(i l ,j l ,d l )
+=
+X
+(p,q)∈t −1 (i l ,j l ,d l )
+?
+vec
+?
+∂z
+∂Y
+F T
+??
+(p,q)
+. (45)
+In other words, to compute
+∂z
+∂(vec(x l )) , we do not need to explicitly use the
+extremely high dimensional vector H T . Instead, Equation 45 and equations 16
+to 19 can be used to efficiently find
+∂z
+∂(vec(x l )) 
+
+## 5 The pooling layer ##
+
+We will use the same notation inherited from the convolution layer. Let x l ∈
+R H
+l ×W l ×D l
+be the input to the l-th layer, which is now a pooling layer. The
+pooling operation requires no parameters (i.e., w i is null hence parameter learn-
+ing is not needed for this layer), but a spatial extent of the pooling (H ×W) is
+specified in the design of the CNN structure. Assume that H divides H l and W
+divides W l , the output of pooling (y or equivalently x l+1 ) will be a 3D tensor
+of size H l+1 × W l+1 × D l+1 , with
+H l+1 =
+H l
+H
+, W l+1 =
+W l
+W
+, D l+1 = D l . (46)
+A pooling layer operates upon x l slice by slice (i.e., channel by channel)
+independently. Within each slice, the matrix with H l ×W l elements are spatially
+divided into H l+1 ×W l+1 subregions, each subregion being H ×W in size. The
+pooling operator then maps a subregion into a single number.
+Two types of pooling operators are widely used: max pooling and average
+pooling. In max pooling, the pooling operator maps a subregion to its maximum
+value, while the average pooling maps a subregion to its average value. In precise
+mathematics,
+max : y i l+1 ,j l+1 ,d = max
+0≤i<H,0≤j<W
+x l
+i l+1 ×H+i,j l+1 ×W+j,d ,
+(47)
+average : y i l+1 ,j l+1 ,d =
+1
+HW
+X
+0≤i<H,0≤j<W
+x l
+i l+1 ×H+i,j l+1 ×W+j,d ,
+(48)
+where 0 ≤ i l+1 < H l+1 , 0 ≤ j l+1 < W l+1 , and 0 ≤ d < D l+1 .
+Pooling is a local operator, and its forward computation is pretty straight-
+forward. Now we focus on the back propagation. Only max pooling is discussed
+and we can resort to the indicator matrix again. 3 All we need to encode in this
+indicator matrix is: for every element in y, where does it come from in x l ?
