@@ -241,8 +241,8 @@ Now our task is to compute \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\) 
 Using the chain rule, we have
 \\[
 \\begin{array}{rllr}
-\\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} &= \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} & \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, & \\qquad (10) \\\
-\\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} &= \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} & \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, & \\qquad (11)
+\\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} &= \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} & \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, & \\quad (10) \\\
+\\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} &= \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} & \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, & \\quad (11)
 \\end{array}
 \\]
 
