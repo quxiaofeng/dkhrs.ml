@@ -239,9 +239,11 @@ Both are stored in memory and ready for use.
 
 Now our task is to compute \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\) and \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\).
 Using the chain rule, we have
-\\[ \\begin{array}{rlr}
+\\[
+\\begin{array}{rlr}
 \\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} = & \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, & \\qquad (10) \\\
 \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} = & \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, & \\qquad (11)
+\\end{array}
 \\]
 
 Now that \\( \\frac{\\partial z}{\\partial \\mathbf{x}^{i+1}} \\) is already computed and stored in memory.
