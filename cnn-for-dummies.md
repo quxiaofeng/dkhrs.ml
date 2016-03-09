@@ -28,7 +28,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
    1. [Input, output, filters, and notations](#input-output-filters-and-notations)
    2. [The (forward) convolution](#the-forward-convolution)
    3. [Expanding the convolution](#expanding-the-convolution)
-   4. Now let's make it formal
+   4. [Now let's make it formal](#now-lets-make-it-formal)
    5. The Kronecker product
    6. Backward propagation: the parameters
    7. Even higher dimensional indicator matrices
@@ -407,29 +407,22 @@ Note that the filtering result is \\( x^{l+1} \\), whose spatial extent is \\( H
 H + 1 \\) and \\( W^{l+1} = W^l − W + 1\\).
 Thus, in [Equation 16](#eqn_triplet), the remainder and quotient of dividing \\( p \\) by \\( H^{l+1} = H^l − H + 1 \\) will give us the offset in the convolved result \\( (i{l+1}, j^{l+1} )\\), or, which subvolume is it.
 
-Based on the definition of convolution, it is clear that we can use Equa-
-tions 18 and 19 find the offset in the input x l as i l = i l+1 +i and j l = j l+1 +j.
-That is, the mapping from (p,q) to (i l ,j l ,d l ) is one-to-one. However, we want
-to emphasize that the reverse mapping from (i l ,j l ,d l ) to (p,q) is one-to-many.
-Now we use the standard vec operator to convert the filter bank f into a
-vector. Let's start from one slice / channel of filter, which can be vectorized
-into a vector in R HWD
-l . Thus, the entire filter bank can be reshaped into a
-matrix with HWD l rows and D columns (remember that D l+1 = D.) Let's call
-this matrix F.
-Finally, with all these notations, we have a beautiful equation to calculate
-convolution results:
-vec(y) = vec(x l+1 ) = vec
-? φ(x l )F ?
-. (20)
-Note that vec(y) ∈ R H
-l+1 W l+1 D , φ(x l ) ∈ R (H l+1 W l+1 )×(HWD l ) , and F ∈
-R (HWD
-l )×D .
-The matrix multiplication φ(x l )F results in a matrix of size
-(H l+1 W l+1 )×D. The vectorization of this resultant matrix generates a vector
-in R H
-l+1 W l+1 D , which matches the dimensionality of vec(y).
+Based on the definition of convolution, it is clear that we can use [Equations 18 and 19](#eqn_triplet) find the offset in the input \\( x^l \\) as \\( i^l = i^{l+1} + i \\) and \\( j^l = j^{l+1} + j \\).
+That is, the mapping from (\\(p, q\\)) to (\\(i^l, j^l, d^l\\)) is one-to-one.
+However, we want to emphasize that the reverse mapping from (\\(i^l, j^l, d^l\\)) to (\\(p, q\\)) is one-to-many.
+Now we use the standard vec operator to convert the filter bank f into a vector.
+Let's start from one slice/channel of filter, which can be vectorized into a vector in \\( \\mathbb{R}^{HWD^l}.
+Thus, the entire filter bank can be reshaped into a matrix with \\( HWD^l \\) rows and \\( D \\) columns (remember that \\( D^{l+1} = D \\).)
+Let's call this matrix \\( F \\).
+
+Finally, with all these notations, we have a beautiful equation to calculate convolution results:
+\\[
+vec(\\mathbf{y}) = vec(\\mathbf{x}^{l+1}) = vec \\left( \\phi \\left( \\mathbf{x}^l \\right) F \\right). (20)
+\\]
+
+Note that \\( vec(\\mathbf{y}) \\in \\mathbb{R}^{H^{l+1}W^{l+1}D} \\), \\( \\phi(\\mathbf{x}^l ) \\in \\mathbb{R}^{(H^{l+1}W^{l+1} ) \\times (HWD^l)}\\), and \\(F \\in \\mathbb{R}^{(HWD^l)\\times D} \\).
+The matrix multiplication \\( \\phi(x^l)F \\) results in a matrix of size \\( (H^{l+1}W^{l+1}) \\times D \\).
+The vectorization of this resultant matrix generates a vector in \\( \\mathbb{R}^{H^{l+1}W^{l+1}D} \\), which matches the dimensionality of \\( vec(\\mathbf{y}) \\).
 
 ### 4.5 The Kronecker product ###
 
