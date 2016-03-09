@@ -387,10 +387,11 @@ The expanded slices will be stacked together, that is, one column will have \\( 
 More formally, suppose \\( \\mathbf{x}^l \\) is a 3D tensor in \\( \\mathbb{R}^{H^l \\times W^l \\times D^l} \\), with one element in \\( \\mathbf{x}^l \\) being indexed by a triplet \\( (i^l, j^l, d^l) \\).
 We also consider a filter bank \\( \\mathbf{f} \\), whose spatial extent are all \\( H \\times W \\).
 Then, the expansion operator converts \\( \\mathbf{x}^l \\) into a matrix \\( \\phi(\\mathbf{x}^l) \\).
-We use two indexes \\((p, q)\\) to pointing to an element in this matrix.
+We use two indexes \\( (p, q) \\) to pointing to an element in this matrix.
 Then, the expansion operator assigns the element \\( (i^l, j^l, d^l) \\) in \\( \\mathbf{x}^l \\) to the \\((p, q)\\) entry in \\( \\phi(\\mathbf{x}^l) \\).
 
 From the description of the expansion process, it is clear that given a fixed \\((p, q)\\), we can calculate its corresponding \\( (i^l, j^l, d^l) \\) triplet, because obviously
+<a name="eqn_triplet"></a>
 \\[ \\begin{array}{lrrr}
 p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & \\qquad \\qquad & (16)\\\
 q   = & i + H \\times j + H \\times W \\times d^l, & \\qquad \\qquad & (17)\\\
@@ -398,15 +399,14 @@ i^l = & i^{l+1} + i,                               & \\qquad \\qquad & (18)\\\
 j^l = & j^{l+1} + j .                              & \\qquad \\qquad & (19)
 \\end{array} \\]
 
-In Equation 17, dividing q by HW and take the integer part of the quotient,
-we can determine which slice (d l ) does it belong to in the subvolume. Similarly,
-we can get the offsets inside the subvolume as (i,j), where 0 ≤ i < H and
-0 ≤ j < W. In other words, q completely determines one specific location in a
-subvolume.
-Note that the filtering result is x l+1 , whose spatial extent is H l+1 = H l −
-H + 1 and W l+1 = W l − W + 1. Thus, in Equation 16, the remainder and
-quotient of dividing p by H l+1 = H l − H + 1 will give us the offset in the
-convolved result (i l+1 ,j l+1 ), or, which subvolume is it.
+In [Equation 17](#eqn_triplet), dividing \\( q \\) by \\( HW \\) and take the integer part of the quotient, we can determine which slice (\\( d^l \\)) does it belong to in the subvolume.
+Similarly, we can get the offsets inside the subvolume as \\( (i, j) \\), where \\( 0 \\leq i \< H \\) and \\( 0 \\leq j \< W \\).
+In other words, \\( q \\) completely determines one specific location in a subvolume.
+
+Note that the filtering result is \\( x^{l+1} \\), whose spatial extent is \\( H^{l+1} = H^l −
+H + 1 \\) and \\( W^{l+1} = W^l − W + 1\\).
+Thus, in [Equation 16](#eqn_triplet), the remainder and quotient of dividing \\( p \\) by \\( H^{l+1} = H^l − H + 1 \\) will give us the offset in the convolved result \\( (i{l+1}, j^{l+1} )\\), or, which subvolume is it.
+
 Based on the definition of convolution, it is clear that we can use Equa-
 tions 18 and 19 find the offset in the input x l as i l = i l+1 +i and j l = j l+1 +j.
 That is, the mapping from (p,q) to (i l ,j l ,d l ) is one-to-one. However, we want
