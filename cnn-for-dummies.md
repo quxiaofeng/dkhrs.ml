@@ -450,8 +450,8 @@ vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}
 vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l)) \\text{,} & \\qquad (25)
 \\end{array} \\]
 where \\( I \\) is an identity matrix of proper sizes.
-In Equation 24, the size of \\( I \\) is determined the number of columns in \\( F \\), hence \\( I \\in \\mathbb{R}^{D \\times D} \\) in Equation 24.
-Similarly, in Equation 25, \\( I \\in \\mathbb{R}^{(H^{l+1} W^{l+1}) \\times (H^{l+1} W^{l+1})} \\).
+In [Equation 24](#eqn_kronecker_properties_application), the size of \\( I \\) is determined the number of columns in \\( F \\), hence \\( I \\in \\mathbb{R}^{D \\times D} \\) in [Equation 24](#eqn_kronecker_properties_application).
+Similarly, in [Equation 25](#eqn_kronecker_properties_application), \\( I \\in \\mathbb{R}^{(H^{l+1} W^{l+1}) \\times (H^{l+1} W^{l+1})} \\).
 
 ### 4.6 Backward propagation: the parameters ###
 
