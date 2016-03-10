@@ -239,7 +239,7 @@ Both are stored in memory and ready for use.
 
 Now our task is to compute \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\) and \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\).
 Using the chain rule, we have
-\\[
+<a name="eqn_chain_rule"></a>\\[
 \\begin{array}{rlllr}
 \\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} &=& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} & \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, & \\quad (10) \\\
 \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} &=& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} & \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, & \\quad (11)
@@ -455,50 +455,19 @@ Similarly, in [Equation 25](#eqn_kronecker_properties_application), \\( I \\in \
 
 ### 4.6 Backward propagation: the parameters ###
 
-As previously mentioned, we need to compute two derivatives:
-∂z
-∂ vec(x l )
-and
-∂z
-∂ vec(F) , where the first term
-∂z
-∂ vec(x l )
-will be used for backward propagation
-to the previous ((l − 1)-th) layer, and the second term will determine how the
-parameters of the current (l-th) layer will be updated. A friendly reminder is
-to remember that f, F and w i refers to the same thing (modulo reshaping
-of the vector or matrix or tensor). Similarly, we can reshape y into a matrix
-Y ∈ R (H
-l+1 W l+1 )×D , then y, Y and x l+1
-refers to the same object (again modulo
-reshaping).
-From the chain rule (Equation 10), it is easy to compute
-∂z
-∂ vec(F)
-as
-∂z
-∂(vec(F)) T
-=
-∂z
-∂(vec(Y ) T )
-∂ vec(y)
-∂(vec(F) T )
-. (26)
-The first term in the RHS is already computed in the (l+1)-th layer as (equiva-
-lently)
-∂z
-∂(vec(x l+1 )) T
-. The second term, based on Equation 24, is pretty straight-
-forward:
-∂ vec(y)
-∂(vec(F) T )
-=
-∂
-?? I ⊗ φ(x) T ?
-vec(F) ?
-∂(vec(F) T )
-= I ⊗ φ(x l ). (27)
+As previously mentioned, we need to compute two derivatives: \\( \\frac{\\partial z}{\\partial vec(\\mathbf{x}^l)} \\) and \\( \\frac{\\partial z}{\\partial vec(F)} \\), where the first term \\( \\frac{\\partial z}{\\partial vec(\\mathbf{x}^l)} \\) will be used for backward propagation to the previous ((\\( l - 1 \\))-th) layer, and the second term will determine how the parameters of the current (\\( l \\)-th) layer will be updated.
+A friendly reminder is to remember that \\( \\mathbf{f} \\), \\( F \\) and \\( \\mathbf{w}^i \\) refers to the same thing (modulo reshaping of the vector or matrix or tensor).
+Similarly, we can reshape \\( \\mathbf{y} \\) into a matrix \\( Y \\in \\mathbb{R}^{(H^{l+1} W^{l+1}) \\times D} \\), then \\( \\mathbf{y} \\), \\( Y \\) and \\( \\mathbf{x}^{l+1} \\) refers to the same object (again modulo reshaping).
 
+From the chain rule ([Equation 10](#eqn_chain_rule)), it is easy to compute \\( \\frac{\\partial z}{\\partial vec(F)} \\) as
+\\[
+\\frac{\\partial z}{\\partial (vec(F))^T} = \\frac{\\partial z}{\\partial (vec(Y)^T)} \\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F)^T)}. \\qquad \\qquad (26)
+\\]
+The first term in the RHS is already computed in the (\\(l+1\\))-th layer as (equivalently) \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^{l+1}))} \\).
+The second term, based on [Equation 24](#eqn_kronecker_properties_application), is pretty straightforward:
+\\[
+\\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F))^T} = \\frac{\\partial ((I \\otimes \\phi(\\mathbf{x})^T) vec (F))}{\\partial (vec(F)^T)} = I \\otimes \\phi(\\mathbf{x}^l). \\qquad \\qquad (27)
+\\]
 Note that we have used the fact
 ∂Xa T
 ∂a
