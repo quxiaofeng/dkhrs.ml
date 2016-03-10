@@ -29,8 +29,8 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
    2. [The (forward) convolution](#the-forward-convolution)
    3. [Expanding the convolution](#expanding-the-convolution)
    4. [Now let's make it formal](#now-lets-make-it-formal)
-   5. The Kronecker product
-   6. Backward propagation: the parameters
+   5. [The Kronecker product](#the-kronecker-product)
+   6. [Backward propagation: the parameters](#backward-propagation-the-parameters)
    7. Even higher dimensional indicator matrices
    8. Backward propagation: the supervision signal 
 5. The pooling layer
@@ -468,69 +468,26 @@ The second term, based on [Equation 24](#eqn_kronecker_properties_application), 
 \\[
 \\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F))^T} = \\frac{\\partial ((I \\otimes \\phi(\\mathbf{x})^T) vec (F))}{\\partial (vec(F)^T)} = I \\otimes \\phi(\\mathbf{x}^l). \\qquad (27)
 \\]
-Note that we have used the fact
-∂Xa T
-∂a
-= X or
-∂Xa
-∂a T
-= X so long as the matrix
-multiplications are well defined. This equation leads to
-∂z
-∂(vec(F)) T
-=
-∂z
-∂(vec(y) T ) (I ⊗ φ(x
-l )).
-(28)
+Note that we have used the fact \\( \\frac{\\partial X \\mathbf{a}^T }{\\partial \\mathbf{a}} = X \\) or \\( \\frac{\\partial X \\mathbf{a}}{\\partial \\mathbf{a}^T} = X \\) so long as the matrix multiplications are well defined.
+This equation leads to
+\\[
+\\frac{\\partial z}{\\partial (vec (F))^T} = \\frac{\\partial z}{\\partial (vec (\\mathbf{y})^T)} (I \\otimes \\phi(\\mathbf{x}^l)). \\qquad (28)
+\\]
 Making a transpose, we get
-∂z
-∂ vec(F)
-=
-? I ⊗ φ(x l ) ? T
-∂z
-∂ vec(y)
-=
-? I ⊗ φ(x l ) ? T
-vec
-?
-∂z
-∂Y
-?
-(29)
-=
-? I ⊗ φ(x l ) T ?
-vec
-?
-∂z
-∂Y
-?
-(30)
-= vec
-?
-φ(x l ) T
-∂z
-∂Y
-I T
-?
-(31)
-= vec
-?
-φ(x l ) T
-∂z
-∂Y
-?
-. (32)
-Note that both Equation 23 (from RHS to LHS) and Equation 22 are used in
-the above derivation.
+\\[ \\begin{array}{rllr}
+\\frac{\\partial z}{\\partial vec (F)} 
+& = & (I \\otimes \\phi(\\mathbf{x}^l))^T \\frac{\\partial z}{\\partial vec (\\mathbf{y})}
+= (I \\otimes \\phi(\\mathbf{x}^l))^T vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (29) \\\
+&            = & (I \\otimes \\phi(\\mathbf{x}^l)^T) vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (30) \\\
+&            = & vec \\left( \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y} I^T \\right) & (31) \\\
+&            = & vec \\left( \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y} \\right). & (32) \\\
+\\]
+Note that both Equation 23 (from RHS to LHS) and Equation 22 are used in the above derivation.
 Thus, we conclude that
-∂z
-∂F
-= φ(x l ) T
-∂z
-∂Y
-, (33)
-which is enough to update the parameters in the l-th layer.
+\\[
+\\frac{\\partial z}{\\partial F} = \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y}, \\qquad (33)
+\\]
+which is enough to update the parameters in the \\( l \\)-th layer.
 
 ### 4.7 Even higher dimensional indicator matrices ###
 
