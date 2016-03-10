@@ -431,22 +431,22 @@ A short detour to the Kronecker product is needed to compute the derivatives.
 Given two matrices \\( A \\in \\mathbb{R}^{m \\times n} \\) and \\( B \\in \\mathbb{R}^{p \\times q} \\), the Kronecker product \\( A \\otimes B \\) is a \\( mp \\times nq \\) block matrix, defined as
 \\[
 A \\otimes B = \\left( \\begin{matrix}
-a\_{11}B & \\cdots & a\_{1n}B \\
-\\vdots  & \\ddots & \\vdots  \\
+a\_{11}B & \\cdots & a\_{1n}B \\\
+\\vdots  & \\ddots & \\vdots  \\\
 a\_{m1}B & \\cdots & a\_{mn}B
 \\end{matrix} \\right) \\qquad (21)
 \\]
 
 The Kronecker product has the following properties that will be useful for us:
 <a name="eqn_kronecker_properties"></a>\\[ \\begin{array}{lr} 
-(A \\otimes B)^T = A^T \\otimes B^T & \\text{,   } (22)\\
+(A \\otimes B)^T = A^T \\otimes B^T & \\text{,   } (22)\\\
 vec(AXB) = (B^T \\otimes A)vec(X)   & \\text{,  } (23)
 \\end{array} \\]
 for matrices \\( A \\), \\( X \\), and \\( B \\) with proper dimensions (e.g., when the matrix multiplication \\( AXB \\) is defined.) Note that [Equation 23](#eqn_kronecker_properties) can be utilized from both directions.
 
 With the help of \\( \\otimes \\), we can write down
 <a name="eqn_kronecker_properties_application"></a>\\[ \\begin{array}{lllr} 
-vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}^l)) vec(F) & \\text{,  } (24)\\
+vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}^l)) vec(F) & \\text{,  } (24)\\\
 vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l)) & \\text{,  } (25)
 \\end{array} \\]
 where \\( I \\) is an identity matrix of proper sizes.
