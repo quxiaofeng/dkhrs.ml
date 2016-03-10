@@ -438,24 +438,20 @@ a_{m1}B & \\cdots & a_{mn}B
 \\]
 
 The Kronecker product has the following properties that will be useful for us:
-\\[ \\begin{array}{lr} 
-(A \\otimes B)^T = A^T \\otimes B^T &\\text{,   } (22)\\
-vec(AXB) = (B^T \\otimes A)vec(X) &\\text{,  } (23)
+<a name="eqn_kronecker_properties"></a>\\[ \\begin{array}{lr} 
+(A \\otimes B)^T = A^T \\otimes B^T & \\text{,   } (22)\\
+vec(AXB) = (B^T \\otimes A)vec(X)   & \\text{,  } (23)
 \\end{array} \\]
-for matrices A, X, and B with proper dimensions (e.g., when the matrix mul-
-tiplication AXB is defined.) Note that Equation 23 can be utilized from both
-directions.
-With the help of ⊗, we can write down
-vec(y) = vec
-? φ(x l )FI ?
-= (I ⊗ φ(x l ))vec(F), (24)
-vec(y) = vec
-? Iφ(x l )F ?
-= (F T ⊗ I)vec(φ(x l )), (25)
-where I is an identity matrix of proper sizes. In Equation 24, the size of I
-is determined the number of columns in F, hence I ∈ R D×D in Equation 24.
-Similarly, in Equation 25, I ∈ R (H
-l+1 W l+1 )×(H l+1 W l+1 ) .
+for matrices \\( A \\), \\( X \\), and \\( B \\) with proper dimensions (e.g., when the matrix multiplication \\( AXB \\) is defined.) Note that [Equation 23](#eqn_kronecker_properties) can be utilized from both directions.
+
+With the help of \\( \\otimes \\), we can write down
+<a name="eqn_kronecker_properties_application"></a>\\[ \\begin{array}{lllr} 
+vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}^l)) vec(F) & \\text{,  } (24)\\
+vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l)) & \\text{,  } (25)
+\\end{array} \\]
+where \\( I \\) is an identity matrix of proper sizes.
+In Equation 24, the size of \\( I \\) is determined the number of columns in \\( F \\), hence \\( I \\in \\mathbb{R}^{D \\times D} \\) in Equation 24.
+Similarly, in Equation 25, \\( I \\in \\mathbb{R}^{(H^{l+1} W^{l+1}) \\times (H^{l+1} W^{l+1})\\).
 
 ### 4.6 Backward propagation: the parameters ###
 
