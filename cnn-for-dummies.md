@@ -451,7 +451,7 @@ vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\
 \\end{array} \\]
 where \\( I \\) is an identity matrix of proper sizes.
 In Equation 24, the size of \\( I \\) is determined the number of columns in \\( F \\), hence \\( I \\in \\mathbb{R}^{D \\times D} \\) in Equation 24.
-Similarly, in Equation 25, \\( I \\in \\mathbb{R}^{(H^{l+1} W^{l+1}) \\times (H^{l+1} W^{l+1})\\).
+Similarly, in Equation 25, \\( I \\in \\mathbb{R}^{(H^{l+1} W^{l+1}) \\times (H^{l+1} W^{l+1})} \\).
 
 ### 4.6 Backward propagation: the parameters ###
 
