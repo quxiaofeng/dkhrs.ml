@@ -411,7 +411,7 @@ Based on the definition of convolution, it is clear that we can use [Equations 1
 That is, the mapping from (\\(p, q\\)) to (\\(i^l, j^l, d^l\\)) is one-to-one.
 However, we want to emphasize that the reverse mapping from (\\(i^l, j^l, d^l\\)) to (\\(p, q\\)) is one-to-many.
 Now we use the standard vec operator to convert the filter bank f into a vector.
-Let's start from one slice/channel of filter, which can be vectorized into a vector in \\( \\mathbb{R}^{HWD^l}.
+Let's start from one slice/channel of filter, which can be vectorized into a vector in \\( \\mathbb{R}^{HWD^l} \\).
 Thus, the entire filter bank can be reshaped into a matrix with \\( HWD^l \\) rows and \\( D \\) columns (remember that \\( D^{l+1} = D \\).)
 Let's call this matrix \\( F \\).
 
