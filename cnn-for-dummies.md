@@ -431,9 +431,9 @@ A short detour to the Kronecker product is needed to compute the derivatives.
 Given two matrices \\( A \\in \\mathbb{R}^{m \\times n} \\) and \\( B \\in \\mathbb{R}^{p \\times q} \\), the Kronecker product \\( A \\otimes B \\) is a \\( mp \\times nq \\) block matrix, defined as
 \\[
 A \\otimes B = \\left( \\begin{matrix}
-a_{11}B & \\cdots & a_{1n}B \\
-\\vdots & \\ddots & \\vdots \\
-a_{m1}B & \\cdots & a_{mn}B
+a\_{11}B & \\cdots & a\_{1n}B \\
+\\vdots  & \\ddots & \\vdots  \\
+a\_{m1}B & \\cdots & a\_{mn}B
 \\end{matrix} \\right) \\qquad (21)
 \\]
 
