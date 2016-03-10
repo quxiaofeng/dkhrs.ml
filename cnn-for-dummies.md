@@ -466,7 +466,7 @@ From the chain rule ([Equation 10](#eqn_chain_rule)), it is easy to compute \\( 
 The first term in the RHS is already computed in the (\\(l+1\\))-th layer as (equivalently) \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^{l+1}))} \\).
 The second term, based on [Equation 24](#eqn_kronecker_properties_application), is pretty straightforward:
 \\[
-\\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F))^T} = \\frac{\\partial ((I \\otimes \\phi(\\mathbf{x})^T) vec (F))}{\\partial (vec(F)^T)} = I \\otimes \\phi(\\mathbf{x}^l). \\qquad \\qquad (27)
+\\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F))^T} = \\frac{\\partial ((I \\otimes \\phi(\\mathbf{x})^T) vec (F))}{\\partial (vec(F)^T)} = I \\otimes \\phi(\\mathbf{x}^l). \\qquad (27)
 \\]
 Note that we have used the fact
 ∂Xa T
