@@ -480,8 +480,8 @@ Making a transpose, we get
 = (I \\otimes \\phi(\\mathbf{x}^l))^T vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (29) \\\
 &            = & (I \\otimes \\phi(\\mathbf{x}^l)^T) vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (30) \\\
 &            = & vec \\left( \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y} I^T \\right) & (31) \\\
-&            = & vec \\left( \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y} \\right). & (32) \\\
-\\]
+&            = & vec \\left( \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y} \\right). & (32)
+\\end{array} \\]
 Note that both Equation 23 (from RHS to LHS) and Equation 22 are used in the above derivation.
 Thus, we conclude that
 \\[
