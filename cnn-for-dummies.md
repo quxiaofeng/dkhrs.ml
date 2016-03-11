@@ -501,7 +501,7 @@ The spatial offsets in the input \\( \\mathbf{x}^l \\) can be determined as \\( 
 
 That is, the mapping \\( t:(p, q) \\mapsto (i^l ,j^l ,d^l) \\) is one-to-one, and thus a valid function.
 The inverse mapping, however, is one-to-many (thus not a valid function).
-If we use \\( t^{−1} \\) to represent the inverse mapping, we know that \\( t^{−1} (i^l ,j^l ,d^l) \\) is a set \\( S \\), where each \\( (p, q) \\in S \\0 satisfies that \\( t(p,q) = (i^l ,j^l, d^l) \\).
+If we use \\( t^{−1} \\) to represent the inverse mapping, we know that \\( t^{−1} (i^l ,j^l ,d^l) \\) is a set \\( S \\), where each \\( (p, q) \\in S \\) satisfies that \\( t(p,q) = (i^l ,j^l, d^l) \\).
 
 Now we take a look at \\( \\phi(x^l) \\) from a different perspective.
 In order to fully specify \\( \\phi(x^l) \\), what information are required?
