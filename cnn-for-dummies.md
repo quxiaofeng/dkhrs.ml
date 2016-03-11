@@ -526,36 +526,31 @@ And,
 
 (C.2) The entire \\(  \\mathbf{x}^l \\).
 
-It is easy to see that the collective information in both [A, B, C.1] for the entire range of \\( p, q \\) and \\( u \\), and [C.2] (\\( \\mathbf{x}^l \\)) contains exactly the same amount of information as \\( \\phi(\\mathbf{x}^l) \\).
+It is easy to see that the collective information in both [A, B, C.1] for the entire range of \\( p, q \\) and \\( u \\), and [C.2] \\(( \\mathbf{x}^l )\\) contains exactly the same amount of information as \\( \\phi(\\mathbf{x}^l) \\).
 
-Since 0 ≤ p < H l+1 W l+1 , 0 ≤ q < HWD l , and 0 ≤ u < H l W l D l , we can
-use a a matrix H ∈ R (H
-l+1 W l+1 HWD l )×(H l W l D l )
-to encode the information in
-[A, B, C.1]. One row of this matrix corresponds to one element inside φ(x l )
-(i.e., a (p,q) pair). One row has H l W l D l elements, and each element can be
-indexed by (i l ,j l ,d l ). Thus, each element in this matrix is indexed by a 5-tuple:
-(p,q,i l ,j l ,d l ).
-Then, we can use the “indicator” method to encode the function t(p,q) =
-(i l ,j l ,d l ) into H. That is, for any possible element in H, its row index deter-
-mines a (p,q) pair, and its column index determines a (i l ,j l ,d l ) triplet, then H
-is defined as
-H(x,y) =
-(
-1 if t(p,q) = (i l ,j l ,d l )
-0 otherwise
-. (34)
+Since \\( 0 \\leq p \< H^{l+1} W^{l+1} \\), \\( 0 \\leq q \< HWD^l \\), and \\( 0 \\leq u \< H^l W^l D^l \\), we can use a a matrix \\( H \\in \\mathbb{R}^{(H^{l+1} W^{l+1} HWD^l) \\times (H^l W^l D^l)} to encode the information in [A, B, C.1].
+One row of this matrix corresponds to one element inside \\( \\phi(\\mathbf{x}^l) \\) (i.e., a \\( (p, q) \\) pair).
+One row has \\( H^l W^l D^l \\) elements, and each element can be indexed by \\( (i^l, j^l, d^l) \\).
+Thus, each element in this matrix is indexed by a 5-tuple: \\( (p, q, i^l, j^l, d^l) \\).
 
-The H matrix has the following properties:
-• It is very high dimensional;
-• But it is also very sparse: there is only 1 non-zero entry in the H l W l D l
-elements in one row;
-• H, which uses information [A, B, C.1], only encodes the one-to-one cor-
-respondence between any element in φ(x l ) and any element in x l , it does
-not encode any specific value in x l ;
-• Most importantly, putting together the one-to-one correspondence infor-
-mation in H and the value information in x l , obviously we have
+Then, we can use the ``indicator'' method to encode the function \\( t(p, q) = (i^l, j^l, d^l) \\) into \\( H \\).
+That is, for any possible element in \\( H \\), its row index determines a \\( (p, q) \\) pair, and its column index determines a \\( (i^l, j^l, d^l ) \\) triplet, then \\( H \\) is defined as
+\\[
+H(x,y) = \\begin{cases}
+1 & \\text{if } t(p, q) = (i^l, j^l, d^l) \\\
+0 & otherwise
+\\end{cases}. \\qquad (34)
+\\]
+
+The \\( H \\) matrix has the following properties:
+
++ It is very high dimensional;
++ But it is also very sparse: there is only 1 non-zero entry in the H l W l D l elements in one row;
++ H, which uses information [A, B, C.1], only encodes the one-to-one correspondence between any element in φ(x l ) and any element in x l , it does not encode any specific value in x l ;
++ Most importantly, putting together the one-to-one correspondence information in H and the value information in x l , obviously we have
+
 vec(φ(x l )) = H vec(x l ). (35)
+
 A natural consequence is that
 ∂ vec(φ(x l ))
 ∂(vec(x l )) T
