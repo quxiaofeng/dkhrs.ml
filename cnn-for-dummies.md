@@ -31,7 +31,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
    4. [Now let's make it formal](#now-lets-make-it-formal)
    5. [The Kronecker product](#the-kronecker-product)
    6. [Backward propagation: the parameters](#backward-propagation-the-parameters)
-   7. Even higher dimensional indicator matrices
+   7. [Even higher dimensional indicator matrices](#even-higher-dimensional-indicator-matrices)
    8. Backward propagation: the supervision signal 
 5. The pooling layer
 6. The reverse operators
