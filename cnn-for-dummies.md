@@ -482,7 +482,7 @@ Making a transpose, we get
 & = & vec \\left( \\phi \\left( \\mathbf{x}^l \\right)^T \\frac{\\partial z}{\\partial Y} I^T \\right) & (31) \\\
 & = & vec \\left( \\phi \\left( \\mathbf{x}^l \\right)^T \\frac{\\partial z}{\\partial Y} \\right). & (32)
 \\end{array} \\]
-Note that both Equation 23 (from RHS to LHS) and Equation 22 are used in the above derivation.
+Note that both [Equation 23](#eqn_kronecker_properties) (from RHS to LHS) and [Equation 22](#eqn_kronecker_properties) are used in the above derivation.
 Thus, we conclude that
 \\[
 \\frac{\\partial z}{\\partial F} = \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y}, \\qquad (33)
@@ -491,42 +491,43 @@ which is enough to update the parameters in the \\( l \\)-th layer.
 
 ### 4.7 Even higher dimensional indicator matrices ###
 
-The function \\( \\phi(\\cdot) \\) has been very useful in our analysis. It is pretty high dimen-
-sional, e.g., φ(x l ) has H l+1 W l+1 HWD l elements. From the above, we know
-that an element in φ(x) l is indexed by a pair p and q.
-From q we can determine d l , which slice of the subvolume is used, and also
-i and j, the spatial offsets inside a subvolume. From p we can determine i l+1
-and j l+1 , the spatial offsets inside the convolved result x l+1 . The spatial offsets
-in the input x l can be determined as i l = i l+1 + i and j l = j l+1 + j.
-That is, the mapping t : (p,q) 7→ (i l ,j l ,d l ) is one-to-one, and thus a valid
-function. The inverse mapping, however, is one-to-many (thus not a valid func-
-tion). If we use t −1 to represent the inverse mapping, we know that t −1 (i l ,j l ,d l )
-is a set S, where each (p,q) ∈ S satisfies that t(p,q) = (i l ,j l ,d l ).
-Now we take a look at φ(x l ) from a different perspective. In order to fully
-specify φ(x l ), what information are required? It is obvious that the following
-three types of information are needed (and only those). For every element of
-φ(x l ), we need to know
-(A) Which subvolume does it belong to, i.e., what is the value of p (0 ≤ p <
-H l+1 W l+1 )?
+The function \\( \\phi(\\cdot) \\) has been very useful in our analysis.
+It is pretty high dimensional, e.g., \\( \\phi(\\mathbf{x}^l) \\) has \\( H^{l+1} W^{l+1} HWD^l \\)elements.
+From the above, we know that an element in \\( \\phi(\\mathbf{x})^l \\) is indexed by a pair \\( p \\) and \\( p \\).
 
-(B) Which element is it inside the subvolume, i.e., what is the value of q
-(0 ≤ q < HWD l )?
-The above two types of information determines a spatial location (p,q) inside
-φ(x l ). The only missing information is
-(C) What is the value in that position, i.e.,
-? φ(x l ) ?
-pq ?
-Since every element in φ(x l ) is a verbatim copy of one element from x l , we
-can turn [C] into a different but equivalent one:
-(C.1) For
-? φ(x l ) ?
-pq , what is its original location inside x
-l , i.e., an index u that
-satisfies 0 ≤ u < H l W l D l ? And,
-(C.2) The entire x l .
-It is easy to see that the collective information in both [A, B, C.1] for the
-entire range of p, q and u, and [C.2] (x l ) contains exactly the same amount of
-information as φ(x l ).
+From \\( q \\) we can determine \\( d^l \\), which slice of the subvolume is used, and also \\( i \\) and \\( j \\), the spatial offsets inside a subvolume.
+From \\( p \\) we can determine \\( i^{l+1} \\) and \\( j^{l+1} \\), the spatial offsets inside the convolved result \\( \\mathbf{x}^{l+1} \\).
+The spatial offsets in the input \\( \\mathbf{x}^l \\) can be determined as \\( i^l = i^{l+1} + i \\) and \\( j^l = j^{l+1} + j \\).
+
+That is, the mapping \\( t:(p, q) \\mapsto (i^l ,j^l ,d^l) \\) is one-to-one, and thus a valid function.
+The inverse mapping, however, is one-to-many (thus not a valid function).
+If we use \\( t^{−1} \\) to represent the inverse mapping, we know that \\( t^{−1} (i^l ,j^l ,d^l) \\) is a set \\( S \\), where each \\( (p, q) \\in S \\0 satisfies that \\( t(p,q) = (i^l ,j^l, d^l) \\).
+
+Now we take a look at \\( \\phi(x^l) \\) from a different perspective.
+In order to fully specify \\( \\phi(x^l) \\), what information are required?
+It is obvious that the following three types of information are needed (and only those).
+For every element of \\( \\phi(x^l) \\), we need to know
+
+(A) Which subvolume does it belong to, i.e., what is the value of \\( p(0 \\leq p \<
+H^{l+1} W^{l+1} ) \\)?
+
+(B) Which element is it inside the subvolume, i.e., what is the value of \\( q
+(0 \\leq q \< HWD^l ) \\)?
+
+The above two types of information determines a spatial location \\( (p, q) \\) inside \\( \\phi(\\mathbf{x}^l) \\).
+The only missing information is
+
+(C) What is the value in that position, i.e., \\( \\left[ \\phi(\\mathbf{x}^l) \\right] \\)?
+
+Since every element in \\( \\phi(\\mathbf{x}^l) \\) is a verbatim copy of one element from \\( \\mathbf{x}^l \\), we can turn [C] into a different but equivalent one:
+
+(C.1) For \\( \\left[ \\phi( \\mathbf{x}^l ) \\right] \\), what is its original location inside \\( \\mathbf{x}^l \\), i.e., an index \\( u \\) that satisfies \\( 0 \\leq u \< H^l W^l D^l \\)?
+And,
+
+(C.2) The entire \\(  \\mathbf{x}^l \\).
+
+It is easy to see that the collective information in both [A, B, C.1] for the entire range of \\( p, q \\) and \\( u \\), and [C.2] (\\( \\mathbf{x}^l \\)) contains exactly the same amount of information as \\( \\phi(\\mathbf{x}^l) \\).
+
 Since 0 ≤ p < H l+1 W l+1 , 0 ≤ q < HWD l , and 0 ≤ u < H l W l D l , we can
 use a a matrix H ∈ R (H
 l+1 W l+1 HWD l )×(H l W l D l )
