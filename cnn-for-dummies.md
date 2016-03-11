@@ -476,11 +476,11 @@ This equation leads to
 Making a transpose, we get
 \\[ \\begin{array}{rllr}
 \\frac{\\partial z}{\\partial vec (F)} 
-& = & (I \\otimes \\phi(\\mathbf{x}^l))^T \\frac{\\partial z}{\\partial vec (\\mathbf{y})}
-= (I \\otimes \\phi(\\mathbf{x}^l))^T vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (29) \\\
-&            = & (I \\otimes \\phi(\\mathbf{x}^l)^T) vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (30) \\\
-&            = & vec \\left( \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y} I^T \\right) & (31) \\\
-&            = & vec \\left( \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y} \\right). & (32)
+& = & \\left(I \\otimes \\phi \\left( \\mathbf{x}^l \\right) \\right)^T \\frac{\\partial z}{\\partial vec (\\mathbf{y})}
+= \\left( I \\otimes \\phi \\left( \\mathbf{x}^l \\right) \\right)^T vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (29) \\\
+& = & \\left( I \\otimes \\phi \\left( \\mathbf{x}^l \\right)^T \\right) vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (30) \\\
+& = & vec \\left( \\phi \\left( \\mathbf{x}^l \\right)^T \\frac{\\partial z}{\\partial Y} I^T \\right) & (31) \\\
+& = & vec \\left( \\phi \\left( \\mathbf{x}^l \\right)^T \\frac{\\partial z}{\\partial Y} \\right). & (32)
 \\end{array} \\]
 Note that both Equation 23 (from RHS to LHS) and Equation 22 are used in the above derivation.
 Thus, we conclude that
