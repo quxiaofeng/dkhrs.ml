@@ -78,9 +78,7 @@ For example, we will soon see that the filter bank in a convolution layer in a C
 Given a tensor, we can arrange all the numbers inside it into a long vector, following a pre-specified order.
 For example, in Matlab, the (\\(:\\)) operator converts a matrix into a column vector in the column-first order.
 An example is:
-
-<a name="eqn_tensor"></a>
-\\[
+<a name="eqn_tensor"></a> \\[
 A = \\left(\\begin{matrix}
 1 & 2 \\\
 3 & 4
@@ -90,7 +88,7 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 2 \\\
 3 \\\
 4
-\\end{matrix}\\right) \\qquad (1)
+\\end{matrix}\\right) \\; (1)
 \\]
 
 In mathematics, we use the notation "\\( vec \\)" to represent this vectorization operator.
@@ -199,7 +197,7 @@ Finally, we achieve a loss \\( z \\).
 The loss \\( z \\) is then a supervision signal, guiding how the parameters of the model should be modified.
 And the SGD way of modifying the parameters are
 <a name="eqn_sgd"></a>\\[
-\\qquad \\qquad \\qquad \\mathbf{w}^i \\leftarrow \\mathbf{w}^i - \\eta \\frac{\\partial z}{\\partial \\mathbf{w}^i}. \\qquad \\qquad \\qquad (8)
+\\qquad \\qquad \\quad \\mathbf{w}^i \\leftarrow \\mathbf{w}^i - \\eta \\frac{\\partial z}{\\partial \\mathbf{w}^i}. \\qquad \\qquad \\quad (8)
 \\]
 
 In [Equation 8](#eqn_sgd), \\( \\eta \\) is a proper learning rate.
@@ -212,7 +210,7 @@ We do not use an additional index variable \\( t \\) to represent time.
 In [Equation 8](#eqn_sgd), the \\( \\leftarrow \\) sign implicitly indicates that the parameters \\( \\mathbf{w}^i \\) (of the \\( i \\)-layer) are updated from time \\( t \\) to \\( t + 1 \\).
 If an time index \\( t \\) is explicit used, this equation will look like
 \\[
-\\qquad \\qquad \\left( \\mathbf{w}^i \\right)^{t + 1} = \\left( \\mathbf{w}^i \\right)^t - \\eta \\frac{\\partial z}{\\partial \\left( \\mathbf{w}^i \\right)^t}. \\qquad (9)
+\\qquad \\quad \\left( \\mathbf{w}^i \\right)^{t + 1} = \\left( \\mathbf{w}^i \\right)^t - \\eta \\frac{\\partial z}{\\partial \\left( \\mathbf{w}^i \\right)^t}. \\qquad \\quad (9)
 \\]
 
 A new problem now becomes apparent: how to compute the (partial) derivatives, which seem very complex?
@@ -241,8 +239,8 @@ Now our task is to compute \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\) 
 Using the chain rule, we have
 <a name="eqn_chain_rule"></a>\\[
 \\begin{array}{rllr}
-\\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} &=& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, & \\, (10) \\\
-\\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} &=& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, & \\, (11)
+\\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} & = & \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, & (10) \\\
+\\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} & = & \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, & (11)
 \\end{array}
 \\]
 
@@ -300,7 +298,7 @@ In the output \\( \\mathbf{x}^{l+1} \\), this vector is \\( x(i^{l+1}, j^{l+1}, 
 
 In precise mathematics, the convolution procedure can be expressed as an equation:
 <a name="eqn_convolution_procedure"></a>\\[
-y\_{i^{l+1},j^{l+1},d} = \\sum^H\_{i=0} \\sum^W\_{j=0} \\sum^D\_{d=0} f\_{i,j,d} \\times {x^l}\_{i^{l+1}+i, j^{l+1}+j, d}. \\quad (12)
+y\_{i^{l+1},j^{l+1},d} = \\sum^H\_{i=0} \\sum^W\_{j=0} \\sum^D\_{d=0} f\_{i,j,d} \\times {x^l}\_{i^{l+1}+i, j^{l+1}+j, d}. \\; (12)
 \\]
 [Equation 12](#eqn_convolution_procedure) is repeated for all \\( 0 \\leq d \< D = D^{l+1} \\), and satisfies \\( 0 \\leq i^{l+1} \< H^l - H + 1 = H^{l+1} \\), \\( 0 \\leq j^{l+1} \< W^l - W + 1 = W^{l+1} \\).
 In the equation, \\( x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\) refers to the element of \\( \\mathbf{x}^l \\) indexed by the triplet \\( i^{l+1}+i, j^{l+1}+j, d \\).
@@ -327,7 +325,7 @@ This example is illustrated as
 \\left( \\begin{matrix}
 12 & 16 & 11 \\\
 24 & 28 & 17
-\\end{matrix} \\right), \\, (13)
+\\end{matrix} \\right), \\; (13)
 \\]
 where the first matrix is denoted as \\( A \\), and the filter simply adds the elements in each subvolume together; \\( \\ast \\) is the convolution operator.
 
@@ -393,10 +391,10 @@ Then, the expansion operator assigns the element \\( (i^l, j^l, d^l) \\) in \\( 
 From the description of the expansion process, it is clear that given a fixed \\((p, q)\\), we can calculate its corresponding \\( (i^l, j^l, d^l) \\) triplet, because obviously
 <a name="eqn_triplet"></a>
 \\[ \\begin{array}{lrrr}
-p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & \\qquad \\quad & (16)\\\
-q   = & i + H \\times j + H \\times W \\times d^l, & \\qquad \\quad & (17)\\\
-i^l = & i^{l+1} + i,                               & \\qquad \\quad & (18)\\\
-j^l = & j^{l+1} + j .                              & \\qquad \\quad & (19)
+p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & \\qquad \\; & (16)\\\
+q   = & i + H \\times j + H \\times W \\times d^l, & \\qquad \\; & (17)\\\
+i^l = & i^{l+1} + i,                               & \\qquad \\; & (18)\\\
+j^l = & j^{l+1} + j .                              & \\qquad \\; & (19)
 \\end{array} \\]
 
 In [Equation 17](#eqn_triplet), dividing \\( q \\) by \\( HW \\) and take the integer part of the quotient, we can determine which slice (\\( d^l \\)) does it belong to in the subvolume.
@@ -417,7 +415,7 @@ Let's call this matrix \\( F \\).
 
 Finally, with all these notations, we have a beautiful equation to calculate convolution results:
 \\[
-\\quad vec(\\mathbf{y}) = vec(\\mathbf{x}^{l+1}) = vec \\left( \\phi \\left( \\mathbf{x}^l \\right) F \\right). \\qquad (20)
+\\quad vec(\\mathbf{y}) = vec(\\mathbf{x}^{l+1}) = vec \\left( \\phi \\left( \\mathbf{x}^l \\right) F \\right). \\quad (20)
 \\]
 
 Note that \\( vec(\\mathbf{y}) \\in \\mathbb{R}^{H^{l+1}W^{l+1}D} \\), \\( \\phi(\\mathbf{x}^l ) \\in \\mathbb{R}^{(H^{l+1}W^{l+1} ) \\times (HWD^l)}\\), and \\(F \\in \\mathbb{R}^{(HWD^l)\\times D} \\).
@@ -430,11 +428,11 @@ A short detour to the Kronecker product is needed to compute the derivatives.
 
 Given two matrices \\( A \\in \\mathbb{R}^{m \\times n} \\) and \\( B \\in \\mathbb{R}^{p \\times q} \\), the Kronecker product \\( A \\otimes B \\) is a \\( mp \\times nq \\) block matrix, defined as
 \\[
-\\qquad \\quad A \\otimes B = \\left( \\begin{matrix}
+\\qquad \\; A \\otimes B = \\left( \\begin{matrix}
 a\_{11}B & \\cdots & a\_{1n}B \\\
 \\vdots  & \\ddots & \\vdots  \\\
 a\_{m1}B & \\cdots & a\_{mn}B
-\\end{matrix} \\right) \\qquad \\quad(21)
+\\end{matrix} \\right) \\qquad \\; (21)
 \\]
 
 The Kronecker product has the following properties that will be useful for us:
@@ -446,8 +444,8 @@ for matrices \\( A \\), \\( X \\), and \\( B \\) with proper dimensions (e.g., w
 
 With the help of \\( \\otimes \\), we can write down
 <a name="eqn_kronecker_properties_application"></a>\\[ \\begin{array}{lllr} 
-vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}^l)) vec(F) \\text{,} & \\, (24)\\\
-vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l)) \\text{,} & \\, (25)
+vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}^l)) vec(F) \\text{,} & \\; (24)\\\
+vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l)) \\text{,} & \\; (25)
 \\end{array} \\]
 where \\( I \\) is an identity matrix of proper sizes.
 In [Equation 24](#eqn_kronecker_properties_application), the size of \\( I \\) is determined the number of columns in \\( F \\), hence \\( I \\in \\mathbb{R}^{D \\times D} \\) in [Equation 24](#eqn_kronecker_properties_application).
@@ -466,7 +464,7 @@ From the chain rule ([Equation 10](#eqn_chain_rule)), it is easy to compute \\( 
 The first term in the RHS is already computed in the (\\(l+1\\))-th layer as (equivalently) \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^{l+1}))} \\).
 The second term, based on [Equation 24](#eqn_kronecker_properties_application), is pretty straightforward:
 \\[
-\\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F))^T} = \\frac{\\partial \\left( (I \\otimes \\phi(\\mathbf{x})^T \\right) vec (F))}{\\partial \\left( vec(F)^T \\right)} = I \\otimes \\phi(\\mathbf{x}^l). \\, (27)
+\\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F))^T} = \\frac{\\partial \\left( (I \\otimes \\phi(\\mathbf{x})^T \\right) vec (F))}{\\partial \\left( vec(F)^T \\right)} = I \\otimes \\phi(\\mathbf{x}^l). \\; (27)
 \\]
 Note that we have used the fact \\( \\frac{\\partial X \\mathbf{a}^T }{\\partial \\mathbf{a}} = X \\) or \\( \\frac{\\partial X \\mathbf{a}}{\\partial \\mathbf{a}^T} = X \\) so long as the matrix multiplications are well defined.
 This equation leads to
@@ -485,7 +483,7 @@ Making a transpose, we get
 Note that both [Equation 23](#eqn_kronecker_properties) (from RHS to LHS) and [Equation 22](#eqn_kronecker_properties) are used in the above derivation.
 Thus, we conclude that
 \\[
-\\qquad \\qquad \\quad \\frac{\\partial z}{\\partial F} = \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y}, \\qquad \\qquad \\quad (33)
+\\qquad \\qquad \\qquad \\frac{\\partial z}{\\partial F} = \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y}, \\qquad \\qquad \\quad (33)
 \\]
 which is enough to update the parameters in the \\( l \\)-th layer.
 
