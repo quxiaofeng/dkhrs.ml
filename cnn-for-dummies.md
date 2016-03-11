@@ -327,7 +327,7 @@ This example is illustrated as
 \\left( \\begin{matrix}
 12 & 16 & 11 \\\
 24 & 28 & 17
-\\end{matrix} \\right), \\qquad (13)
+\\end{matrix} \\right), \\quad (13)
 \\]
 where the first matrix is denoted as \\( A \\), and the filter simply adds the elements in each subvolume together; \\( ∗ \\) is the convolution operator.
 
