@@ -528,7 +528,7 @@ And,
 
 It is easy to see that the collective information in both [A, B, C.1] for the entire range of \\( p, q \\) and \\( u \\), and [C.2] \\(( \\mathbf{x}^l )\\) contains exactly the same amount of information as \\( \\phi(\\mathbf{x}^l) \\).
 
-Since \\( 0 \\leq p \< H^{l+1} W^{l+1} \\), \\( 0 \\leq q \< HWD^l \\), and \\( 0 \\leq u \< H^l W^l D^l \\), we can use a a matrix \\( H \\in \\mathbb{R}^{(H^{l+1} W^{l+1} HWD^l) \\times (H^l W^l D^l)} to encode the information in [A, B, C.1].
+Since \\( 0 \\leq p \< H^{l+1} W^{l+1} \\), \\( 0 \\leq q \< HWD^l \\), and \\( 0 \\leq u \< H^l W^l D^l \\), we can use a a matrix \\( H \\in \\mathbb{R}^{(H^{l+1} W^{l+1} HWD^l) \\times (H^l W^l D^l)} \\) to encode the information in [A, B, C.1].
 One row of this matrix corresponds to one element inside \\( \\phi(\\mathbf{x}^l) \\) (i.e., a \\( (p, q) \\) pair).
 One row has \\( H^l W^l D^l \\) elements, and each element can be indexed by \\( (i^l, j^l, d^l) \\).
 Thus, each element in this matrix is indexed by a 5-tuple: \\( (p, q, i^l, j^l, d^l) \\).
