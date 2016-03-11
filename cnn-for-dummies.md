@@ -471,7 +471,7 @@ The second term, based on [Equation 24](#eqn_kronecker_properties_application), 
 Note that we have used the fact \\( \\frac{\\partial X \\mathbf{a}^T }{\\partial \\mathbf{a}} = X \\) or \\( \\frac{\\partial X \\mathbf{a}}{\\partial \\mathbf{a}^T} = X \\) so long as the matrix multiplications are well defined.
 This equation leads to
 \\[
-\\frac{\\partial z}{\\partial (vec (F))^T} = \\frac{\\partial z}{\\partial (vec (\\mathbf{y})^T)} (I \\otimes \\phi(\\mathbf{x}^l)). \\qquad (28)
+\\frac{\\partial z}{\\partial (vec (F))^T} = \\frac{\\partial z}{\\partial \\left( vec (\\mathbf{y})^T \\right)} (I \\otimes \\phi(\\mathbf{x}^l)). \\qquad (28)
 \\]
 Making a transpose, we get
 \\[ \\begin{array}{rllr}
