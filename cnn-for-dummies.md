@@ -491,7 +491,7 @@ which is enough to update the parameters in the \\( l \\)-th layer.
 
 ### 4.7 Even higher dimensional indicator matrices ###
 
-The function φ(·) has been very useful in our analysis. It is pretty high dimen-
+The function \\( \\phi(\\cdot) \\) has been very useful in our analysis. It is pretty high dimen-
 sional, e.g., φ(x l ) has H l+1 W l+1 HWD l elements. From the above, we know
 that an element in φ(x) l is indexed by a pair p and q.
 From q we can determine d l , which slice of the subvolume is used, and also
@@ -895,9 +895,6 @@ and are safe to use, though.
 
 ## 8 Conclusions ##
 
-We hope this introductory note on CNN is clear, self-contained, and easy to
-understand to our readers.
-Once a reader is confident in his/her understanding of CNN at the mathe-
-matical level, in the next step (aka, future work) it is very helpful to get some
-hands on CNN experience. For example, one can validate what has been talked
-about in this note using [the MatConvNet software package](http://arxiv.org/abs/1412.4564).
+We hope this introductory note on CNN is clear, self-contained, and easy to understand to our readers.
+Once a reader is confident in his/her understanding of CNN at the mathematical level, in the next step (aka, future work) it is very helpful to get some hands on CNN experience.
+For example, one can validate what has been talked about in this note using [the MatConvNet software package](http://arxiv.org/abs/1412.4564).
