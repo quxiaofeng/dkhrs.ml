@@ -550,12 +550,12 @@ The \\( H \\) matrix has the following properties:
 + Most importantly, putting together the one-to-one correspondence information in \\( H \\) and the value information in \\( \\mathbf{x}^l \\), obviously we have
 
 \\[
-vec(\\phi(\\mathbf{x}^l)) = H vec(\\mathbf{x}^l). \\qquad (35)
+\\qquad \\qquad vec(\\phi(\\mathbf{x}^l)) = H vec(\\mathbf{x}^l). \\qquad \\qquad \\qquad (35)
 \\]
 
 A natural consequence is that
 \\[
-\\frac{\\partial vec(\\phi(\\mathbf{x}^l))}{\\partial (vec(\\mathbf{x}^l))^T} = H, \\qquad (36)
+\\qquad \\qquad \\frac{\\partial vec(\\phi(\\mathbf{x}^l))}{\\partial (vec(\\mathbf{x}^l))^T} = H, \\qquad \\qquad \\qquad (36)
 \\]
 a fact we will use soon.
 
