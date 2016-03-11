@@ -329,7 +329,7 @@ This example is illustrated as
 24 & 28 & 17
 \\end{matrix} \\right), \\quad (13)
 \\]
-where the first matrix is denoted as \\( A \\), and the filter simply adds the elements in each subvolume together; \\( ∗ \\) is the convolution operator.
+where the first matrix is denoted as \\( A \\), and the filter simply adds the elements in each subvolume together; \\( \\ast \\) is the convolution operator.
 
 Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) matrix that is an expanded version of \\( A \\):
 \\[ B =
