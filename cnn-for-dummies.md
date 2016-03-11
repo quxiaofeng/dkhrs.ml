@@ -417,7 +417,7 @@ Let's call this matrix \\( F \\).
 
 Finally, with all these notations, we have a beautiful equation to calculate convolution results:
 \\[
-vec(\\mathbf{y}) = vec(\\mathbf{x}^{l+1}) = vec \\left( \\phi \\left( \\mathbf{x}^l \\right) F \\right). (20)
+vec(\\mathbf{y}) = vec(\\mathbf{x}^{l+1}) = vec \\left( \\phi \\left( \\mathbf{x}^l \\right) F \\right). \\qquad (20)
 \\]
 
 Note that \\( vec(\\mathbf{y}) \\in \\mathbb{R}^{H^{l+1}W^{l+1}D} \\), \\( \\phi(\\mathbf{x}^l ) \\in \\mathbb{R}^{(H^{l+1}W^{l+1} ) \\times (HWD^l)}\\), and \\(F \\in \\mathbb{R}^{(HWD^l)\\times D} \\).
@@ -466,7 +466,7 @@ From the chain rule ([Equation 10](#eqn_chain_rule)), it is easy to compute \\( 
 The first term in the RHS is already computed in the (\\(l+1\\))-th layer as (equivalently) \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^{l+1}))} \\).
 The second term, based on [Equation 24](#eqn_kronecker_properties_application), is pretty straightforward:
 \\[
-\\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F))^T} = \\frac{\\partial \\left( (I \\otimes \\phi(\\mathbf{x})^T \\right) vec (F))}{\\partial \\left( vec(F)^T \\right)} = I \\otimes \\phi(\\mathbf{x}^l). \\qquad (27)
+\\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(F))^T} = \\frac{\\partial \\left( (I \\otimes \\phi(\\mathbf{x})^T \\right) vec (F))}{\\partial \\left( vec(F)^T \\right)} = I \\otimes \\phi(\\mathbf{x}^l). \\, (27)
 \\]
 Note that we have used the fact \\( \\frac{\\partial X \\mathbf{a}^T }{\\partial \\mathbf{a}} = X \\) or \\( \\frac{\\partial X \\mathbf{a}}{\\partial \\mathbf{a}^T} = X \\) so long as the matrix multiplications are well defined.
 This equation leads to
@@ -485,7 +485,7 @@ Making a transpose, we get
 Note that both [Equation 23](#eqn_kronecker_properties) (from RHS to LHS) and [Equation 22](#eqn_kronecker_properties) are used in the above derivation.
 Thus, we conclude that
 \\[
-\\frac{\\partial z}{\\partial F} = \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y}, \\qquad (33)
+\\qquad \\frac{\\partial z}{\\partial F} = \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y}, \\qquad \\qquad (33)
 \\]
 which is enough to update the parameters in the \\( l \\)-th layer.
 
