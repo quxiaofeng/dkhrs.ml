@@ -163,7 +163,7 @@ Let's suppose \\( \\mathbf{t} \\) is the corresponding target (ground-truth) val
 \\( \\mathbf{x}^1 \\), then a cost or loss function can be used to measure the discrepancy between the CNN prediction \\( \\mathbf{x}^L \\) and the target \\( \\mathbf{t} \\).
 For example, the simplest loss function could be
 <a name="eqn_simplest_loss"></a>\\[
-\\qquad \\qquad \\qquad z = \\| \\mathbf{t} - \\mathbf{x}^L \\|^2, \\qquad \\qquad (6)
+\\qquad \\qquad \\qquad z = \\| \\mathbf{t} - \\mathbf{x}^L \\|^2, \\qquad \\qquad \\qquad (6)
 \\]
 although more complex loss functions are usually used.
 
@@ -182,7 +182,7 @@ Starting from the input \\( \\mathbf{x}^1 \\), we make it pass the processing of
 Finally, we achieve \\( \\mathbf{x}^L \\in \\mathbb{R}^C \\), which estimates the posterior probabilities of \\( \\mathbf{x}^1 \\) belonging to the \\( C \\) categories.
 We can output the CNN prediction as
 \\[
-\\qquad \\qquad \\qquad \\arg\\max\_i \, \\mathbf{x}^L\_i. \\qquad \\qquad (7)
+\\qquad \\qquad \\qquad \\arg\\max\_i \, \\mathbf{x}^L\_i. \\qquad \\qquad \\qquad (7)
 \\]
 
 The problem is: how do we learn the model parameters?
@@ -199,7 +199,7 @@ Finally, we achieve a loss \\( z \\).
 The loss \\( z \\) is then a supervision signal, guiding how the parameters of the model should be modified.
 And the SGD way of modifying the parameters are
 <a name="eqn_sgd"></a>\\[
-\\qquad \\qquad \\qquad \\mathbf{w}^i \\leftarrow \\mathbf{w}^i - \\eta \\frac{\\partial z}{\\partial \\mathbf{w}^i}. \\qquad \\qquad (8)
+\\qquad \\qquad \\qquad \\mathbf{w}^i \\leftarrow \\mathbf{w}^i - \\eta \\frac{\\partial z}{\\partial \\mathbf{w}^i}. \\qquad \\qquad \\qquad (8)
 \\]
 
 In [Equation 8](#eqn_sgd), \\( \\eta \\) is a proper learning rate.
@@ -240,9 +240,9 @@ Both are stored in memory and ready for use.
 Now our task is to compute \\( \\frac{\\partial z}{\\partial \\mathbf{w}^i} \\) and \\( \\frac{\\partial z}{\\partial \\mathbf{x}^i} \\).
 Using the chain rule, we have
 <a name="eqn_chain_rule"></a>\\[
-\\begin{array}{rlllr}
-\\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} &=& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} & \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, & \\quad (10) \\\
-\\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} &=& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} & \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, & \\quad (11)
+\\begin{array}{rllr}
+\\frac{\\partial z}{\\partial (vec(\\mathbf{w}^i)^T)} &=& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{w}^i)^T)}, & \\, (10) \\\
+\\frac{\\partial z}{\\partial (vec(\\mathbf{x}^i)^T)} &=& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^{i+1})^T)} \\frac{\\partial vec(\\mathbf{x}^{i+1})}{\\partial (vec(\\mathbf{x}^i)^T)}, & \\, (11)
 \\end{array}
 \\]
 
@@ -300,7 +300,7 @@ In the output \\( \\mathbf{x}^{l+1} \\), this vector is \\( x(i^{l+1}, j^{l+1}, 
 
 In precise mathematics, the convolution procedure can be expressed as an equation:
 <a name="eqn_convolution_procedure"></a>\\[
-y\_{i^{l+1},j^{l+1},d} = \\sum^H\_{i=0} \\sum^W\_{j=0} \\sum^D\_{d=0} f\_{i,j,d} \\times {x^l}\_{i^{l+1}+i, j^{l+1}+j, d}. \\qquad (12)
+y\_{i^{l+1},j^{l+1},d} = \\sum^H\_{i=0} \\sum^W\_{j=0} \\sum^D\_{d=0} f\_{i,j,d} \\times {x^l}\_{i^{l+1}+i, j^{l+1}+j, d}. \\quad (12)
 \\]
 [Equation 12](#eqn_convolution_procedure) is repeated for all \\( 0 \\leq d \< D = D^{l+1} \\), and satisfies \\( 0 \\leq i^{l+1} \< H^l - H + 1 = H^{l+1} \\), \\( 0 \\leq j^{l+1} \< W^l - W + 1 = W^{l+1} \\).
 In the equation, \\( x^l\_{i^{l+1}+i, j^{l+1}+j, d} \\) refers to the element of \\( \\mathbf{x}^l \\) indexed by the triplet \\( i^{l+1}+i, j^{l+1}+j, d \\).
@@ -327,7 +327,7 @@ This example is illustrated as
 \\left( \\begin{matrix}
 12 & 16 & 11 \\\
 24 & 28 & 17
-\\end{matrix} \\right), \\quad (13)
+\\end{matrix} \\right), \\, (13)
 \\]
 where the first matrix is denoted as \\( A \\), and the filter simply adds the elements in each subvolume together; \\( \\ast \\) is the convolution operator.
 
@@ -345,7 +345,7 @@ It is obvious that now the first column of \\( B \\) corresponds to the first \\
 Similarly, the second to last column in \\( B \\) correspond to subvolumes in \\( A \\) with \\( (i^{l+1}, j^{l+1} ) \\) being \\((2, 1)\\), \\((1, 2)\\), \\((2, 2)\\), \\((3, 1)\\), and \\((3, 2)\\), respectively.
 That is, the Matlab `im2col` function explicitly expands the required elements for performing each individual convolution into a column in the matrix \\( B \\).
 For convenience of (later) notations, we transpose \\( B \\) to get a matrix \\( C \\), with
-\\[ \\qquad \\qquad \\qquad C =
+\\[ \\qquad \\qquad C =
 \\left( \\begin{matrix}
 1 & 4 & 2 & 5 \\\
 4 & 7 & 5 & 8 \\\
@@ -353,11 +353,11 @@ For convenience of (later) notations, we transpose \\( B \\) to get a matrix \\(
 5 & 8 & 6 & 9 \\\
 3 & 6 & 1 & 1 \\\
 6 & 9 & 1 & 1
-\\end{matrix} \\right). \\qquad \\qquad \\qquad (14)
+\\end{matrix} \\right). \\qquad \\qquad (14)
 \\]
 
 Now, if we vectorize the filter itself into a vector (in the same column-first ordering) \\( (1,1,1,1)^T \\), we find that
-<a name="eqn_vectorize_example"></a> \\[ \\qquad \\qquad \\qquad C
+<a name="eqn_vectorize_example"></a> \\[ \\qquad \\qquad \\quad C
 \\left( \\begin{matrix}
 1 \\\
 1 \\\
@@ -371,7 +371,7 @@ Now, if we vectorize the filter itself into a vector (in the same column-first o
 28 \\\
 11 \\\
 17
-\\end{matrix} \\right). \\qquad \\qquad \\qquad (15)
+\\end{matrix} \\right). \\qquad \\qquad \\quad (15)
 \\]
 
 It is obvious that if we reshape this resulting vector in [Equation 15](#eqn_vectorize_example) properly, we get the exact convolution result matrix in [Equation 13](#eqn_convolving_example).
@@ -393,10 +393,10 @@ Then, the expansion operator assigns the element \\( (i^l, j^l, d^l) \\) in \\( 
 From the description of the expansion process, it is clear that given a fixed \\((p, q)\\), we can calculate its corresponding \\( (i^l, j^l, d^l) \\) triplet, because obviously
 <a name="eqn_triplet"></a>
 \\[ \\begin{array}{lrrr}
-p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & \\qquad \\qquad & (16)\\\
-q   = & i + H \\times j + H \\times W \\times d^l, & \\qquad \\qquad & (17)\\\
-i^l = & i^{l+1} + i,                               & \\qquad \\qquad & (18)\\\
-j^l = & j^{l+1} + j .                              & \\qquad \\qquad & (19)
+p   = & i^{l+1} + (H^l - H + 1) \\times j^{l+1},   & \\qquad \\quad & (16)\\\
+q   = & i + H \\times j + H \\times W \\times d^l, & \\qquad \\quad & (17)\\\
+i^l = & i^{l+1} + i,                               & \\qquad \\quad & (18)\\\
+j^l = & j^{l+1} + j .                              & \\qquad \\quad & (19)
 \\end{array} \\]
 
 In [Equation 17](#eqn_triplet), dividing \\( q \\) by \\( HW \\) and take the integer part of the quotient, we can determine which slice (\\( d^l \\)) does it belong to in the subvolume.
@@ -417,7 +417,7 @@ Let's call this matrix \\( F \\).
 
 Finally, with all these notations, we have a beautiful equation to calculate convolution results:
 \\[
-vec(\\mathbf{y}) = vec(\\mathbf{x}^{l+1}) = vec \\left( \\phi \\left( \\mathbf{x}^l \\right) F \\right). \\qquad (20)
+\\quad vec(\\mathbf{y}) = vec(\\mathbf{x}^{l+1}) = vec \\left( \\phi \\left( \\mathbf{x}^l \\right) F \\right). \\qquad (20)
 \\]
 
 Note that \\( vec(\\mathbf{y}) \\in \\mathbb{R}^{H^{l+1}W^{l+1}D} \\), \\( \\phi(\\mathbf{x}^l ) \\in \\mathbb{R}^{(H^{l+1}W^{l+1} ) \\times (HWD^l)}\\), and \\(F \\in \\mathbb{R}^{(HWD^l)\\times D} \\).
@@ -430,24 +430,24 @@ A short detour to the Kronecker product is needed to compute the derivatives.
 
 Given two matrices \\( A \\in \\mathbb{R}^{m \\times n} \\) and \\( B \\in \\mathbb{R}^{p \\times q} \\), the Kronecker product \\( A \\otimes B \\) is a \\( mp \\times nq \\) block matrix, defined as
 \\[
-A \\otimes B = \\left( \\begin{matrix}
+\\qquad \\quad A \\otimes B = \\left( \\begin{matrix}
 a\_{11}B & \\cdots & a\_{1n}B \\\
 \\vdots  & \\ddots & \\vdots  \\\
 a\_{m1}B & \\cdots & a\_{mn}B
-\\end{matrix} \\right) \\qquad (21)
+\\end{matrix} \\right) \\qquad \\quad(21)
 \\]
 
 The Kronecker product has the following properties that will be useful for us:
 <a name="eqn_kronecker_properties"></a>\\[ \\begin{array}{lr} 
-(A \\otimes B)^T = A^T \\otimes B^T \\text{,} & \\qquad (22)\\\
-vec(AXB) = (B^T \\otimes A)vec(X)   \\text{,} & \\qquad (23)
+\\qquad (A \\otimes B)^T = A^T \\otimes B^T \\text{,} & \\qquad (22)\\\
+\\qquad vec(AXB) = (B^T \\otimes A)vec(X)   \\text{,} & \\qquad (23)
 \\end{array} \\]
 for matrices \\( A \\), \\( X \\), and \\( B \\) with proper dimensions (e.g., when the matrix multiplication \\( AXB \\) is defined.) Note that [Equation 23](#eqn_kronecker_properties) can be utilized from both directions.
 
 With the help of \\( \\otimes \\), we can write down
 <a name="eqn_kronecker_properties_application"></a>\\[ \\begin{array}{lllr} 
-vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}^l)) vec(F) \\text{,} & \\qquad (24)\\\
-vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l)) \\text{,} & \\qquad (25)
+vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}^l)) vec(F) \\text{,} & \\, (24)\\\
+vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l)) \\text{,} & \\, (25)
 \\end{array} \\]
 where \\( I \\) is an identity matrix of proper sizes.
 In [Equation 24](#eqn_kronecker_properties_application), the size of \\( I \\) is determined the number of columns in \\( F \\), hence \\( I \\in \\mathbb{R}^{D \\times D} \\) in [Equation 24](#eqn_kronecker_properties_application).
@@ -461,7 +461,7 @@ Similarly, we can reshape \\( \\mathbf{y} \\) into a matrix \\( Y \\in \\mathbb{
 
 From the chain rule ([Equation 10](#eqn_chain_rule)), it is easy to compute \\( \\frac{\\partial z}{\\partial vec(F)} \\) as
 \\[
-\\frac{\\partial z}{\\partial (vec(F))^T} = \\frac{\\partial z}{\\partial (vec(Y)^T)} \\frac{\\partial vec(\\mathbf{y})}{\\partial \\left( vec(F)^T \\right)}. \\qquad \\qquad (26)
+\\frac{\\partial z}{\\partial (vec(F))^T} = \\frac{\\partial z}{\\partial (vec(Y)^T)} \\frac{\\partial vec(\\mathbf{y})}{\\partial \\left( vec(F)^T \\right)}. \\quad (26)
 \\]
 The first term in the RHS is already computed in the (\\(l+1\\))-th layer as (equivalently) \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^{l+1}))} \\).
 The second term, based on [Equation 24](#eqn_kronecker_properties_application), is pretty straightforward:
@@ -485,7 +485,7 @@ Making a transpose, we get
 Note that both [Equation 23](#eqn_kronecker_properties) (from RHS to LHS) and [Equation 22](#eqn_kronecker_properties) are used in the above derivation.
 Thus, we conclude that
 \\[
-\\qquad \\frac{\\partial z}{\\partial F} = \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y}, \\qquad \\qquad (33)
+\\qquad \\qquad \\quad \\frac{\\partial z}{\\partial F} = \\phi(\\mathbf{x}^l)^T \\frac{\\partial z}{\\partial Y}, \\qquad \\qquad \\quad (33)
 \\]
 which is enough to update the parameters in the \\( l \\)-th layer.
 
@@ -550,7 +550,7 @@ The \\( H \\) matrix has the following properties:
 + Most importantly, putting together the one-to-one correspondence information in \\( H \\) and the value information in \\( \\mathbf{x}^l \\), obviously we have
 
 \\[
-\\qquad \\qquad vec(\\phi(\\mathbf{x}^l)) = H vec(\\mathbf{x}^l). \\qquad \\qquad \\qquad (35)
+\\qquad \\qquad vec(\\phi(\\mathbf{x}^l)) = H vec(\\mathbf{x}^l). \\qquad \\qquad (35)
 \\]
 
 A natural consequence is that
