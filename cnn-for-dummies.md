@@ -91,13 +91,17 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 \\end{matrix}\\right) \\; (1)
 \\]
 
-```julia
+
 {% capture code %}{% include code_vec.jl %}{% endcapture %}
+**`Julia`**
+```julia
 {{ code }}
 ```
 
-```python
+
 {% capture code %}{% include code_vec.py %}{% endcapture %}
+**`Python`**
+```python
 {{ code }}
 ```
 
