@@ -92,7 +92,7 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 \\]
 
 
-{% capture code %}{% include julia/code_vec.jl %}{% endcapture %}
+{% capture code %}{% include julia\\code_vec.jl %}{% endcapture %}
 **`Julia`**
 
 ```julia
@@ -100,7 +100,7 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 ```
 
 
-{% capture code %}{% include python/code_vec.py %}{% endcapture %}
+{% capture code %}{% include python\\code_vec.py %}{% endcapture %}
 **`Python`**
 
 ```python
