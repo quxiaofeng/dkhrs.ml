@@ -85,8 +85,8 @@ A = \\left(\\begin{matrix}
 \\end{matrix}\\right), \\qquad
 A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 1 \\\
-2 \\\
 3 \\\
+2 \\\
 4
 \\end{matrix}\\right) \\; (1)
 \\]
