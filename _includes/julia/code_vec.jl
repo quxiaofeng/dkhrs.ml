@@ -3,6 +3,11 @@ A = [1 2; 3 4]
 #  1  2
 #  3  4
 
+@doc vec
+# vec(Array) -> Vector
+#
+# Vectorize an array using column-major convention.
+
 vec(A)
 # 4-element Array{Int64,1}:
 #  1
