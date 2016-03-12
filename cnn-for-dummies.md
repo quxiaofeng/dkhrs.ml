@@ -92,11 +92,13 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 \\]
 
 ```julia
-{% capture index %}{% include julia\code_vec.jl %}{% endcapture %}
+{% capture code %}{% include code_vec.jl %}{% endcapture %}
+{{ code }}
 ```
 
 ```python
-{% capture index %}{% include julia\code_vec.py %}{% endcapture %}
+{% capture code %}{% include code_vec.py %}{% endcapture %}
+{{ code }}
 ```
 
 In mathematics, we use the notation "\\( vec \\)" to represent this vectorization operator.
