@@ -93,6 +93,14 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 \\end{matrix}\\right) \\qquad (1)
 \\]
 
+```julia
+{% capture index %}{% include julia\code_vec.jl %}{% endcapture %}
+```
+
+```python
+{% capture index %}{% include julia\code_vec.py %}{% endcapture %}
+```
+
 In mathematics, we use the notation "\\( vec \\)" to represent this vectorization operator.
 That is, \\( vec(A) = (1, 3, 2, 4)^T \\) in the example in [Equation 1](#eqn_tensor).
 In order to vectorize a 3D tensor, we could vectorize its first slice (which is a matrix), then the second slice, . . . , till all slices are vectorized.
