@@ -15,3 +15,25 @@ conv2(B, A)
 #   5  12  16  11  2
 #  11  24  28  17  2
 #   7  15  17  10  1
+
+* = conv2
+# WARNING: imported binding for * overwritten in module Main
+# conv2 (generic function with 4 methods)
+
+B * A
+# 4x5 Array{Int64,2}:
+#   1   3   5   4  1
+#   5  12  16  11  2
+#  11  24  28  17  2
+#   7  15  17  10  1
+
+⊗ = conv2
+# conv2 (generic function with 4 methods)
+
+B ⊗ A
+# 4x5 Array{Int64,2}:
+#   1   3   5   4  1
+#   5  12  16  11  2
+#  11  24  28  17  2
+#   7  15  17  10  1
+
