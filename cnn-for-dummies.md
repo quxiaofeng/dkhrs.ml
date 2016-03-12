@@ -91,20 +91,23 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 \\end{matrix}\\right) \\; (1)
 \\]
 
-
-{% capture code %}{% include julia/code_vec.jl %}{% endcapture %}
+{% capture julia_code_vec %}
+{% include julia/code_vec.jl %}
+{% endcapture %}
 **`Julia`**
 
 ```julia
-{{ code }}
+{{ julia_code_vec }}
 ```
 
 
-{% capture code %}{% include python/code_vec.py %}{% endcapture %}
+{% capture julia_code_vec %}
+{% include python/code_vec.py %}
+{% endcapture %}
 **`Python`**
 
 ```python
-{{ code }}
+{{ julia_code_vec }}
 ```
 
 In mathematics, we use the notation "\\( vec \\)" to represent this vectorization operator.
@@ -344,6 +347,24 @@ This example is illustrated as
 \\end{matrix} \\right), \\; (13)
 \\]
 where the first matrix is denoted as \\( A \\), and the filter simply adds the elements in each subvolume together; \\( \\ast \\) is the convolution operator.
+
+{% capture julia_code_conv2 %}
+{% include julia/code_conv2.jl %}
+{% endcapture %}
+**`Julia`**
+
+```julia
+{{ julia_code_conv2 }}
+```
+
+{% capture python_code_conv2 %}
+{% include python/code_conv2.py %}
+{% endcapture %}
+**`Python`**
+
+```python
+{{ python_code_conv2 }}
+```
 
 Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) matrix that is an expanded version of \\( A \\):
 \\[ B =
