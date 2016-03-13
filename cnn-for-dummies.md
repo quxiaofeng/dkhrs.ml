@@ -613,20 +613,19 @@ For this purpose, we want to reshape \\( \\mathbf{x}^l \\) into a matrix \\( X \
 
 The chain rule states that \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = \\frac{\\partial z}{\\partial (vec(\\mathbf{y})^T)} \\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(\\mathbf{x}^l)^T)} \\) (cf. Equation 11).
 We will start by studying the second term in the RHS (utilizing equations 25 and 36):
-∂ vec(y)
-∂(vec(x l ) T )
-=
-∂(F T ⊗ I)vec(φ(x l ))
-∂(vec(x l ) T )
-= (F T ⊗ I)H . (37)
+
+\\[
+\\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(\\mathbf{x}^l)^T)}
+= \\frac{\\partial (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l))}{\\partial (vec(\\mathbf{X}^l)^T)}
+= (F^T \\otimes I)H. (37)
+\\]
+
 Thus,
-∂z
-∂(vec(x l ) T )
-=
-∂z
-∂(vec(y) T ) (F
-T
-⊗ I)H . (38)
+\\[
+\\frac{\\partial z}{\\partial (vec(\\mathbf{X}^l)^T)}
+= \\frac{\\partial z}{\\partial (vec(\\mathbf{y})^T)} (F^T \\otimes I)H. (38)
+\\]
+
 Since (using Equation 23 from right to left)
 ∂z
 ∂(vec(y) T ) (F
