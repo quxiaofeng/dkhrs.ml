@@ -608,23 +608,11 @@ a fact we will use soon.
 
 ### 4.8 Backward propagation: the supervision signal ###
 
-In the l-th layer, we still need to compute
-∂z
-∂ vec(x l ) . For this purpose, we want to
-reshape x l into a matrix X ∈ R (H
-l W l )×D l , and use these two equivalent forms
-(modulo reshaping) interchangeably.
-The chain rule states that
-∂z
-∂(vec(x l ) T )
-=
-∂z
-∂(vec(y) T )
-∂ vec(y)
-∂(vec(x l ) T )
-(cf. Equa-
-tion 11). We will start by studying the second term in the RHS (utilizing
-equations 25 and 36):
+In the \\( l \\)-th layer, we still need to compute \\( \\frac{\\partial z}{\\partial vec(\\mathbf{x}^l)}.
+For this purpose, we want to reshape \\( \\mathbf{x}^l \\) into a matrix \\( X \\in \\mathbb{R}^{(H^l W^l) \\times D^l}, and use these two equivalent forms (modulo reshaping) interchangeably.
+
+The chain rule states that \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = \\frac{\\partial z}{\\partial (vec(\\mathbf{y})^T)} \\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(\\mathbf{x}^l)^T)} \\) (cf. Equation 11).
+We will start by studying the second term in the RHS (utilizing equations 25 and 36):
 ∂ vec(y)
 ∂(vec(x l ) T )
 =
