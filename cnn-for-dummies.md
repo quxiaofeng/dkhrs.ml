@@ -375,6 +375,10 @@ Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) 
 \\end{matrix} \\right).
 \\]
 
+**`Julia`**
+
+[C++ version `im2col` code](https://github.com/pluskid/Mocha.jl/blob/master/deps/im2col.cpp) can be called with [this interface](https://github.com/pluskid/Mocha.jl/blob/master/src/utils/im2col-native.jl). Or native `im2col` code could be implemented as [this](https://github.com/pluskid/Mocha.jl/blob/master/src/utils/im2col.jl).
+
 {% capture python_code_im2col %}
 {% include python/code_im2col.py %}
 {% endcapture %}
