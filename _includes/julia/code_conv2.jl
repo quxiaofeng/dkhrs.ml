@@ -37,3 +37,12 @@ B ⊗ A
 #  11  24  28  17  2
 #   7  15  17  10  1
 
+function valid_conv2(A, B)
+  return conv2(B, A)[size(B)[1]:size(B)[1]+size(A)[1]-2, size(B)[2]:size(B)[2]+size(A)[2]-2]
+end
+# valid_conv2 (generic function with 1 method)
+
+valid_conv2(A, B)
+# 2x3 Array{Int64,2}:
+#  12  16  11
+#  24  28  17
