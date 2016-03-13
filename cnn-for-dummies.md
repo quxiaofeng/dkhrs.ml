@@ -452,7 +452,7 @@ In other words, \\( q \\) completely determines one specific location in a subvo
 
 Note that the filtering result is \\( x^{l+1} \\), whose spatial extent is \\( H^{l+1} = H^l −
 H + 1 \\) and \\( W^{l+1} = W^l − W + 1\\).
-Thus, in [Equation 16](#eqn_triplet), the remainder and quotient of dividing \\( p \\) by \\( H^{l+1} = H^l − H + 1 \\) will give us the offset in the convolved result \\( (i{l+1}, j^{l+1} )\\), or, which subvolume is it.
+Thus, in [Equation 16](#eqn_triplet), the remainder and quotient of dividing \\( p \\) by \\( H^{l+1} = H^l − H + 1 \\) will give us the offset in the convolved result \\( (i^{l+1}, j^{l+1} )\\), or, which subvolume is it.
 
 Based on the definition of convolution, it is clear that we can use [Equations 18 and 19](#eqn_triplet) find the offset in the input \\( x^l \\) as \\( i^l = i^{l+1} + i \\) and \\( j^l = j^{l+1} + j \\).
 That is, the mapping from (\\(p, q\\)) to (\\(i^l, j^l, d^l\\)) is one-to-one.
