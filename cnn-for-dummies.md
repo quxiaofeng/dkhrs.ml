@@ -375,19 +375,6 @@ Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) 
 \\end{matrix} \\right).
 \\]
 
-**`Julia`**
-
-[C++ version `im2col` code](https://github.com/pluskid/Mocha.jl/blob/master/deps/im2col.cpp) can be called with [this interface](https://github.com/pluskid/Mocha.jl/blob/master/src/utils/im2col-native.jl). Or native `im2col` code could be implemented as [this](https://github.com/pluskid/Mocha.jl/blob/master/src/utils/im2col.jl).
-
-{% capture python_code_im2col %}
-{% include python/code_im2col.py %}
-{% endcapture %}
-**`Python`**
-
-```python
-{{ python_code_im2col }}
-```
-
 It is obvious that now the first column of \\( B \\) corresponds to the first \\( 2 \\times 2 \\) subvolume in \\( A \\), in a column-first order, corresponding to \\( (i^{l+1}, j^{l+1} ) = (1, 1) \\).
 Similarly, the second to last column in \\( B \\) correspond to subvolumes in \\( A \\) with \\( (i^{l+1}, j^{l+1} ) \\) being \\((2, 1)\\), \\((1, 2)\\), \\((2, 2)\\), \\((3, 1)\\), and \\((3, 2)\\), respectively.
 That is, the Matlab `im2col` function explicitly expands the required elements for performing each individual convolution into a column in the matrix \\( B \\).
@@ -424,6 +411,19 @@ Now, if we vectorize the filter itself into a vector (in the same column-first o
 It is obvious that if we reshape this resulting vector in [Equation 15](#eqn_vectorize_example) properly, we get the exact convolution result matrix in [Equation 13](#eqn_convolving_example).
 That is, the convolution operator is a linear one.
 We can multiply the expanded input matrix and the vectorized filter to get a result vector, and by reshaping this vector properly we get the correct convolution results.
+
+**`Julia`**
+
+[C++ version `im2col` code](https://github.com/pluskid/Mocha.jl/blob/master/deps/im2col.cpp) can be called with [this interface](https://github.com/pluskid/Mocha.jl/blob/master/src/utils/im2col-native.jl). Or native `im2col` code could be implemented as [this](https://github.com/pluskid/Mocha.jl/blob/master/src/utils/im2col.jl).
+
+{% capture python_code_im2col %}
+{% include python/code_im2col.py %}
+{% endcapture %}
+**`Python`**
+
+```python
+{{ python_code_im2col }}
+```
 
 ### 4.4 Now let's make it formal ###
 
