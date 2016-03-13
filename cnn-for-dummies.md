@@ -608,7 +608,7 @@ a fact we will use soon.
 
 ### 4.8 Backward propagation: the supervision signal ###
 
-In the \\( l \\)-th layer, we still need to compute \\( \\frac{\\partial z}{\\partial vec(\\mathbf{x}^l)}.
+In the \\( l \\)-th layer, we still need to compute \\( \\frac{\\partial z}{\\partial vec(\\mathbf{x}^l)} \\).
 For this purpose, we want to reshape \\( \\mathbf{x}^l \\) into a matrix \\( X \\in \\mathbb{R}^{(H^l W^l) \\times D^l}, and use these two equivalent forms (modulo reshaping) interchangeably.
 
 The chain rule states that \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = \\frac{\\partial z}{\\partial (vec(\\mathbf{y})^T)} \\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(\\mathbf{x}^l)^T)} \\) (cf. Equation 11).
