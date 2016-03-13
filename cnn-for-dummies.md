@@ -100,14 +100,13 @@ A(:) = (1,3,2,4)^T = \\left(\\begin{matrix}
 {{ julia_code_vec }}
 ```
 
-
-{% capture julia_code_vec %}
+{% capture python_code_vec %}
 {% include python/code_vec.py %}
 {% endcapture %}
 **`Python`**
 
 ```python
-{{ julia_code_vec }}
+{{ python_code_vec }}
 ```
 
 In mathematics, we use the notation "\\( vec \\)" to represent this vectorization operator.
@@ -375,6 +374,15 @@ Now let's run a Matlab command `B = im2col(A, [2 2])`, we arrive at a \\( B \\) 
 5 & 8 & 6 & 9 & 1 & 1
 \\end{matrix} \\right).
 \\]
+
+{% capture python_code_im2col %}
+{% include python/code_im2col.py %}
+{% endcapture %}
+**`Python`**
+
+```python
+{{ python_code_im2col }}
+```
 
 It is obvious that now the first column of \\( B \\) corresponds to the first \\( 2 \\times 2 \\) subvolume in \\( A \\), in a column-first order, corresponding to \\( (i^{l+1}, j^{l+1} ) = (1, 1) \\).
 Similarly, the second to last column in \\( B \\) correspond to subvolumes in \\( A \\) with \\( (i^{l+1}, j^{l+1} ) \\) being \\((2, 1)\\), \\((1, 2)\\), \\((2, 2)\\), \\((3, 1)\\), and \\((3, 2)\\), respectively.
