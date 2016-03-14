@@ -636,11 +636,11 @@ Since (using Equation 23 from right to left)
 \\end{array} \\]
 we have
 \\[ \\begin{array}{rlr}
-& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right)^TH, & (43)
+\\qquad & \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right)^TH, & \\qquad (43)
 \\end{array} \\]
 or equivalently
 \\[ \\begin{array}{rlr}
-& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l))} = H^T vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right). & (43)
+\\qquad  & \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l))} = H^T vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right). & \\qquad (43)
 \\end{array} \\]
 
 Let's have a closer look at the RHS.
