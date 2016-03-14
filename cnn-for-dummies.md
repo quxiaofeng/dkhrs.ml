@@ -627,60 +627,22 @@ Thus,
 \\]
 
 Since (using Equation 23 from right to left)
-∂z
-∂(vec(y) T ) (F
-T
-⊗ I) =
-?
-(F ⊗ I)
-∂z
-∂ vec(y)
-? T
-(39)
-=
-?
-(F ⊗ I)vec
-?
-∂z
-∂Y
-?? T
-(40)
-= vec
-?
-I
-∂z
-∂Y
-F T
-? T
-(41)
-= vec
-?
-∂z
-∂Y
-F T
-? T
-, (42)
-
+\\[ \\begin{array}{rlr}
+\\frac{\\partial z}{\\partial (vec(\\mathbf{y})^T)} (F^T \\otimes I)
+& = \\left((F \\otimes I) \\frac{\\partial z}{\\partial vec(\\mathbf{y})} \\right)^T & (39) \\\
+& = \\left((F \\otimes I) vec\\left( \\frac{\\partial z}{\\partial Y} \\right) \\right)^T & (40) \\\
+& = vec\\left( I \\frac{\\partial z}{\\partial Y} F^T \\right)^T & (41) \\\
+& = vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right)^T, & (42)
+\\end{array} \\]
 we have
-∂z
-∂(vec(x l ) T )
-= vec
-?
-∂z
-∂Y
-F T
-? T
-H , (43)
+\\[ \\begin{array}{rlr}
+& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right)^TH, & (43)
+\\end{array} \\]
 or equivalently
-∂z
-∂(vec(x l ))
-= H T vec
-?
-∂z
-∂Y
-F T
-?
-. (44)
+\\[ \\begin{array}{rlr}
+& \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l))} = H^T vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right). & (43)
+\\end{array} \\]
+
 Let's have a closer look at the RHS.
 ∂z
 ∂Y
