@@ -636,7 +636,7 @@ Since (using Equation 23 from right to left)
 \\end{array} \\]
 we have
 \\[ \\begin{array}{rlr}
-\\qquad \\quad & \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right)^TH, & \\qquad \\quad (43)
+\\qquad \\quad & \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = vec\\left( \\frac{\\partial z}{\\partial Y} F^T \\right)^TH, & \\qquad \\; (43)
 \\end{array} \\]
 or equivalently
 \\[ \\begin{array}{rlr}
