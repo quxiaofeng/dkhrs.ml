@@ -646,7 +646,8 @@ or equivalently
 Let's have a closer look at the RHS.
 \\( \\frac{\\partial z}{\\partial Y} F^T \\in \\mathbb{R}^{(H^{l+1}W^{l+1}) \\times (HWD^l)} \\), and \\( vec \\left( \\frac{\\partial z}{\\partial Y} F^T \\right) \\) is a vector in \\( \\mathbb{R}^{H^{l+1}W^{l+1}HWD^l} \\).
 On the other hand, \\( H^T \\) is an indicator matrix in \\( \\mathbb{R}^{(H^lW^lD^l) \\times (H^{l+1}W^{l+1}HWD^l)} \\).
-In order to pinpoint one element in vec(x l ) or one row in H T , we need an
+
+In order to pinpoint one element in \\( vec(\\mathbf{x}^l) \\) or one row in H T , we need an
 index triplet (i l ,j l ,d l ), with 0 ≤ i l < H l , 0 ≤ j l < W l , and 0 ≤ d l < D l .
 Similarly, to locate a column in H T or an element in
 ∂z
