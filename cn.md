@@ -40,7 +40,7 @@ LGBPHS
 
 ### 论文 ###
 
-+ Qu, X.; Zhang, D.; Lu, G.; and Guo, Z., "Door knob hand recognition system," *Will appear in Systems, Man, and Cybernetics: Systems, IEEE Transactions on*.
++ [Qu, Xiaofeng][csxfqu]; [Zhang, David][csdzhang]; [Lu, Guangming][csgmlu]; and [Guo, Zhenhua][cszhguo], "[Door knob hand recognition system （门把手人手识别系统）][dkhrs]," *in Systems, Man, and Cybernetics: Systems, IEEE Transactions on , vol.PP, no.99, pp.1-12*.
 
 ### 专利 ###
 
@@ -56,3 +56,8 @@ LGBPHS
   + China Patent CN104978551 (A)
 
 
+[csxfqu]: http://www.quxiaofeng.me/about
+[csdzhang]: http://www4.comp.polyu.edu.hk/~csdzhang/
+[csgmlu]: http://www.hitsz.edu.cn/body/shizi/detailen.php?strID=396
+[cszhguo]: http://www.sz.tsinghua.edu.cn/publish/sz/139/2012/20120420104947649501973/20120420104947649501973_.html
+[dkhrs]: http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7433472

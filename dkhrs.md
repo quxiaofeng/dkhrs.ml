@@ -7,7 +7,7 @@ permalink: /dkhrs/
 
 ![](http://images.freeimages.com/images/previews/7d5/under-construction-icon-1242121.jpg)
 
-Qu, Xiaofeng; Zhang, David; Lu, Guangming; and Guo, Zhenhua, "Door knob hand recognition system," *Will appear in Systems, Man, and Cybernetics: Systems, IEEE Transactions on*
+[Qu, Xiaofeng][csxfqu]; [Zhang, David][csdzhang]; [Lu, Guangming][csgmlu]; and [Guo, Zhenhua][cszhguo], "[Door knob hand recognition system][dkhrs]," *in Systems, Man, and Cybernetics: Systems, IEEE Transactions on , vol.PP, no.99, pp.1-12*.
 
 ## Abstract ##
 
@@ -109,3 +109,9 @@ EBD model is illustrated in [Fig. 2](#fig_newmodel). This model is to provide a 
 [ref35]: http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5422748
 [ref36]: http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5678710
 [ref37]: http://as.wiley.com/WileyCDA/WileyTitle/productCd-0470185481.html
+
+[csxfqu]: http://www.quxiaofeng.me/about
+[csdzhang]: http://www4.comp.polyu.edu.hk/~csdzhang/
+[csgmlu]: http://www.hitsz.edu.cn/body/shizi/detailen.php?strID=396
+[cszhguo]: http://www.sz.tsinghua.edu.cn/publish/sz/139/2012/20120420104947649501973/20120420104947649501973_.html
+[dkhrs]: http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7433472
