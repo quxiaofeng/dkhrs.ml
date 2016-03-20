@@ -652,17 +652,9 @@ Similarly, to locate a column in \\( H^T \\) or an element in \\( \\frac{\\parti
 
 Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) equals the multiplication of two vectors: the row in \\( H^T \\) that is indexed by \\( (i^l, j^l, d^l ) \\), and \\( vec (\\frac{\\partial z}{\\partial Y} F^T ) \\).
 
-Furthermore, since H T is an indicator matrix, in the row vector indexed by
-(i l ,j l ,d l ), only those entries whose index (p,q) satisfies t(p,q) = (i l ,j l ,d l ) have a value 1, all other entries are 0. Thus, the (i l ,j l ,d l )-th entry of
-∂z
-∂(vec(x l ))
-equals
-the sum of these corresponding entries in vec
-?
-∂z
-∂Y
-F T
-? .
+Furthermore, since \\( H^T \\) is an indicator matrix, in the row vector indexed by \\( (i^l, j^l, d^l ) \\), only those entries whose index \\( (p, q) \\) satisfies \\( t(p, q) = (i^l, j^l, d^l ) \\) have a value \\( 1 \\), all other entries are \\( 0 \\).
+Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) equals the sum of these corresponding entries in \\( vec (\\frac{\\partial z}{\\partizl Y}) F^T \\).
+
 Transferring the above textual description into precise mathematical form,
 we get the following succinct equation:
 ?
