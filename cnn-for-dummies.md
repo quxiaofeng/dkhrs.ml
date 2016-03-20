@@ -655,32 +655,16 @@ Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial
 Furthermore, since \\( H^T \\) is an indicator matrix, in the row vector indexed by \\( (i^l, j^l, d^l ) \\), only those entries whose index \\( (p, q) \\) satisfies \\( t(p, q) = (i^l, j^l, d^l ) \\) have a value \\( 1 \\), all other entries are \\( 0 \\).
 Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) equals the sum of these corresponding entries in \\( vec (\\frac{\\partial z}{\\partizl Y}) F^T \\).
 
-Transferring the above textual description into precise mathematical form,
-we get the following succinct equation:
-?
-∂z
-∂(vec(x l ))
-?
-(i l ,j l ,d l )
-=
-X
-(p,q)∈t −1 (i l ,j l ,d l )
-?
-vec
-?
-∂z
-∂Y
-F T
-??
-(p,q)
-. (45)
-In other words, to compute
-∂z
-∂(vec(x l )) , we do not need to explicitly use the
-extremely high dimensional vector H T . Instead, Equation 45 and equations 16
-to 19 can be used to efficiently find
-∂z
-∂(vec(x l )) 
+Transferring the above textual description into precise mathematical form, we get the following succinct equation:
+<a name="eqn_backward_propagation"></a>\\[
+\[ \\frac{\\partial z}{ \\partial (vec (\\mathbf{x}^l))} \]^{(i^l, j^l, d^l)}
+= \\sum_{(p, q) \\in t^{−1} (i^l, j^l, d^l)
+\[ vec \\left( \\frac{\\partial z}{\\partial Y} F^T \\right) \]\_{(p, q)}
+. \\quad (45)
+\\]
+
+In other words, to compute \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\), we do not need to explicitly use the extremely high dimensional vector \\( H^T \\).
+Instead, [Equation 45](#eqn_backward_propagation) and equations 16 to 19 can be used to efficiently find \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) 
 
 ## 5 The pooling layer ##
 
