@@ -658,7 +658,7 @@ Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial
 Transferring the above textual description into precise mathematical form, we get the following succinct equation:
 <a name="eqn_backward_propagation"></a>\\[
 \[ \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \]^{(i^l, j^l, d^l)}
-= \\sum_{(p, q) \\in t^{−1} (i^l, j^l, d^l)}
+= \\sum\_{(p, q) \\in t^{−1} (i^l, j^l, d^l)}
 \[ vec \\left( \\frac{\\partial z}{\\partial Y} F^T \\right) \]\_{(p, q)}
 . \\quad (45)
 \\]
