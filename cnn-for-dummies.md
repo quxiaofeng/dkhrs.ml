@@ -664,7 +664,7 @@ Transferring the above textual description into precise mathematical form, we ge
 \\]
 
 In other words, to compute \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\), we do not need to explicitly use the extremely high dimensional vector \\( H^T \\).
-Instead, [Equation 45](#eqn_backward_propagation) and equations 16 to 19 can be used to efficiently find \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) 
+Instead, [Equation 45](#eqn_backward_propagation) and [equations 16 to 19](#eqn_triplet) can be used to efficiently find \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) 
 
 ## 5 The pooling layer ##
 
