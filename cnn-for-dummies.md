@@ -653,12 +653,12 @@ Similarly, to locate a column in \\( H^T \\) or an element in \\( \\frac{\\parti
 Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) equals the multiplication of two vectors: the row in \\( H^T \\) that is indexed by \\( (i^l, j^l, d^l ) \\), and \\( vec (\\frac{\\partial z}{\\partial Y} F^T ) \\).
 
 Furthermore, since \\( H^T \\) is an indicator matrix, in the row vector indexed by \\( (i^l, j^l, d^l ) \\), only those entries whose index \\( (p, q) \\) satisfies \\( t(p, q) = (i^l, j^l, d^l ) \\) have a value \\( 1 \\), all other entries are \\( 0 \\).
-Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) equals the sum of these corresponding entries in \\( vec (\\frac{\\partial z}{\\partizl Y}) F^T \\).
+Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) equals the sum of these corresponding entries in \\( vec (\\frac{\\partial z}{\\partial Y}) F^T \\).
 
 Transferring the above textual description into precise mathematical form, we get the following succinct equation:
 <a name="eqn_backward_propagation"></a>\\[
-\[ \\frac{\\partial z}{ \\partial (vec (\\mathbf{x}^l))} \]^{(i^l, j^l, d^l)}
-= \\sum_{(p, q) \\in t^{−1} (i^l, j^l, d^l)
+\[ \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \]^{(i^l, j^l, d^l)}
+= \\sum_{(p, q) \\in t^{−1} (i^l, j^l, d^l)}
 \[ vec \\left( \\frac{\\partial z}{\\partial Y} F^T \\right) \]\_{(p, q)}
 . \\quad (45)
 \\]
@@ -668,15 +668,11 @@ Instead, [Equation 45](#eqn_backward_propagation) and [equations 16 to 19](#eqn_
 
 ## 5 The pooling layer ##
 
-We will use the same notation inherited from the convolution layer. Let x l ∈
-R H
-l ×W l ×D l
-be the input to the l-th layer, which is now a pooling layer. The
-pooling operation requires no parameters (i.e., w i is null hence parameter learn-
-ing is not needed for this layer), but a spatial extent of the pooling (H ×W) is
-specified in the design of the CNN structure. Assume that H divides H l and W
-divides W l , the output of pooling (y or equivalently x l+1 ) will be a 3D tensor
-of size H l+1 × W l+1 × D l+1 , with
+We will use the same notation inherited from the convolution layer.
+
+Let \\( \\mathbf{x}^l \\in \\mathbb{R}^{H^l \\times W^l \\times D^l} \\) be the input to the \\( l \\)-th layer, which is now a pooling layer.
+The pooling operation requires no parameters (i.e., \\( \\mathbf{w}^i \\) is null hence parameter learning is not needed for this layer), but a spatial extent of the pooling \\( (H \\times W) \\) is specified in the design of the CNN structure.
+Assume that \\( H \\) divides \\( H^l \\) and  \\( W \\) divides \\( W^l \\), the output of pooling (\\(\\mathbf{y}\\) or equivalently \\( \\mathbf{x}^{l+1} \\) ) will be a 3D tensor of size \\(H^{l+1} \\times W^{l+1} \\times D^{l+1} \\), with
 H l+1 =
 H l
 H
