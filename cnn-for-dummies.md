@@ -657,10 +657,9 @@ Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial
 
 Transferring the above textual description into precise mathematical form, we get the following succinct equation:
 <a name="eqn_backward_propagation"></a>\\[
-[\\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))}]^{(i^l, j^l, d^l)}
+\\left[ \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\right]^{(i^l, j^l, d^l)}
 = \\sum\_{(p, q) \\in t^{−1} (i^l, j^l, d^l)}
-[ vec \\left( \\frac{\\partial z}{\\partial Y} F^T \\right) ]\_{(p, q)}
-. \\quad (45)
+\\left[ vec \\left( \\frac{\\partial z}{\\partial Y} F^T \\right) \\right]\_{(p, q)}. \\quad (45)
 \\]
 
 In other words, to compute \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\), we do not need to explicitly use the extremely high dimensional vector \\( H^T \\).
