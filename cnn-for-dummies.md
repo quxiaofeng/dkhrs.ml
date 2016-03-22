@@ -609,7 +609,7 @@ a fact we will use soon.
 ### 4.8 Backward propagation: the supervision signal ###
 
 In the \\( l \\)-th layer, we still need to compute \\( \\frac{\\partial z}{\\partial vec(\\mathbf{x}^l)} \\).
-For this purpose, we want to reshape \\( \\mathbf{x}^l \\) into a matrix \\( X \\in \\mathbb{R}^{(H^l W^l) \\times D^l}, and use these two equivalent forms (modulo reshaping) interchangeably.
+For this purpose, we want to reshape \\( \\mathbf{x}^l \\) into a matrix \\( X \\in \\mathbb{R}^{(H^l W^l) \\times D^l} \\), and use these two equivalent forms (modulo reshaping) interchangeably.
 
 The chain rule states that \\( \\frac{\\partial z}{\\partial (vec(\\mathbf{x}^l)^T)} = \\frac{\\partial z}{\\partial (vec(\\mathbf{y})^T)} \\frac{\\partial vec(\\mathbf{y})}{\\partial (vec(\\mathbf{x}^l)^T)} \\) (cf. Equation 11).
 We will start by studying the second term in the RHS (utilizing equations 25 and 36):
@@ -656,7 +656,8 @@ Furthermore, since \\( H^T \\) is an indicator matrix, in the row vector indexed
 Thus, the \\( (i^l, j^l, d^l ) \\)-th entry of \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) equals the sum of these corresponding entries in \\( vec (\\frac{\\partial z}{\\partial Y}) F^T \\).
 
 Transferring the above textual description into precise mathematical form, we get the following succinct equation:
-<a name="eqn_backward_propagation"></a>\\[
+<a name="eqn_backward_propagation"></a>
+\\[
 \\left[ \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\right]^{(i^l, j^l, d^l)}
 = \\sum\_{(p, q) \\in t^{−1} (i^l, j^l, d^l)}
 \\left[ vec \\left( \\frac{\\partial z}{\\partial Y} F^T \\right) \\right]\_{(p, q)}. \\quad (45)
