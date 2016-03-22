@@ -22,8 +22,6 @@ HBSI 模型
 
 EBD 模型
 
-walking
-
 ![EBD model](/images/fig_newmodel.svg)
 
 ## 特征提取与分类

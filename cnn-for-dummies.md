@@ -32,11 +32,11 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
    5. [The Kronecker product](#the-kronecker-product)
    6. [Backward propagation: the parameters](#backward-propagation-the-parameters)
    7. [Even higher dimensional indicator matrices](#even-higher-dimensional-indicator-matrices)
-   8. Backward propagation: the supervision signal 
-5. The pooling layer
-6. The reverse operators
-7. The ReLU layer
-8. Conclusions
+   8. [Backward propagation: the supervision signal](#backward-propagation-the-supervision-signal) 
+5. [The pooling layer](#the-pooling-layer)
+6. [The reverse operators](#the-reverse-operators)
+7. [The ReLU layer](#the-relu-layer)
+8. [Conclusions](#conclusions)
 
 ## 1 Motivation ##
 
