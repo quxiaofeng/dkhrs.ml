@@ -3,7 +3,14 @@ layout: default
 permalink: /dkhrs/
 ---
 
+[Home](/)
+
 # [Door Knob Hand Recognition System](/dkhrs/) #
+
+[**Xiaofeng QU**][csxfqu],
+[**David ZHANG**][csdzhang],
+[**Guangming LU**][csgmlu],
+and [**Zhenhua GUO**][cszhguo]
 
 ![](http://images.freeimages.com/images/previews/7d5/under-construction-icon-1242121.jpg)
 
