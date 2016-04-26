@@ -12,9 +12,7 @@ permalink: /dkhrs/
 [**Guangming LU**][csgmlu],
 and [**Zhenhua GUO**][cszhguo]
 
-![](http://images.freeimages.com/images/previews/7d5/under-construction-icon-1242121.jpg)
-
-[Qu, Xiaofeng][csxfqu]; [Zhang, David][csdzhang]; [Lu, Guangming][csgmlu]; and [Guo, Zhenhua][cszhguo], "[Door knob hand recognition system][dkhrs]," *in Systems, Man, and Cybernetics: Systems, IEEE Transactions on , vol.PP, no.99, pp.1-12*.
+> [Qu, Xiaofeng][csxfqu]; [Zhang, David][csdzhang]; [Lu, Guangming][csgmlu]; and [Guo, Zhenhua][cszhguo], "[Door knob hand recognition system][dkhrs]," *in Systems, Man, and Cybernetics: Systems, IEEE Transactions on , vol.PP, no.99, pp.1-12*.
 
 ## Abstract ##
 
@@ -66,18 +64,6 @@ EBD model is proposed to address the above limitations. EBD model implements fou
 *Fig. 2 EBD model considers both physical ergonomics and cognitive ergonomics in all three stages of biometric system development.*
 
 EBD model is illustrated in [Fig. 2](#fig_newmodel). This model is to provide a guideline for creating a new ergonomic biometric system. In design theory, Rubin and Chisnell [[37][ref37]] argue that there are five reasons why a machine or a system is difficult to use. The fundamental issue is that the focus has been on the machine or the system and not on users during the development. In a biometric system, the emphasis should be users. The consideration of ergonomics should be as early as in the first design stage and also in the full design process. Conventionally, the ergonomics analysis is occurred in the implementation stage, which is after the production of sensors. When the feature and the sensor is determined, the room for ergonomics is limited. In EBD model, we insist that ergonomics should be included in the full biometrics system design process. In all three stages: selecting biological and behavioral characteristics, designing the sample-collecting device and designing the feature extraction and classification method, ergonomics should be considered. Furthermore, both categories of ergonomics should be considered including the physical ergonomics and the cognitive ergonomics. Though ergonomics is an essential element in EBD model, recognition performance should not be ignored. The ergonomics and recognition performance should collaborate with each other during the design process.
-
-
-
-
-
-
-
-
-
-
-
-
 
 [ref1]: http://www.usembassy.org.uk/visaservices/?p=420
 [ref2]: http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6650265
