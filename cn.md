@@ -6,9 +6,9 @@ permalink: /cn/
 门把手识别系统
 ======================
 
-[English](/) \\( \\qquad \\) [**中文**](/cn/)
+## [曲晓峰][csxfqu] ##
 
-**[曲晓峰][csxfqu]**
+[English](/) \\( \\qquad \\) [**中文**](/cn/)
 
 ![DKHRS](/images/fig_device.png)
 
