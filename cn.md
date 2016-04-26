@@ -8,7 +8,7 @@ permalink: /cn/
 
 [English](/) \\( \\qquad \\) [**中文**](/cn/)
 
-![](http://images.freeimages.com/images/previews/7d5/under-construction-icon-1242121.jpg)
+**[曲晓峰][csxfqu]**
 
 ![DKHRS](/images/fig_device.png)
 
