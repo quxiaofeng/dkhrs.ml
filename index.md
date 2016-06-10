@@ -15,8 +15,8 @@ Door Knob Hand Recognition System
 ![The prototype](/images/fig_prototype.png)
 Door Knob Hand Recognition System Prototype
 
-![The prototype](/images/fig_prototype.png)
-Door Knob Hand Recognition System Prototype
+![Working Scenario](/images/fig_scenario.png)
+Working Scenario
 
 ## Background ##
 
