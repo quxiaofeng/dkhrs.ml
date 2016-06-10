@@ -9,9 +9,14 @@ layout: default
 
 [**English**](/) \\( \\qquad \\) [中文](/cn/)
 
-
 ![DKHRS](/images/fig_device.png)
-The Door Knob Hand Recognition System
+Door Knob Hand Recognition System
+
+![The prototype](/images/fig_prototype.png)
+Door Knob Hand Recognition System Prototype
+
+![The prototype](/images/fig_prototype.png)
+Door Knob Hand Recognition System Prototype
 
 ## Background ##
 
@@ -36,29 +41,45 @@ EBD Model
 
 "Reinvent the Door Knob", it is not a new biometrics, but is a new door knob.
 
+![The basic idea](/images/fig_origin.png)
+The basic idea
+
 "Open the door just like it is not locked."
 
 ### Imaging ###
 
-+ Conventional Imaging
-+ Catadioptric Imaging
-+ Door Knob Imaging
++ Conventional Imaging: small view field, large, easy to be interfered
++ Catadioptric Imaging: compact, capturing the surroundings in one image; large, expensive
++ Door Knob Imaging: low-cost, capturing the surroundings in one image, short working distance
+
+![Conventional imaging scheme](/images/fig_conventionalimaging.svg)
+Conventional imaging scheme
+
+![Catadioptric imaging scheme](/images/fig_cata.png)
+Catadioptric imaging scheme
+
+![Door Knob Imaging scheme](/images/fig_doorknobimaging.svg)
+Door Knob Imaging scheme
 
 ## Feature Extraction and Classification ##
 
-LGBPHS
+### Preprocessing ###
+
+![Calibration](/images/fig_calibration.png)
+System Calibration
+
+![Ring area](/images/fig_ring.png)
+The area of hand
+
+### Feature Extraction ###
 
 ![LGBPHS Method](/images/fig_lgbphs.svg)
+Local Gabor Binary Pattern Histogram Sequence
 
 ### Projective Dictionary Pair Learning
 
 See [DPL](/dpl/) and [DPL Supplementary](/dpl-supplementary/).
 
-### Experiment ###
-
-Flowchart
-
-![Flowchart](/images/fig_flowchart.svg)
 
 ## Publications ##
 
