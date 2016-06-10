@@ -39,12 +39,12 @@ EBD Model
 
 ## Door Knob Hand Recognition System ##
 
-"Reinvent the Door Knob", it is not a new biometrics, but is a new door knob.
+**"Reinvent the Door Knob"**, it is not a new biometrics, but is a new door knob.
 
 ![The basic idea](/images/fig_origin.png)
 The basic idea
 
-"Open the door just like it is not locked."
+**"Open the door just like it is not locked."**
 
 ### Imaging ###
 
@@ -58,7 +58,7 @@ Conventional imaging scheme
 ![Catadioptric imaging scheme](/images/fig_cata.png)
 Catadioptric imaging scheme
 
-![Door Knob Imaging scheme](/images/fig_doorknobimaging.svg)
+![Door Knob Imaging scheme](/images/fig_doorknobimaging.png)
 Door Knob Imaging scheme
 
 ## Feature Extraction and Classification ##
