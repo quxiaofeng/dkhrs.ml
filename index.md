@@ -22,7 +22,7 @@ The Door Knob Hand Recognition System
 
 ## Ergonomic Biometrics Design Model ##
 
-**Four Principals of EBD Model**
+**Four Principles of EBD Model**
 
 + Considering ergonomics in the first stage --- selecting biological and behavioral characteristics.
 + Considering ergonomics in all developing stages --- selecting biological and behavioral characteristics, designing the sample-collecting device and designing the feature extraction and classification method.
