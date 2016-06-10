@@ -84,7 +84,7 @@ See [DPL](/dpl/) and [DPL Supplementary](/dpl-supplementary/).
 
 + The best EER is 0.091%.
 + The recognition rate of DKHRS is over 99%, and its EER can be lower than 0.1%.
-+ Generally speaking, the recognition performance of DKHRS is much better than hand back skin texture [Xie2012][Xie2012], gait [Lai2014gait][Lai2014gait] and face recognition [Gu2014dpl][Gu2014dpl], [Lfw2015][Lfw2015];
++ Generally speaking, the recognition performance of DKHRS is much better than hand back skin texture [Xie2012](#xie2012), gait [Lai2014gait][Lai2014gait] and face recognition [Gu2014dpl][Gu2014dpl], [Lfw2015][Lfw2015];
 + it is even surpass fingerprint recognition (about 1% EER on STFV-STD-1.0 dataset\cite{ICB2013}) and 3D fingerprint (3.4% EER\cite{Liu2015});
 + but it is still not as good as iris recognition (\textless{}0.003% EER\cite{Daugman2007}), and palmprint recognition (EER from 0.062% to 0.012%\cite{Zuo2008compcode, Guo2009bocv, Laadjel2009a, Guo2009coc, Zhang2010, Zhang2010b, Li2012a, Qu2015lps}).
 
@@ -111,8 +111,11 @@ See [DPL](/dpl/) and [DPL Supplementary](/dpl-supplementary/).
 [cszhguo]: http://www.sz.tsinghua.edu.cn/publish/sz/139/2012/20120420104947649501973/20120420104947649501973_.html
 [dkhrs]: http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7433472
 
+## References ##
 
-[Xie2012]: 
++ <a name="xie2012"></a>[J. Xie, L. Zhang, J. You, D. Zhang, and X. Qu, "A study of hand back skin texture patterns for personal identification and gender classification." Sensors (Basel, Switzerland), vol. 12, no. 7, pp. 8691-709, 1 2012.][Xie2012]
+
+[Xie2012]: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444070/
 [Lai2014gait]: 
 [Gu2014dpl]: 
 [Lfw2015]: 
