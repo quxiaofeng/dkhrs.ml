@@ -84,9 +84,9 @@ See [DPL](/dpl/) and [DPL Supplementary](/dpl-supplementary/).
 
 + The best EER is 0.091%.
 + The recognition rate of DKHRS is over 99%, and its EER can be lower than 0.1%.
-+ Generally speaking, the recognition performance of DKHRS is much better than hand back skin texture [Xie2012](#xie2012), gait [Lai2014gait][Lai2014gait] and face recognition [Gu2014dpl][Gu2014dpl], [Lfw2015][Lfw2015];
-+ it is even surpass fingerprint recognition (about 1% EER on STFV-STD-1.0 dataset\cite{ICB2013}) and 3D fingerprint (3.4% EER\cite{Liu2015});
-+ but it is still not as good as iris recognition (\textless{}0.003% EER\cite{Daugman2007}), and palmprint recognition (EER from 0.062% to 0.012%\cite{Zuo2008compcode, Guo2009bocv, Laadjel2009a, Guo2009coc, Zhang2010, Zhang2010b, Li2012a, Qu2015lps}).
++ Generally speaking, the recognition performance of DKHRS is much better than hand back skin texture [Xie2012](#xie2012), gait [Lai2014gait](#lai2014gait) and face recognition [Gu2014dpl](#gu2014dpl), [Lfw2015](#lfw2015);
++ it is even surpass fingerprint recognition (about 1% EER on STFV-STD-1.0 dataset [ICB2013](#icb2013)) and 3D fingerprint (3.4% EER [Liu2015](#liu2015));
++ but it is still not as good as iris recognition (<0.003% EER[Daugman2007](#daugman2007)), and palmprint recognition (EER from 0.062% to 0.012% [Zuo2008compcode](#zuo2008compcode), [Guo2009bocv](#guo2009bocv), [Laadjel2009a](#laadjel2009a), [Guo2009coc](#guo2009coc), [Zhang2010](#zhang2010), [Zhang2010b](#zhang2010b), [Li2012a](#li2012a), [Qu2015lps](#qu2015lps)).
 
 ## Publications ##
 
@@ -114,8 +114,33 @@ See [DPL](/dpl/) and [DPL Supplementary](/dpl-supplementary/).
 ## References ##
 
 + <a name="xie2012"></a>[J. Xie, L. Zhang, J. You, D. Zhang, and X. Qu, "A study of hand back skin texture patterns for personal identification and gender classification." Sensors (Basel, Switzerland), vol. 12, no. 7, pp. 8691-709, 1 2012.][Xie2012]
++ <a name="lai2014gait"></a>[Z. Lai, Y. Xu, Z. Jin, and D. Zhang, "Human gait recognition via sparse discriminant projection learning," IEEE Transactions on Circuits and Systems for Video Technology, vol. 24, no. 10, pp. 1651-1662, 10 2014.][Lai2014gait]
++ <a name="gu2014dpl"></a>[S. Gu, L. Zhang, W. Zuo, and X. Feng, "Projective dictionary pair learning for pattern classification," in Advances in Neural Information Processing Systems 27, Z. Ghahramani, M. Welling, C. Cortes, N. D. Lawrence, and K. Q. Weinberger, Eds. Curran Associates, Inc., 2014, pp. 793-801.][Gu2014dpl]
++ <a name="lfw2015"></a>["Lfw : Results." [Online]. Available: http://vis-www.cs.umass.edu/lfw/results.html][Lfw2015]
++ <a name="icb2013"></a>["Fvc-ongoing." [Online]. Available: https://biolab.csr.unibo.it/fvcongoing/UI/Form/ICB2013STFV.aspx][ICB2013]
++ <a name="liu2015"></a>[F. Liu, D. Zhang, and L. Shen, "Study on novel curvature features for 3d fingerprint recognition," Neurocomputing, vol. 168, pp. 599-608, 11 2015.][Liu2015]
++ <a name="daugman2007"></a>[J. Daugman, "New methods in iris recognition," Systems, Man, and Cybernetics, Part B: Cybernetics, IEEE Transactions on, vol. 37, no. 5, pp. 1167-1175, 10 2007.][Daugman2007]
++ <a name="zuo2008compcode"></a>[W. Zuo, F. Yue, K. Wang, and D. Zhang, "Multiscale competitive code for efficient palmprint recognition," in Proc. 19th Int. Conf. Pattern Recogn. (ICPR), 2008, pp. 1-4.][Zuo2008compcode]
++ <a name="guo2009bocv"></a>[][Guo2009bocv]
++ <a name="laadjel2009a"></a>[][Laadjel2009a]
++ <a name="guo2009coc"></a>[][Guo2009coc]
++ <a name="zhang2010"></a>[][Zhang2010]
++ <a name="zhang2010b"></a>[][Zhang2010b]
++ <a name="li2012a"></a>[][Li2012a]
++ <a name="qu2015lps"></a>[][Qu2015lps]
 
 [Xie2012]: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444070/
-[Lai2014gait]: 
-[Gu2014dpl]: 
-[Lfw2015]: 
+[Lai2014gait]: http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6737218
+[Gu2014dpl]: https://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification
+[Lfw2015]: http://vis-www.cs.umass.edu/lfw/results.html
+[ICB2013]: https://biolab.csr.unibo.it/fvcongoing/UI/Form/ICB2013STFV.aspx
+[Liu2015]: http://www.sciencedirect.com/science/article/pii/S0925231215007638
+[Daugman2007]: http://www.cl.cam.ac.uk/~jgd1000/NewMethodsInIrisRecog.pdf
+[Zuo2008compcode]: http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4761868
+[Guo2009bocv]: 
+[Laadjel2009a]: 
+[Guo2009coc]: 
+[Zhang2010]: 
+[Zhang2010b]: 
+[Li2012a]: 
+[Qu2015lps]: 
