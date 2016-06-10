@@ -11,22 +11,38 @@ layout: default
 
 
 ![DKHRS](/images/fig_device.png)
+The Door Knob Hand Recognition System
+
+## Background ##
+
++ Biometrics has been utilized worldwide.
++ A great amount of users have been educated of the convenience and security of biometric systems.
++ There is an expanding need of biometric systems in everyday life by ordinary people.
++ However, the majority of the biometric systems are designed for professionals or experienced people and tend to consider ergonomics a secondary element in system developing.
 
 ## Ergonomic Biometrics Design Model ##
 
-HBSI Model
+**Four Principals of EBD Model**
 
-![HBSI model](/images/fig_hbsi.svg)
-
-EBD Model
++ Considering ergonomics in the first stage --- selecting biological and behavioral characteristics.
++ Considering ergonomics in all developing stages --- selecting biological and behavioral characteristics, designing the sample-collecting device and designing the feature extraction and classification method.
++ Considering both physical and cognitive ergonomics in each stage.
++ Collaborating the recognition performance with ergonomics.
 
 ![EBD model](/images/fig_newmodel.svg)
+EBD Model
 
 ## Door Knob Hand Recognition System ##
 
-### Concept and Framework ###
+"Reinvent the Door Knob", it is not a new biometrics, but is a new door knob.
+
+"Open the door just like it is not locked."
 
 ### Imaging ###
+
++ Conventional Imaging
++ Catadioptric Imaging
++ Door Knob Imaging
 
 ## Feature Extraction and Classification ##
 
