@@ -3,6 +3,8 @@ layout: default
 permalink: /cnn-for-dummies/
 ---
 
+[Home]({{site.baseurl}}/)
+
 # CNN for Dummies #
 
 Written by [Jianxin WU](http://cs.nju.edu.cn/wujx/)
@@ -32,7 +34,7 @@ This is a note that describes how a Convolutional Neural Network (CNN) operates 
    5. [The Kronecker product](#the-kronecker-product)
    6. [Backward propagation: the parameters](#backward-propagation-the-parameters)
    7. [Even higher dimensional indicator matrices](#even-higher-dimensional-indicator-matrices)
-   8. [Backward propagation: the supervision signal](#backward-propagation-the-supervision-signal) 
+   8. [Backward propagation: the supervision signal](#backward-propagation-the-supervision-signal)
 5. [The pooling layer](#the-pooling-layer)
 6. [The reverse operators](#the-reverse-operators)
 7. [The ReLU layer](#the-relu-layer)
@@ -484,14 +486,14 @@ a\_{m1}B & \\cdots & a\_{mn}B
 \\]
 
 The Kronecker product has the following properties that will be useful for us:
-<a name="eqn_kronecker_properties"></a>\\[ \\begin{array}{lr} 
+<a name="eqn_kronecker_properties"></a>\\[ \\begin{array}{lr}
 \\qquad (A \\otimes B)^T = A^T \\otimes B^T \\text{,} & \\qquad (22)\\\
 \\qquad vec(AXB) = (B^T \\otimes A)vec(X)   \\text{,} & \\qquad (23)
 \\end{array} \\]
 for matrices \\( A \\), \\( X \\), and \\( B \\) with proper dimensions (e.g., when the matrix multiplication \\( AXB \\) is defined.) Note that [Equation 23](#eqn_kronecker_properties) can be utilized from both directions.
 
 With the help of \\( \\otimes \\), we can write down
-<a name="eqn_kronecker_properties_application"></a>\\[ \\begin{array}{lllr} 
+<a name="eqn_kronecker_properties_application"></a>\\[ \\begin{array}{lllr}
 vec(\\mathbf{y}) &= vec(\\phi(\\mathbf{x}^l)FI) &= (I \\otimes \\phi(\\mathbf{x}^l)) vec(F) \\text{,} & \\; (24)\\\
 vec(\\mathbf{y}) &= vec(I\\phi(\\mathbf{x}^l)F) &= (F^T \\otimes I) vec(\\phi(\\mathbf{x}^l)) \\text{,} & \\; (25)
 \\end{array} \\]
@@ -521,7 +523,7 @@ This equation leads to
 \\]
 Making a transpose, we get
 \\[ \\begin{array}{rllr}
-\\frac{\\partial z}{\\partial vec (F)} 
+\\frac{\\partial z}{\\partial vec (F)}
 & = & \\left(I \\otimes \\phi \\left( \\mathbf{x}^l \\right) \\right)^T \\frac{\\partial z}{\\partial vec (\\mathbf{y})} & \\\
 & = & \\left( I \\otimes \\phi \\left( \\mathbf{x}^l \\right) \\right)^T vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (29) \\\
 & = & \\left( I \\otimes \\phi \\left( \\mathbf{x}^l \\right)^T \\right) vec \\left( \\frac{\\partial z}{\\partial Y} \\right) & (30) \\\
@@ -663,7 +665,7 @@ Transferring the above textual description into precise mathematical form, we ge
 \\]
 
 In other words, to compute \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\), we do not need to explicitly use the extremely high dimensional vector \\( H^T \\).
-Instead, [Equation 45](#eqn_backward_propagation) and [equations 16 to 19](#eqn_triplet) can be used to efficiently find \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\) 
+Instead, [Equation 45](#eqn_backward_propagation) and [equations 16 to 19](#eqn_triplet) can be used to efficiently find \\( \\frac{\\partial z}{\\partial (vec (\\mathbf{x}^l))} \\)
 
 ## 5 The pooling layer ##
 

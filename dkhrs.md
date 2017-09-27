@@ -3,9 +3,9 @@ layout: default
 permalink: /dkhrs/
 ---
 
-[Home](/)
+[Home]({{site.baseurl}}/)
 
-# [Door Knob Hand Recognition System](/dkhrs/) #
+# [Door Knob Hand Recognition System]({{site.baseurl}}/dkhrs/) #
 
 [**Xiaofeng QU**][csxfqu],
 [**David ZHANG**][csdzhang],
@@ -41,7 +41,7 @@ From the above studies, it is noticed that ergonomics takes a significant role i
 Early ergonomics studies in development of biometric systems aimed at user acceptance [[24][ref24], [25][ref25], [26][ref26]], latent fingerprint examination [[27][ref27], [28][ref28]], and collectability  [[5][ref5], [8][ref8], [21][ref21], [29][ref29], [30][ref30]]. According to Albrecht [[24][ref24]], users accept natural and everyday motions the most readily, which conforms with ergonomic principles both in physical and cognitive. The analysis of latent fingerprint is widely depended on the human judgments because the analysis is semi-automatic [[27][ref27], [28][ref28]]. In collectability, the physical ergonomics is the challenge from an engineering perspective to next generation biometrics [[5][ref5], [30][ref30]]. Then, addressing ergonomic issues in a systematic view, human-biometric sensor interaction (HBSI) model is proposed [[31][ref31], [32][ref32]].
 
 <a name="fig_hbsi">
-![HBSI model](/images/fig_hbsi.svg)
+![HBSI model]({{site.baseurl}}/images/fig_hbsi.svg)
 </a>
 *Fig. 1 Human-Biometric Sensor Interaction (HBSI) model shows the interactions between human, biometric sensors, and biometric systems (Redrawn in accordance with [[33][ref33]]).*
 
@@ -51,7 +51,7 @@ HBSI model has been used to examine the ergonomics of swipe fingerprint sensors 
 
 ### 2.3 Ergonomic Biometrics Design Model ###
 
-EBD model is proposed to address the above limitations. EBD model implements four concepts. 
+EBD model is proposed to address the above limitations. EBD model implements four concepts.
 
 + Considering ergonomics in the first stage - selecting biological and behavioral characteristics.
 + Considering ergonomics in all developing stages - selecting biological and behavioral characteristics, designing the sample-collecting device and designing the feature extraction and classification method.
@@ -59,7 +59,7 @@ EBD model is proposed to address the above limitations. EBD model implements fou
 + Collaborating the recognition performance with ergonomics.
 
 <a name="fig_newmodel">
-![EBD model](/images/fig_newmodel.svg)
+![EBD model]({{site.baseurl}}/images/fig_newmodel.svg)
 </a>
 *Fig. 2 EBD model considers both physical ergonomics and cognitive ergonomics in all three stages of biometric system development.*
 

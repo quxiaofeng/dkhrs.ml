@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[Door Knob Hand Recognition System]({{site.url}}/)
+[Door Knob Hand Recognition System]({{site.baseurl}}/)
 ==================================
 
 ## [Xiaofeng QU][csxfqu] ##

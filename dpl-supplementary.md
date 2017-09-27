@@ -3,6 +3,8 @@ layout: default
 permalink: /dpl-supplementary/
 ---
 
+[Back]({{site.baseurl}}/#projective-dictionary-pair-learning)
+
 # Supplementary materials to "Projective dictionary pair learning for pattern classification" #
 
 [Shuhang Gu, Lei Zhang, Wangmeng Zuo, and Xiangchu Feng. "Supplementary materials to ‘Projective dictionary pair learning for pattern classification’." Neural Information Processing Systems (2014).](http://papers.nips.cc/paper/5600-projective-dictionary-pair-learning-for-pattern-classification-supplemental.zip)
