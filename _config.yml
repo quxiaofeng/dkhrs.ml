@@ -1,5 +1,5 @@
-url: http://www.quxiaofeng.me/doorknob
-baseurl:/doorknob
+url: www.quxiaofeng.me/doorknob
+baseurl: /doorknob
 
 title_tag_text: Door Knob Hand Recognition System
 h1_tag_text: Door Knob Hand Recognition System
