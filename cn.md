@@ -8,9 +8,9 @@ permalink: /cn/
 
 ## [曲晓峰][csxfqu] ##
 
-[English](/) \\( \\qquad \\) [**中文**](/cn/)
+[English]({{site.baseurl}}/) \\( \\qquad \\) [**中文**]({{site.baseurl}}/cn/)
 
-![DKHRS](/images/fig_device.png)
+![DKHRS]({{site.baseurl}}/images/fig_device.png)
 
 ## 简介
 
@@ -18,23 +18,23 @@ permalink: /cn/
 
 HBSI 模型
 
-![HBSI model](/images/fig_hbsi.svg)
+![HBSI model]({{site.baseurl}}/images/fig_hbsi.svg)
 
 EBD 模型
 
-![EBD model](/images/fig_newmodel.svg)
+![EBD model]({{site.baseurl}}/images/fig_newmodel.svg)
 
 ## 特征提取与分类
 
 LGBPHS
 
-![LGBPHS Method](/images/fig_lgbphs.svg)
+![LGBPHS Method]({{site.baseurl}}/images/fig_lgbphs.svg)
 
 ### 实验 ###
 
 流程图
 
-![Flowchart](/images/fig_flowchart.svg)
+![Flowchart]({{site.baseurl}}/images/fig_flowchart.svg)
 
 ## 相关文献 ##
 
