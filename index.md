@@ -7,15 +7,15 @@ layout: default
 
 ## [Xiaofeng QU][csxfqu] ##
 
-[**English**](/) \\( \\qquad \\) [中文](/cn/)
+[**English**]({{site.baseurl}}/) \\( \\qquad \\) [中文]({{site.baseurl}}/cn/)
 
-![DKHRS](/images/fig_device.png)
+![DKHRS]({{site.baseurl}}/images/fig_device.png)
 Door Knob Hand Recognition System
 
-![The prototype](/images/fig_prototype.png)
+![The prototype]({{site.baseurl}}/images/fig_prototype.png)
 Door Knob Hand Recognition System Prototype
 
-![Working Scenario](/images/fig_scenario.png)
+![Working Scenario]({{site.baseurl}}/images/fig_scenario.png)
 Working Scenario
 
 ## Background ##
@@ -34,14 +34,14 @@ Working Scenario
 + Considering both physical and cognitive ergonomics in each stage.
 + Collaborating the recognition performance with ergonomics.
 
-![EBD model](/images/fig_newmodel.svg)
+![EBD model]({{site.baseurl}}/images/fig_newmodel.svg)
 EBD Model
 
 ## Door Knob Hand Recognition System ##
 
 **"Reinvent the Door Knob"**, it is not a new biometrics, but is a new door knob.
 
-![The basic idea](/images/fig_origin.png)
+![The basic idea]({{site.baseurl}}/images/fig_origin.png)
 The basic idea
 
 **"Open the door just like it is not locked."**
@@ -52,33 +52,33 @@ The basic idea
 + Catadioptric Imaging: compact, capturing the surroundings in one image; large, expensive
 + Door Knob Imaging: low-cost, capturing the surroundings in one image, short working distance
 
-![Conventional imaging scheme](/images/fig_conventionalimaging.svg)
+![Conventional imaging scheme]({{site.baseurl}}/images/fig_conventionalimaging.svg)
 Conventional imaging scheme
 
-![Catadioptric imaging scheme](/images/fig_cata.png)
+![Catadioptric imaging scheme]({{site.baseurl}}/images/fig_cata.png)
 Catadioptric imaging scheme
 
-![Door Knob Imaging scheme](/images/fig_doorknobimaging.png)
+![Door Knob Imaging scheme]({{site.baseurl}}/images/fig_doorknobimaging.png)
 Door Knob Imaging scheme
 
 ## Feature Extraction and Classification ##
 
 ### Preprocessing ###
 
-![Calibration](/images/fig_calibration.png)
+![Calibration]({{site.baseurl}}/images/fig_calibration.png)
 System Calibration
 
-![Ring area](/images/fig_ring.png)
+![Ring area]({{site.baseurl}}/images/fig_ring.png)
 The area of hand
 
 ### Feature Extraction ###
 
-![LGBPHS Method](/images/fig_lgbphs.svg)
+![LGBPHS Method]({{site.baseurl}}/images/fig_lgbphs.svg)
 Local Gabor Binary Pattern Histogram Sequence
 
 ### Projective Dictionary Pair Learning
 
-See [DPL](/dpl/) and [DPL Supplementary](/dpl-supplementary/).
+See [DPL]({{site.baseurl}}/dpl/) and [DPL Supplementary]({{site.baseurl}}/dpl-supplementary/).
 
 ### Performance ###
 
