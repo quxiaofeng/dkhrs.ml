@@ -86,7 +86,7 @@ See [DPL]({{site.baseurl}}/dpl/) and [DPL Supplementary]({{site.baseurl}}/dpl-su
 + The recognition rate of DKHRS is over 99%, and its EER can be lower than 0.1%.
 + Generally speaking, the recognition performance of DKHRS is much better than hand back skin texture [Xie2012](#xie2012), gait [Lai2014gait](#lai2014gait) and face recognition [Gu2014dpl](#gu2014dpl), [Lfw2015](#lfw2015);
 + it is even surpass fingerprint recognition (about 1% EER on STFV-STD-1.0 dataset [ICB2013](#icb2013)) and 3D fingerprint (3.4% EER [Liu2015](#liu2015));
-+ but it is still not as good as iris recognition (<0.003% EER[Daugman2007](#daugman2007)), and palmprint recognition (EER from 0.062% to 0.012% [Zuo2008compcode](#zuo2008compcode), [Guo2009bocv](#guo2009bocv), [Laadjel2009a](#laadjel2009a), [Guo2009coc](#guo2009coc), [Zhang2010](#zhang2010), [Zhang2010b](#zhang2010b), [Li2012a](#li2012a), [Qu2015lps](#qu2015lps)).
++ but it is still not as good as iris recognition (<0.003%  EER [Daugman2007](#daugman2007)), and palmprint recognition (EER from 0.062% to 0.012% [Zuo2008compcode](#zuo2008compcode), [Guo2009bocv](#guo2009bocv), [Laadjel2009a](#laadjel2009a), [Guo2009coc](#guo2009coc), [Zhang2010](#zhang2010), [Zhang2010b](#zhang2010b), [Li2012a](#li2012a), [Qu2015lps](#qu2015lps)).
 
 ## Publications ##
 
