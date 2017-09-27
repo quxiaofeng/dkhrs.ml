@@ -113,21 +113,21 @@ See [DPL]({{site.baseurl}}/dpl/) and [DPL Supplementary]({{site.baseurl}}/dpl-su
 
 ## References ##
 
-+ <a name="xie2012"></a>[J. Xie, L. Zhang, J. You, D. Zhang, and X. Qu, "A study of hand back skin texture patterns for personal identification and gender classification." Sensors (Basel, Switzerland), vol. 12, no. 7, pp. 8691-709, 1 2012.][Xie2012]
-+ <a name="lai2014gait"></a>[Z. Lai, Y. Xu, Z. Jin, and D. Zhang, "Human gait recognition via sparse discriminant projection learning," IEEE Transactions on Circuits and Systems for Video Technology, vol. 24, no. 10, pp. 1651-1662, 10 2014.][Lai2014gait]
-+ <a name="gu2014dpl"></a>[S. Gu, L. Zhang, W. Zuo, and X. Feng, "Projective dictionary pair learning for pattern classification," in Advances in Neural Information Processing Systems 27, Z. Ghahramani, M. Welling, C. Cortes, N. D. Lawrence, and K. Q. Weinberger, Eds. Curran Associates, Inc., 2014, pp. 793-801.][Gu2014dpl]
-+ <a name="lfw2015"></a>["Lfw : Results." [Online]. Available: http://vis-www.cs.umass.edu/lfw/results.html][Lfw2015]
-+ <a name="icb2013"></a>["Fvc-ongoing." [Online]. Available: https://biolab.csr.unibo.it/fvcongoing/UI/Form/ICB2013STFV.aspx][ICB2013]
-+ <a name="liu2015"></a>[F. Liu, D. Zhang, and L. Shen, "Study on novel curvature features for 3d fingerprint recognition," Neurocomputing, vol. 168, pp. 599-608, 11 2015.][Liu2015]
-+ <a name="daugman2007"></a>[J. Daugman, "New methods in iris recognition," Systems, Man, and Cybernetics, Part B: Cybernetics, IEEE Transactions on, vol. 37, no. 5, pp. 1167-1175, 10 2007.][Daugman2007]
-+ <a name="zuo2008compcode"></a>[W. Zuo, F. Yue, K. Wang, and D. Zhang, "Multiscale competitive code for efficient palmprint recognition," in Proc. 19th Int. Conf. Pattern Recogn. (ICPR), 2008, pp. 1-4.][Zuo2008compcode]
-+ <a name="guo2009bocv"></a>[Z. Guo, D. Zhang, L. Zhang, and W. Zuo, "Palmprint verification using binary orientation co-occurrence vector," Pattern Recogn. Lett., vol. 30, no. 13, pp. 1219-1227, 10 2009.][Guo2009bocv]
-+ <a name="laadjel2009a"></a>[M. Laadjel, F. Kurugollu, A. Bouridane, and W. Yan, "Palmprint recognition based on subspace analysis of gabor filter bank," in Proc. 10th Pacific Rim Conf. Multimedia: Advances in Multimedia Information Processing (PCM). Springer-Verlag, 2009, pp. 719-730.][Laadjel2009a]
-+ <a name="guo2009coc"></a>[Z. Guo, W. Zuo, L. Zhang, and D. Zhang, "Palmprint verification using consistent orientation coding," in Proc. 16th IEEE Int. Conf. Image Process. (ICIP), 2009, pp. 1965-1968.][Guo2009coc]
-+ <a name="zhang2010"></a>[D. Zhang, Z. Guo, G. Lu, and W. Zuo, "An online system of multispectral palmprint verification," IEEE Trans. Instrum. Meas., vol. 59, no. 2, pp. 480-490, 2 2010.][Zhang2010]
-+ <a name="zhang2010b"></a>[D. Zhang, V. Kanhangad, N. Luo, and A. Kumar, "Robust palmprint verification using 2d and 3d features," Pattern Recogn., vol. 43, no. 1, pp. 358-368, 1 2010.][Zhang2010b]
-+ <a name="li2012a"></a>[W. Li, D. Zhang, G. Lu, and N. Luo, "A novel 3-d palmprint acquisition system," Systems, Man and Cybernetics, Part A: Systems and Humans, IEEE Transactions on, vol. 42, no. 2, pp. 443-452, 3 2012.][Li2012a]
-+ <a name="qu2015lps"></a>[X. Qu, D. Zhang, and G. Lu, "A novel line-scan palmprint acquisition system," Systems, Man, and Cybernetics: Systems, IEEE Transactions on, vol. PP, pp. 1-11, 2016.][Qu2015lps]
+1. <a name="xie2012"></a>[J. Xie, L. Zhang, J. You, D. Zhang, and X. Qu, "A study of hand back skin texture patterns for personal identification and gender classification." Sensors (Basel, Switzerland), vol. 12, no. 7, pp. 8691-709, 1 2012.][Xie2012]
+1. <a name="lai2014gait"></a>[Z. Lai, Y. Xu, Z. Jin, and D. Zhang, "Human gait recognition via sparse discriminant projection learning," IEEE Transactions on Circuits and Systems for Video Technology, vol. 24, no. 10, pp. 1651-1662, 10 2014.][Lai2014gait]
+1. <a name="gu2014dpl"></a>[S. Gu, L. Zhang, W. Zuo, and X. Feng, "Projective dictionary pair learning for pattern classification," in Advances in Neural Information Processing Systems 27, Z. Ghahramani, M. Welling, C. Cortes, N. D. Lawrence, and K. Q. Weinberger, Eds. Curran Associates, Inc., 2014, pp. 793-801.][Gu2014dpl]
+1. <a name="lfw2015"></a>["Lfw : Results." [Online]. Available: http://vis-www.cs.umass.edu/lfw/results.html][Lfw2015]
+1. <a name="icb2013"></a>["Fvc-ongoing." [Online]. Available: https://biolab.csr.unibo.it/fvcongoing/UI/Form/ICB2013STFV.aspx][ICB2013]
+1. <a name="liu2015"></a>[F. Liu, D. Zhang, and L. Shen, "Study on novel curvature features for 3d fingerprint recognition," Neurocomputing, vol. 168, pp. 599-608, 11 2015.][Liu2015]
+1. <a name="daugman2007"></a>[J. Daugman, "New methods in iris recognition," Systems, Man, and Cybernetics, Part B: Cybernetics, IEEE Transactions on, vol. 37, no. 5, pp. 1167-1175, 10 2007.][Daugman2007]
+1. <a name="zuo2008compcode"></a>[W. Zuo, F. Yue, K. Wang, and D. Zhang, "Multiscale competitive code for efficient palmprint recognition," in Proc. 19th Int. Conf. Pattern Recogn. (ICPR), 2008, pp. 1-4.][Zuo2008compcode]
+1. <a name="guo2009bocv"></a>[Z. Guo, D. Zhang, L. Zhang, and W. Zuo, "Palmprint verification using binary orientation co-occurrence vector," Pattern Recogn. Lett., vol. 30, no. 13, pp. 1219-1227, 10 2009.][Guo2009bocv]
+1. <a name="laadjel2009a"></a>[M. Laadjel, F. Kurugollu, A. Bouridane, and W. Yan, "Palmprint recognition based on subspace analysis of gabor filter bank," in Proc. 10th Pacific Rim Conf. Multimedia: Advances in Multimedia Information Processing (PCM). Springer-Verlag, 2009, pp. 719-730.][Laadjel2009a]
+1. <a name="guo2009coc"></a>[Z. Guo, W. Zuo, L. Zhang, and D. Zhang, "Palmprint verification using consistent orientation coding," in Proc. 16th IEEE Int. Conf. Image Process. (ICIP), 2009, pp. 1965-1968.][Guo2009coc]
+1. <a name="zhang2010"></a>[D. Zhang, Z. Guo, G. Lu, and W. Zuo, "An online system of multispectral palmprint verification," IEEE Trans. Instrum. Meas., vol. 59, no. 2, pp. 480-490, 2 2010.][Zhang2010]
+1. <a name="zhang2010b"></a>[D. Zhang, V. Kanhangad, N. Luo, and A. Kumar, "Robust palmprint verification using 2d and 3d features," Pattern Recogn., vol. 43, no. 1, pp. 358-368, 1 2010.][Zhang2010b]
+1. <a name="li2012a"></a>[W. Li, D. Zhang, G. Lu, and N. Luo, "A novel 3-d palmprint acquisition system," Systems, Man and Cybernetics, Part A: Systems and Humans, IEEE Transactions on, vol. 42, no. 2, pp. 443-452, 3 2012.][Li2012a]
+1. <a name="qu2015lps"></a>[X. Qu, D. Zhang, and G. Lu, "A novel line-scan palmprint acquisition system," Systems, Man, and Cybernetics: Systems, IEEE Transactions on, vol. PP, pp. 1-11, 2016.][Qu2015lps]
 
 [Xie2012]: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444070/
 [Lai2014gait]: http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6737218
